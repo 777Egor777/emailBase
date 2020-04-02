@@ -24,8 +24,14 @@ public class StartUI {
      * are located in the List
      * "actions"
      */
-    public List<UserAction> actions;
+    private List<UserAction> actions;
 
+    /*
+     * In this non-static block we
+     * initialize actions variable.
+     * We use construction
+     * Arrays.asList(...) to do it.
+     */
     {
         actions = Arrays.asList(
                 null
