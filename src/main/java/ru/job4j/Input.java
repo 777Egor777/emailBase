@@ -24,4 +24,5 @@ public interface Input {
     String askLine(String message);
     int askInt();
     int askInt(String message);
+    int askInt(int max);
 }
