@@ -22,4 +22,5 @@ package ru.job4j;
 public interface Input {
     String askLine();
     String askLine(String message);
+    int askInt();
 }
