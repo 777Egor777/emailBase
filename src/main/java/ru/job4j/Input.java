@@ -28,4 +28,5 @@ public interface Input {
     int askInt(String message, int max);
     Email askEmail();
     User askUser();
+    Data askData();
 }
