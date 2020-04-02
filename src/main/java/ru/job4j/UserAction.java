@@ -11,4 +11,5 @@ package ru.job4j;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public interface UserAction {
+    String getTitle();
 }
