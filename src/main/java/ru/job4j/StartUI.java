@@ -1,5 +1,6 @@
 package ru.job4j;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,6 +25,12 @@ public class StartUI {
      * "actions"
      */
     public List<UserAction> actions;
+
+    {
+        actions = Arrays.asList(
+                null
+        );
+    }
 
     public static void main(String[] args) {
     }
