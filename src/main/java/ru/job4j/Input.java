@@ -20,4 +20,5 @@ package ru.job4j;
  * @author Geraskin Egor(yegeraskin13@gmail.com)
  */
 public interface Input {
+    String askLine();
 }
