@@ -12,4 +12,5 @@ package ru.job4j;
  */
 public interface UserAction {
     String getTitle();
+    boolean execute(Input input, Data data);
 }
