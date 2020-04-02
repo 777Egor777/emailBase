@@ -26,4 +26,5 @@ public interface Input {
     int askInt(String message);
     int askInt(int max);
     int askInt(String message, int max);
+    Email askEmail();
 }
