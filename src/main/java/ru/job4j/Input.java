@@ -98,6 +98,30 @@ public interface Input {
      */
     int askInt(String message);
 
+    /**
+     * Method receive Integer
+     * number from some input
+     * essence and return it.
+     *
+     * Method has no validation -
+     * received number can be
+     * only from diapason
+     * [1, max].
+     * Otherwise, method will
+     * throw exception.
+     * @param max - upper border of the
+     *              diapason, that
+     *              returned value must
+     *              be in.
+     * @return integer number, that
+     *         we received from
+     *         interact process with
+     *         user. Number must be
+     *         from diapason [1, max].
+     *         If user enter number
+     *         not from this diapason,
+     *         exception will be thrown
+     */
     int askInt(int max);
     int askInt(String message, int max);
     Email askEmail();
