@@ -202,6 +202,22 @@ public interface Input {
      *         user enters.
      */
     Email askEmail(String message);
+
+    /**
+     * Method receive User
+     * object from some
+     * input essence and
+     * return it.
+     *
+     * Method nas no
+     * validation. If user
+     * enter incorrect User
+     * object,
+     * method just throw
+     * respective exception.
+     * @return User object that
+     *         user enters.
+     */
     User askUser();
     Data askData();
 }
