@@ -60,7 +60,7 @@ public interface Input {
      *         class that we receive
      *         from user
      */
-    String askLine(String message);
+    String askLine(String message); //TODO add default realization
 
     /**
      * Method receive Integer
@@ -76,7 +76,7 @@ public interface Input {
      *         interact process with
      *         user
      */
-    int askInt();
+    int askInt(); //TODO add default realization
 
     /**
      * Method receive Integer
@@ -102,7 +102,7 @@ public interface Input {
      *         interact process with
      *         user
      */
-    int askInt(String message);
+    int askInt(String message); //TODO add default realization
 
     /**
      * Method receive Integer
@@ -128,7 +128,7 @@ public interface Input {
      *         not from this diapason,
      *         exception will be thrown
      */
-    int askInt(int max);
+    int askInt(int max); //TODO add default realization
 
     /**
      * Method receive Integer
@@ -164,7 +164,7 @@ public interface Input {
      *         not from this diapason,
      *         exception will be thrown
      */
-    int askInt(String message, int max);
+    int askInt(String message, int max); //TODO add default realization
 
     /**
      * Method receive Integer
@@ -198,7 +198,7 @@ public interface Input {
      *         from array
      *         acceptableNumbers.
      */
-    int askInt(String message, int... acceptableNumbers);
+    int askInt(String message, int... acceptableNumbers); //TODO add default realization
 
     /**
      * Method receive Email
@@ -214,7 +214,7 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    Email askEmail();
+    Email askEmail(); //TODO add default realization
 
     /**
      * Method receive Email
@@ -240,7 +240,7 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    Email askEmail(String message);
+    Email askEmail(String message); //TODO add default realization
 
     /**
      * Method receive Email
@@ -279,7 +279,7 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    Email askEmail(String message, User user);
+    Email askEmail(String message, User user); //TODO add default realization
 
     /**
      * Method receive User
@@ -296,7 +296,7 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-    User askUser();
+    User askUser(); //TODO add default realization
 
     /**
      * Method receive User
@@ -322,7 +322,7 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-    User askUser(String message);
+    User askUser(String message); //TODO add default realization
 
     /**
      * Method receive Data
@@ -339,5 +339,5 @@ public interface Input {
      * @return Data object that
      *         user enters.
      */
-    Data askData();
+    Data askData(); //TODO add default realization
 }
