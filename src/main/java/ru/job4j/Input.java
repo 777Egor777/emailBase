@@ -160,6 +160,7 @@ public interface Input {
      *         exception will be thrown
      */
     int askInt(String message, int max);
+    int askInt(String message, int... acceptableNumbers);
 
     /**
      * Method receive Email
