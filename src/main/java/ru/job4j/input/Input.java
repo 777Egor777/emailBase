@@ -1,4 +1,9 @@
-package ru.job4j;
+package ru.job4j.input;
+
+import ru.job4j.Data;
+import ru.job4j.Email;
+import ru.job4j.User;
+
 /**
  * Base interface that
  * describes input operations.

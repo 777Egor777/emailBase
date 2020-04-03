@@ -1,5 +1,7 @@
 package ru.job4j;
 
+import ru.job4j.input.Input;
+
 /**
  * Single action that
  * user calls.
