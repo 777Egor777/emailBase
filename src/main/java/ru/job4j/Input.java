@@ -62,7 +62,7 @@ public interface Input {
      * essence and return it.
      *
      * Method has no validation.
-     * It receive line in
+     * It receive int in
      * "fresh" condition
      * @return integer number, that
      *         we received from
@@ -70,7 +70,32 @@ public interface Input {
      *         user
      */
     int askInt();
+
+    /**
+     * Method receive Integer
+     * number from some input
+     * essence and return it.
+     *
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired number
+     *
+     * Method has no validation.
+     * It receive int in
+     * "fresh" condition
+     * @param message - String that consist
+     *                  some information about
+     *                  desired line. For example
+     *                  we can print it to console
+     *                  and user can read it
+     * @return integer number, that
+     *         we received from
+     *         interact process with
+     *         user
+     */
     int askInt(String message);
+
     int askInt(int max);
     int askInt(String message, int max);
     Email askEmail();
