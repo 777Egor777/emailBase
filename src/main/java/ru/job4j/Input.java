@@ -32,6 +32,28 @@ public interface Input {
      *         class
      */
     String askLine();
+
+    /**
+     * Method receive String
+     * from some input essence
+     * and return it.
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired line
+     *
+     * Method has no validation.
+     *      * It receive line in
+     *      * "fresh" condition
+     * @param message - String that consist
+     *                  some information about
+     *                  desired line. For example
+     *                  we can print it to console
+     *                  and user can read it
+     * @return line - object of String
+     *         class that we receive
+     *         from user
+     */
     String askLine(String message);
     int askInt();
     int askInt(String message);
