@@ -62,8 +62,9 @@ public interface Input {
      * essence and return it.
      *
      * Method has no validation.
-     * It receive int in
-     * "fresh" condition
+     * If user enter not an
+     * integer number, it will
+     * throw exception
      * @return integer number, that
      *         we received from
      *         interact process with
@@ -82,8 +83,9 @@ public interface Input {
      * desired number
      *
      * Method has no validation.
-     * It receive int in
-     * "fresh" condition
+     * If user enter not an
+     * integer number, it will
+     * throw exception
      * @param message - String that consist
      *                  some information about
      *                  desired line. For example
