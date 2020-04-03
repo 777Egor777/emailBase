@@ -20,6 +20,17 @@ package ru.job4j;
  * @author Geraskin Egor(yegeraskin13@gmail.com)
  */
 public interface Input {
+    /**
+     * Method receive String
+     * from some input essence
+     * and return it.
+     *
+     * Method has no validation.
+     * It receive line in
+     * "fresh" condition
+     * @return line - object of String
+     *         class
+     */
     String askLine();
     String askLine(String message);
     int askInt();
