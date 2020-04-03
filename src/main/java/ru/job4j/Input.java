@@ -37,6 +37,7 @@ public interface Input {
      * Method receive String
      * from some input essence
      * and return it.
+     *
      * Method also can use
      * "message" that consist
      * some information about
@@ -123,6 +124,41 @@ public interface Input {
      *         exception will be thrown
      */
     int askInt(int max);
+
+    /**
+     * Method receive Integer
+     * number from some input
+     * essence and return it.
+     *
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired number
+     *
+     * Method has no validation -
+     * received number can be
+     * only from diapason
+     * [1, max].
+     * Otherwise, method will
+     * throw exception.
+     * @param max - upper border of the
+     *              diapason, that
+     *              returned value must
+     *              be in.
+     * @param message - String that consist
+     *                  some information about
+     *                  desired number. For example
+     *                  we can print it to console
+     *                  and user can read it
+     * @return integer number, that
+     *         we received from
+     *         interact process with
+     *         user. Number must be
+     *         from diapason [1, max].
+     *         If user enter number
+     *         not from this diapason,
+     *         exception will be thrown
+     */
     int askInt(String message, int max);
     Email askEmail();
     User askUser();
