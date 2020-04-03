@@ -1,7 +1,7 @@
 package ru.job4j;
 /**
- * Interface that describes
- * input operations.
+ * Base interface that
+ * describes input operations.
  * In this program we need
  * to get follow types of data:
  * String, number, e-mail,
@@ -15,7 +15,7 @@ package ru.job4j;
  * and test it.
  *
  * We will make some
- * implementaions of it.
+ * implementations of it.
  *
  * @author Geraskin Egor(yegeraskin13@gmail.com)
  */
@@ -160,6 +160,21 @@ public interface Input {
      *         exception will be thrown
      */
     int askInt(String message, int max);
+
+    /**
+     * Method receive Email
+     * object from some
+     * input essence and
+     * return it.
+     *
+     * Method nas no
+     * validation. If user
+     * enter incorrect Email
+     * method just throw
+     * respective exception.
+     * @return Email object that
+     *         user enters.
+     */
     Email askEmail();
     User askUser();
     Data askData();
