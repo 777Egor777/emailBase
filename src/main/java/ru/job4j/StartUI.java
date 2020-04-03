@@ -40,7 +40,28 @@ public class StartUI {
         );
     }
 
-
+    /**
+     * This method start work-cycle
+     * of the program.
+     * 1) It show menu to user
+     * 2) Then ask user to choose
+     *    menu item
+     * 3) Run process of this menu
+     *    item
+     * 4) Receive answer from user,
+     *    should cycle break or
+     *    it should continue
+     * @param actions - Array of all possible
+     *                  menu items, that user
+     *                  can choose.
+     * @param input - Object of Input interface,
+     *                that we need to interact
+     *                with user(get input data
+     *                from him)
+     * @param data - Object of type Data, in witch
+     *               we save data base of users
+     *               and their emails
+     */
     public void start(UserAction[] actions, Input input, Data data) {
     }
 
