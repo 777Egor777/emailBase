@@ -160,6 +160,39 @@ public interface Input {
      *         exception will be thrown
      */
     int askInt(String message, int max);
+
+    /**
+     * Method receive Integer
+     * number from some input
+     * essence and return it.
+     *
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired number
+     *
+     * Method has no validation -
+     * received number must be
+     * in array acceptableNumbers,
+     * that is one of parameters.
+     * Otherwise, method will
+     * throw exception.
+     * @param acceptableNumbers - array of integer numbers.
+     *                            Received number must be
+     *                            in it. Otherwise method
+     *                            throws exception.
+     * @param message - String that consist
+     *                  some information about
+     *                  desired number. For example
+     *                  we can print it to console
+     *                  and user can read it
+     * @return integer number, that
+     *         we received from
+     *         interact process with
+     *         user. Number must be
+     *         from array
+     *         acceptableNumbers.
+     */
     int askInt(String message, int... acceptableNumbers);
 
     /**
