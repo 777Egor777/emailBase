@@ -167,7 +167,7 @@ public interface Input {
      * input essence and
      * return it.
      *
-     * Method nas no
+     * Method has no
      * validation. If user
      * enter incorrect Email
      * method just throw
@@ -188,7 +188,7 @@ public interface Input {
      * some information about
      * desired Email
      *
-     * Method nas no
+     * Method has no
      * validation. If user
      * enter incorrect Email
      * method just throw
@@ -209,7 +209,7 @@ public interface Input {
      * input essence and
      * return it.
      *
-     * Method nas no
+     * Method has no
      * validation. If user
      * enter incorrect User
      * object,
@@ -219,5 +219,6 @@ public interface Input {
      *         user enters.
      */
     User askUser();
+    User askUser(String message);
     Data askData();
 }
