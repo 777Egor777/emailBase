@@ -176,6 +176,7 @@ public interface Input {
      *         user enters.
      */
     Email askEmail();
+    Email askEmail(String message);
     User askUser();
     Data askData();
 }
