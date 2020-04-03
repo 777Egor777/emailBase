@@ -62,7 +62,45 @@ public interface Input {
      */
     String askLine(String message); //TODO add default realization
 
-    String askLine(String message, String... possibleLines);
+    /**
+     * Method receive String
+     * from some input essence
+     * and return it,
+     * if line contains
+     * in array "possibleLines"
+     *
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired line
+     *
+     * Method has no validation.
+     * It receive line in
+     * "fresh" condition.
+     * If line is incorrect
+     * (not contains in
+     * "possibleLines" array)
+     * method throws special
+     * exception.
+     * @param message - String that consist
+     *                  some information about
+     *                  desired line. For example
+     *                  we can print it to console
+     *                  and user can read it
+     * @param possibleLines - array of lines, that
+     *                        we can return in this
+     *                        method. So we can return
+     *                        line only if it contains
+     *                        in this array.
+     *                        If line not contains
+     *                        in this array, method
+     *                        throws special exception
+     * //TODO after implementing method add information about exception to JavaDoc
+     * @return line - object of String
+     *         class that we receive
+     *         from user
+     */
+    String askLine(String message, String... possibleLines); //TODO add default realization
 
     /**
      * Method receive Integer
@@ -73,6 +111,7 @@ public interface Input {
      * If user enter not an
      * integer number, it will
      * throw exception
+     * //TODO after implementing method add information about exception to JavaDoc
      * @return integer number, that
      *         we received from
      *         interact process with
@@ -94,6 +133,7 @@ public interface Input {
      * If user enter not an
      * integer number, it will
      * throw exception
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param message - String that consist
      *                  some information about
      *                  desired line. For example
@@ -117,6 +157,7 @@ public interface Input {
      * [1, max].
      * Otherwise, method will
      * throw exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param max - upper border of the
      *              diapason, that
      *              returned value must
@@ -148,6 +189,7 @@ public interface Input {
      * [1, max].
      * Otherwise, method will
      * throw exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param max - upper border of the
      *              diapason, that
      *              returned value must
@@ -184,6 +226,7 @@ public interface Input {
      * that is one of parameters.
      * Otherwise, method will
      * throw exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param acceptableNumbers - array of integer numbers.
      *                            Received number must be
      *                            in it. Otherwise method
@@ -213,6 +256,7 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @return Email object that
      *         user enters.
      */
@@ -234,6 +278,7 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param message - String that consist
      *                  some information about
      *                  desired Email. For example
@@ -269,6 +314,7 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param message - String that consist
      *                  some information about
      *                  desired Email. For example
@@ -295,6 +341,7 @@ public interface Input {
      * object,
      * method just throw
      * respective exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @return User object that
      *         user enters.
      */
@@ -316,6 +363,7 @@ public interface Input {
      * enter incorrect User
      * method just throw
      * respective exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @param message - String that consist
      *                  some information about
      *                  desired User. For example
@@ -338,6 +386,7 @@ public interface Input {
      * object,
      * method just throw
      * respective exception.
+     * //TODO after implementing method add information about exception to JavaDoc
      * @return Data object that
      *         user enters.
      */
