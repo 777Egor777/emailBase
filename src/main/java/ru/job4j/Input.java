@@ -245,5 +245,21 @@ public interface Input {
      *         user enters.
      */
     User askUser(String message);
+
+    /**
+     * Method receive Data
+     * object from some
+     * input essence and
+     * return it.
+     *
+     * Method has no
+     * validation. If user
+     * enter incorrect Data
+     * object,
+     * method just throw
+     * respective exception.
+     * @return Data object that
+     *         user enters.
+     */
     Data askData();
 }
