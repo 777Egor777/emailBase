@@ -202,6 +202,44 @@ public interface Input {
      *         user enters.
      */
     Email askEmail(String message);
+
+    /**
+     * Method receive Email
+     * object from some
+     * input essence and
+     * return it.
+     *
+     * Method also checks if
+     * this Email already
+     * belong to that user
+     * that came to method
+     * as parameter.
+     * If such Email already
+     * exist, method throws
+     * respective exception.
+     *
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired Email
+     *
+     * Method has no
+     * validation. If user
+     * enter incorrect Email
+     * method just throw
+     * respective exception.
+     * @param message - String that consist
+     *                  some information about
+     *                  desired Email. For example
+     *                  we can print it to console
+     *                  and user can read it
+     * @param user - if received e-mail already
+     *               belong to this user,
+     *               method throws respective
+     *               exception
+     * @return Email object that
+     *         user enters.
+     */
     Email askEmail(String message, User user);
 
     /**
