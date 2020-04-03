@@ -43,8 +43,8 @@ public interface Input {
      * desired line
      *
      * Method has no validation.
-     *      * It receive line in
-     *      * "fresh" condition
+     * It receive line in
+     * "fresh" condition
      * @param message - String that consist
      *                  some information about
      *                  desired line. For example
@@ -55,6 +55,20 @@ public interface Input {
      *         from user
      */
     String askLine(String message);
+
+    /**
+     * Method receive Integer
+     * number from some input
+     * essence and return it.
+     *
+     * Method has no validation.
+     * It receive line in
+     * "fresh" condition
+     * @return integer number, that
+     *         we received from
+     *         interact process with
+     *         user
+     */
     int askInt();
     int askInt(String message);
     int askInt(int max);
