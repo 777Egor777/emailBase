@@ -202,6 +202,7 @@ public interface Input {
      *         user enters.
      */
     Email askEmail(String message);
+    Email askEmail(String message, User user);
 
     /**
      * Method receive User
