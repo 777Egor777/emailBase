@@ -62,6 +62,8 @@ public interface Input {
      */
     String askLine(String message); //TODO add default realization
 
+    String askLine(String message, String... possibleLines);
+
     /**
      * Method receive Integer
      * number from some input
