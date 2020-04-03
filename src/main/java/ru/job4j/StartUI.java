@@ -1,5 +1,7 @@
 package ru.job4j;
 
+import ru.job4j.input.Input;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,6 +38,10 @@ public class StartUI {
         actions = Arrays.asList(
                 null
         );
+    }
+
+
+    public void start(UserAction[] actions, Input input, Data data) {
     }
 
     /**
