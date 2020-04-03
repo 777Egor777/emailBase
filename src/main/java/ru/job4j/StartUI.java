@@ -38,6 +38,13 @@ public class StartUI {
         );
     }
 
+    /**
+     * Main class, entry-point of the program.
+     * We create here all necessary
+     * objects and start to
+     * interact with user.
+     * @param args - standard compiler args
+     */
     public static void main(String[] args) {
     }
 }
