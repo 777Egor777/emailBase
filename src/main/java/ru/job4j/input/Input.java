@@ -1,6 +1,6 @@
 package ru.job4j.input;
 
-import ru.job4j.Data;
+import ru.job4j.model.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
