@@ -3,6 +3,13 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of deleting email from
+ * some user in data base
+ *
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class DeleteEmailAction implements UserAction {
     /**
      * Method give name of
@@ -21,15 +28,17 @@ public class DeleteEmailAction implements UserAction {
     /**
      * Inside this method
      * performs all needed
-     * operations on this
-     * type of user's action
+     * operations on process of
+     * deleting email from
+     * some user's email-list
+     * in data base
      *
      * @param input - instance of object,
      *              that we use to input
-     *              data into program
+     *              user's id
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              delete email from
      * @return boolean value that
      * reports, should
      * program stop or
