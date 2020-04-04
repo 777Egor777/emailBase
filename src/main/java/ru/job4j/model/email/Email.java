@@ -14,6 +14,18 @@ public class Email {
      */
     private String value;
 
+    /**
+     * Constructor of class.
+     * Has one parameter -
+     * String value of
+     * this Email.
+     * If value is incorrect,
+     * method throw special
+     * exception
+     * //TODO Make special Exception class in this package
+     * @param value - String value
+     *                of this Email
+     */
     public Email(String value) {
     }
 
