@@ -3,6 +3,12 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of printing data base
+ * to console
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class PrintDataAction implements UserAction {
     /**
      * Method give name of
@@ -29,7 +35,7 @@ public class PrintDataAction implements UserAction {
      *              data into program
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              print to console
      * @return boolean value that
      * reports, should
      * program stop or
