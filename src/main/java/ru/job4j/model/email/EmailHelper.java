@@ -6,4 +6,8 @@ package ru.job4j.model.email;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class EmailHelper {
+    public static boolean isCorrectEmail(Email email) {
+        boolean result = false;
+        return false;
+    }
 }
