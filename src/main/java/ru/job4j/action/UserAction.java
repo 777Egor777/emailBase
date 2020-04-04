@@ -14,6 +14,14 @@ import ru.job4j.model.Data;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public interface UserAction {
+    /**
+     * Method give name of
+     * this action.
+     * This name need
+     * during printing menu
+     * @return short name of this
+     *         action.
+     */
     String getTitle();
     boolean execute(Input input, Data data);
 }

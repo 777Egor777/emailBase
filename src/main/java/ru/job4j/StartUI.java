@@ -49,7 +49,7 @@ public class StartUI {
      * output.
      * @param menu - array of menu items,
      *               that we print to
-     *               standard output
+     *               standard1 output
      */
     public void showMenu(UserAction[] menu) {
     }
