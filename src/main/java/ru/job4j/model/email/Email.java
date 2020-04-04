@@ -13,4 +13,7 @@ public class Email {
      * For example: "yegeraskin13@gmail.com"
      */
     private String value;
+    public String getValue() {
+        return null;
+    }
 }
