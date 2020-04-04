@@ -3,6 +3,12 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of deleting User from
+ * data base
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class DeleteUserAction implements UserAction {
     /**
      * Method give name of
@@ -26,10 +32,11 @@ public class DeleteUserAction implements UserAction {
      *
      * @param input - instance of object,
      *              that we use to input
-     *              data into program
+     *              id of user, that
+     *              we should delete
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              delete user from
      * @return boolean value that
      * reports, should
      * program stop or
