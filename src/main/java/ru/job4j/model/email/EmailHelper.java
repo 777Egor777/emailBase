@@ -6,6 +6,15 @@ package ru.job4j.model.email;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class EmailHelper {
+    /**
+     * Method checks if received
+     * Email object is
+     * acceptable
+     * @param email - verifiable Email
+     *                object
+     * @return true - if param -  correct Email object
+     *         false - if param -  incorrect Email object
+     */
     public static boolean isCorrectEmail(Email email) {
         boolean result = false;
         return false;
