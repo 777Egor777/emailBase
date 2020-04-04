@@ -3,6 +3,12 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of over-writing the data
+ * base
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class OverwriteDataAction implements UserAction {
     /**
      * Method give name of
@@ -26,10 +32,12 @@ public class OverwriteDataAction implements UserAction {
      *
      * @param input - instance of object,
      *              that we use to input
-     *              data into program
+     *              new data base into
+     *              program
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              fill with new data
+     *              base
      * @return boolean value that
      * reports, should
      * program stop or
