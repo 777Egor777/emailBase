@@ -3,6 +3,11 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of closing the program
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class ExitProgramAction implements UserAction {
     /**
      * Method give name of
