@@ -13,6 +13,12 @@ public class Email {
      * For example: "yegeraskin13@gmail.com"
      */
     private String value;
+
+    /**
+     * Getter for field "value"
+     * @return field "value" of
+     *         this class
+     */
     public String getValue() {
         return null;
     }
