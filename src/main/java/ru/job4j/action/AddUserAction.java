@@ -3,6 +3,12 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of adding new User into
+ * data base.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class AddUserAction implements UserAction {
     /**
      * Method give name of
@@ -26,10 +32,10 @@ public class AddUserAction implements UserAction {
      *
      * @param input - instance of object,
      *              that we use to input
-     *              data into program
+     *              new User object
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              add new User to
      * @return boolean value that
      * reports, should
      * program stop or
