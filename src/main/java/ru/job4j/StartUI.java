@@ -47,11 +47,11 @@ public class StartUI {
      * menu items with
      * numeration to standard
      * output.
-     * @param menu - array of menu items,
+     * @param menu - list of menu items,
      *               that we print to
      *               standard1 output
      */
-    public void showMenu(UserAction[] menu) {
+    public void showMenu(List<UserAction> menu) {
     }
 
     /**
@@ -65,7 +65,7 @@ public class StartUI {
      * 4) Receive answer from user,
      *    should cycle break or
      *    it should continue
-     * @param actions - Array of all possible
+     * @param actions - List of all possible
      *                  menu items, that user
      *                  can choose.
      * @param input - Object of Input interface,
@@ -76,7 +76,7 @@ public class StartUI {
      *               we save data base of users
      *               and their emails
      */
-    public void start(UserAction[] actions, Input input, Data data) {
+    public void start(List<UserAction> actions, Input input, Data data) {
     }
 
     /**
