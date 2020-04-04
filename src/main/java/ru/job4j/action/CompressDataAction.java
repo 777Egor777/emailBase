@@ -3,6 +3,15 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of compressing data base.
+ * All users that has at least
+ * one common emails merge into
+ * one user.
+ *
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class CompressDataAction implements UserAction {
     /**
      * Method give name of
@@ -21,15 +30,15 @@ public class CompressDataAction implements UserAction {
     /**
      * Inside this method
      * performs all needed
-     * operations on this
-     * type of user's action
+     * operations on
+     * compressing base
      *
      * @param input - instance of object,
      *              that we use to input
      *              data into program
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              compress
      * @return boolean value that
      * reports, should
      * program stop or
