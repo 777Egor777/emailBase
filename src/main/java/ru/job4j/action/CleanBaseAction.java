@@ -3,6 +3,11 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * cleaning current data base.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class CleanBaseAction implements UserAction {
     /**
      * Method give name of
@@ -21,15 +26,15 @@ public class CleanBaseAction implements UserAction {
     /**
      * Inside this method
      * performs all needed
-     * operations on this
-     * type of user's action
+     * operations on
+     * cleaning base process
      *
      * @param input - instance of object,
      *              that we use to input
      *              data into program
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              clean
      * @return boolean value that
      * reports, should
      * program stop or
