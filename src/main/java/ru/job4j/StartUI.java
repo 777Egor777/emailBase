@@ -42,6 +42,15 @@ public class StartUI {
         );
     }
 
+    /**
+     * This method print all
+     * menu items with
+     * numeration to standard
+     * output.
+     * @param menu - array of menu items,
+     *               that we print to
+     *               standard output
+     */
     public void showMenu(UserAction[] menu) {
     }
 
