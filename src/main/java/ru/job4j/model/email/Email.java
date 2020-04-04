@@ -14,6 +14,9 @@ public class Email {
      */
     private String value;
 
+    public Email(String value) {
+    }
+
     /**
      * Getter for field "value"
      * @return field "value" of
