@@ -42,6 +42,9 @@ public class StartUI {
         );
     }
 
+    public void showMenu(UserAction[] menu) {
+    }
+
     /**
      * This method start work-cycle
      * of the program.
