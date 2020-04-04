@@ -3,6 +3,12 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.Data;
 
+/**
+ * This class execute process
+ * of adding new Email into
+ * data base.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class AddEmailAction implements UserAction {
     /**
      * Method give name of
@@ -21,15 +27,17 @@ public class AddEmailAction implements UserAction {
     /**
      * Inside this method
      * performs all needed
-     * operations on this
-     * type of user's action
+     * operations on the
+     * process of adding
+     * new Email to data
+     * base.
      *
      * @param input - instance of object,
-     *              that we use to input
-     *              data into program
+     *              that we use to read
+     *              new Email
      * @param data  - instance of Data
      *              object, that we will
-     *              make operations with
+     *              add new Email to
      * @return boolean value that
      * reports, should
      * program stop or
