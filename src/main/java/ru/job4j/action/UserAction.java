@@ -23,5 +23,24 @@ public interface UserAction {
      *         action.
      */
     String getTitle();
+
+    /**
+     * Inside this method
+     * performs all needed
+     * operations on this
+     * type of user's action
+     * @param input - instance of object,
+     *                that we use to input
+     *                data into program
+     * @param data - instance of Data
+     *               object, that we will
+     *               make operations with
+     * @return boolean value that
+     *         reports, should
+     *         program stop or
+     *         continue work-
+     *         cycle after this
+     *         action.
+     */
     boolean execute(Input input, Data data);
 }
