@@ -8,5 +8,9 @@ package ru.job4j.model.email;
  * @author Egor Geraskin(yegeraskin13@gmail.com)
  */
 public class Email {
+    /**
+     * String value of email
+     * For example: "yegeraskin13@gmail.com"
+     */
     private String value;
 }
