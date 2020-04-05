@@ -95,4 +95,9 @@ public class User {
      */
     public void deleteEmail(int index) {
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
