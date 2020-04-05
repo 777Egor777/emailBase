@@ -1,4 +1,6 @@
-package ru.job4j.model.email;
+package ru.job4j.model.email.util;
+
+import ru.job4j.model.email.Email;
 
 /**
  * Help utility class for
