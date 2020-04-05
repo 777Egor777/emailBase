@@ -36,6 +36,11 @@ public class User {
 
     }
 
+    /**
+     * Getter for field {@code id}
+     * @return value of field
+     *         {@code id}
+     */
     public int getId() {
         return -1;
     }
