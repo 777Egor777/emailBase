@@ -96,6 +96,18 @@ public class User {
     public void deleteEmail(int index) {
     }
 
+    /**
+     * Method return {@code String}
+     * representative of this
+     * {@code User} object
+     * Format is there:
+     * User#userId->email1, email2, ..., emailN
+     * Where N - count of emails
+     * that this user has
+     * @return {@code String}
+     *      representative of this
+     *      {@code User} object
+     */
     @Override
     public String toString() {
         return super.toString();
