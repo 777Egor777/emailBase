@@ -112,4 +112,7 @@ public class User {
     public String toString() {
         return super.toString();
     }
+
+    public void addEmail(Email email) {
+    }
 }
