@@ -29,6 +29,15 @@ public final class Email {
     public Email(String value) {
     }
 
+    /**
+     * Method return String
+     * representation of
+     * this Email-object.
+     * It will have shape:
+     * "Email{this.value}"
+     * @return String of shape:
+     *         "Email{this.value}"
+     */
     @Override
     public String toString() {
         return super.toString();
