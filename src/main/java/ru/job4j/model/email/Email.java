@@ -29,6 +29,11 @@ public final class Email {
     public Email(String value) {
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     /**
      * Getter for field "value"
      * @return field "value" of
