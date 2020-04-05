@@ -51,4 +51,8 @@ public class User {
      */
     public void cleanEmailsList() {
     }
+
+    public int getNumberOfEmails() {
+        return -1;
+    }
 }
