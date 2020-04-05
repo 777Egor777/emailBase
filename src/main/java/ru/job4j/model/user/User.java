@@ -20,5 +20,11 @@ public class User {
      */
     private List<Email> emails;
 
+    /**
+     * Unique identifier of this user.
+     * We initialise it on constructing
+     * object and use while interact
+     * with customer of the program
+     */
     private int id;
 }
