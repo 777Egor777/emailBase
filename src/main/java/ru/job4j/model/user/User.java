@@ -81,4 +81,7 @@ public class User {
     public Email getEmail(int index) {
         return null;
     }
+
+    public void deleteEmail(int index) {
+    }
 }
