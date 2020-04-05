@@ -5,7 +5,7 @@ package ru.job4j.model.email;
  * single Email of
  * some user
  *
- * @author Egor Geraskin(yegeraskin13@gmail.com)
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public final class Email {
     /**
@@ -56,6 +56,28 @@ public final class Email {
         return super.hashCode();
     }
 
+    /**
+     * This object and object
+     * by reference obj equals
+     * if and only if their
+     * fields "value" equals
+     * as String objects
+     *
+     * If obj - null reference,
+     * than objects not equals
+     * and {@code false} will
+     * be returned
+     * @param obj - reference to object, that we compare
+     *              with {@code this} object
+     * @return {@code true} if {@code obj} - not {@code null} reference and
+     *                      object by reference {@code obj} -
+     *                      instance of {@code Email}
+     *                      class and field {@code value}
+     *                      of object by reference {@code obj}
+     *                      equals to field {@code value} of
+     *                      {@code this} object as {@code String} object.
+     *          {@code false} Otherwise
+     */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
