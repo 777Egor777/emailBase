@@ -13,5 +13,10 @@ import java.util.List;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class User {
+    /**
+     * Email's list of {@code this} {@code User}
+     * We will try not to allow duplicates
+     * in this list.
+     */
     private List<Email> emails;
 }
