@@ -5,6 +5,8 @@ package ru.job4j.model.email;
  * single Email of
  * some user
  *
+ * We can make it class immutable
+ * in future.
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public final class Email {
