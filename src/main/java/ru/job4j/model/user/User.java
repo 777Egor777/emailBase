@@ -28,6 +28,10 @@ public class User {
      */
     private int id;
 
+    /**
+     * Constructor of class.
+     * Initialise all fields.
+     */
     public User() {
 
     }
