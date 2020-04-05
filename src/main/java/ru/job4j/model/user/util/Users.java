@@ -10,5 +10,10 @@ package ru.job4j.model.user.util;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Users {
+    /**
+     * This variable keeps number
+     * of next {@code User} object
+     * that we will create
+     */
     public static int nextUserId;
 }
