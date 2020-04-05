@@ -43,6 +43,14 @@ public final class Email {
         return super.toString();
     }
 
+    /**
+     * Hashcode of Email object =
+     * hashcode of it's "value"
+     * field, that has String
+     * type
+     * @return hashCode of "value"
+     *         field
+     */
     @Override
     public int hashCode() {
         return super.hashCode();
