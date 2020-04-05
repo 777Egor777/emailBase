@@ -27,4 +27,8 @@ public class User {
      * with customer of the program
      */
     private int id;
+
+    public User() {
+
+    }
 }
