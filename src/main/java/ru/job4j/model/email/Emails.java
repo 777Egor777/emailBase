@@ -5,7 +5,7 @@ package ru.job4j.model.email;
  * data model "Email"
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
-public class EmailHelper {
+public class Emails {
     /**
      * Method checks if received
      * Email object is
