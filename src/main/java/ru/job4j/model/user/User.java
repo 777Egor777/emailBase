@@ -63,6 +63,21 @@ public class User {
         return -1;
     }
 
+    /**
+     * Method return user's
+     * email, that located on
+     * the {@code index}
+     * position in user's
+     * email-list
+     * @param index - position of email
+     *                that we should
+     *                return in user's
+     *                email-list
+     * @return {@code Email} object that
+     *         located on position
+     *         {@code index} in user's
+     *         email-list
+     */
     public Email getEmail(int index) {
         return null;
     }
