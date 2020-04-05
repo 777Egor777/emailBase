@@ -13,4 +13,5 @@ import java.util.List;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class User {
+    private List<Email> emails;
 }
