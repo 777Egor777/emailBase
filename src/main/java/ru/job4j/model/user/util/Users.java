@@ -15,5 +15,5 @@ public class Users {
      * of next {@code User} object
      * that we will create
      */
-    public static int nextUserId;
+    public static int nextUserId = 1;
 }
