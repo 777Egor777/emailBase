@@ -10,5 +10,5 @@ package ru.job4j.model.user.util;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Users {
-
+    public static int nextUserId;
 }
