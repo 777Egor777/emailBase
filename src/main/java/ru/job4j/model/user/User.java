@@ -113,6 +113,16 @@ public class User {
         return super.toString();
     }
 
+    /**
+     * Method add new {@code Email}
+     * object to user's email-list
+     * {@code emails}.
+     * Email add to the end of list.
+     * @param email - object of {@Email} class
+     *                that we must add to
+     *                user's email-list
+     *                in this method
+     */
     public void addEmail(Email email) {
     }
 }
