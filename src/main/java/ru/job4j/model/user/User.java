@@ -36,6 +36,10 @@ public class User {
 
     }
 
+    public int getId() {
+        return -1;
+    }
+
     /**
      * Make {@code emails} field empty.
      * Cleans it completely.
