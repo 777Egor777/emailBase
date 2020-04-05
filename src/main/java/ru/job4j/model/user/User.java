@@ -62,4 +62,8 @@ public class User {
     public int getNumberOfEmails() {
         return -1;
     }
+
+    public Email getEmail(int index) {
+        return null;
+    }
 }
