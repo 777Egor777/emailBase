@@ -52,6 +52,13 @@ public class User {
     public void cleanEmailsList() {
     }
 
+    /**
+     * Return current number
+     * of emails that this
+     * user has
+     * @return Current number
+     * of emails
+     */
     public int getNumberOfEmails() {
         return -1;
     }
