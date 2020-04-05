@@ -43,6 +43,16 @@ public final class Email {
         return super.toString();
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
     /**
      * Getter for field "value"
      * @return field "value" of
