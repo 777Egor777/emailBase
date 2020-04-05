@@ -82,6 +82,17 @@ public class User {
         return null;
     }
 
+    /**
+     * Method delete user's
+     * email, that located
+     * on the {@code index}
+     * position in user's
+     * email-list
+     * @param index - position of email
+     *                , that we should
+     *                delete, in user's
+     *                email-list
+     */
     public void deleteEmail(int index) {
     }
 }
