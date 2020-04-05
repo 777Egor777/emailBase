@@ -36,6 +36,10 @@ public class User {
 
     }
 
+    /**
+     * Make {@code emails} field empty.
+     * Cleans it completely.
+     */
     public void cleanEmailsList() {
     }
 }
