@@ -19,4 +19,6 @@ public class User {
      * in this list.
      */
     private List<Email> emails;
+
+    private int id;
 }
