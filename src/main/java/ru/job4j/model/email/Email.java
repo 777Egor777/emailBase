@@ -13,6 +13,7 @@ public final class Email {
      * For example: "yegeraskin13@gmail.com"
      */
     private String value;
+    //TODO after implementing constructor, make this field final
 
     /**
      * Constructor of class.
