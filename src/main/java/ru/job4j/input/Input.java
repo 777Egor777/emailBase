@@ -143,7 +143,9 @@ public interface Input {
      * If user enter not an
      * integer number, it will
      * throw exception
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.IncorrectIntegerNumberException -
+     *         if received line is not represent
+     *         correct integer number
      * @param message - String that consist
      *                  some information about
      *                  desired line. For example
