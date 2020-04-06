@@ -1,4 +1,4 @@
-package ru.job4j.model;
+package ru.job4j.model.database;
 
 /**
  * Data model of the

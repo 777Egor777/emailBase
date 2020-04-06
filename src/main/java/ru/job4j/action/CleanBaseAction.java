@@ -1,7 +1,7 @@
 package ru.job4j.action;
 
 import ru.job4j.input.Input;
-import ru.job4j.model.Data;
+import ru.job4j.model.database.Data;
 
 /**
  * This class execute process

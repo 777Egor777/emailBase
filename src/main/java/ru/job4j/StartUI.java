@@ -2,7 +2,7 @@ package ru.job4j;
 
 import ru.job4j.action.UserAction;
 import ru.job4j.input.Input;
-import ru.job4j.model.Data;
+import ru.job4j.model.database.Data;
 
 import java.util.Arrays;
 import java.util.List;
