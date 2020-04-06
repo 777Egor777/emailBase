@@ -365,7 +365,9 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-    User askUser(); //TODO add default realization
+    default User askUser() {
+        return null;
+    }
 
     /**
      * Method receive User
