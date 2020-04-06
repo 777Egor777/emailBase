@@ -11,6 +11,8 @@ public class Vertex {
     //TODO JavaDoc
     private List<Vertex> edges;
     //TODO JavaDoc
+    private Vertex source;
+    //TODO JavaDoc
     public Vertex(int id) {
     }
     //TODO JavaDoc
