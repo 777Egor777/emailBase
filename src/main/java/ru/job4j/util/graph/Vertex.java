@@ -26,4 +26,8 @@ public class Vertex {
     //TODO JavaDoc
     public void addEdge(Vertex vertex) {
     }
+    //TODO JavaDoc
+    public Vertex getSource() {
+        return null;
+    }
 }
