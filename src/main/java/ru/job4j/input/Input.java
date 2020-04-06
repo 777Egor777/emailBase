@@ -121,7 +121,9 @@ public interface Input {
      *         interact process with
      *         user
      */
-    int askInt(); //TODO add default realization
+    default int askInt() {
+        return -1;
+    }
 
     /**
      * Method receive Integer
