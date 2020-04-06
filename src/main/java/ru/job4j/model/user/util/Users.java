@@ -22,4 +22,8 @@ public class Users {
     //TODO JavDoc
     public void cleanEmailsList(User user) {
     }
+
+    //TODO JavaDoc
+    public void printEmailsWithNumeration(User user) {
+    }
 }
