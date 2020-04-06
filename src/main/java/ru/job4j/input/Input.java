@@ -415,5 +415,7 @@ public interface Input {
      * @return Data object that
      *         user enters.
      */
-    Data askData(); //TODO add default realization
+    default Data askData() {
+        return null;
+    }
 }
