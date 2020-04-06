@@ -11,4 +11,7 @@ public class Graph {
     //TODO JavaDoc
     public Graph(int numberOfVertex) {
     }
+    //TODO JavDoc
+    public void addEdge(int firstVertexIndex, int secondVertexIndex) {
+    }
 }
