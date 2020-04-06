@@ -274,7 +274,9 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    Email askEmail(); //TODO add default realization
+    default Email askEmail() {
+        return null;
+    }
 
     /**
      * Method receive Email
