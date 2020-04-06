@@ -218,7 +218,9 @@ public interface Input {
      *         not from this diapason,
      *         exception will be thrown
      */
-    int askInt(String message, int max); //TODO add default realization
+    default int askInt(String message, int max) {
+        return -1;
+    }
 
     /**
      * Method receive Integer
