@@ -303,7 +303,9 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    Email askEmail(String message); //TODO add default realization
+    default Email askEmail(String message) {
+        return null;
+    }
 
     /**
      * Method receive Email
