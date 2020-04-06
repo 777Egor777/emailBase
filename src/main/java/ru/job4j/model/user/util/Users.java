@@ -33,4 +33,8 @@ public class Users {
     //TODO JavaDoc
     public void deleteEmail(User user, int index) {
     }
+
+    //TODO JavaDoc
+    public void addEmail(User user, int index) {
+    }
 }
