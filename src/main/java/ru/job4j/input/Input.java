@@ -102,7 +102,9 @@ public interface Input {
      *         class that we receive
      *         from user
      */
-    String askLine(String message, String... possibleLines); //TODO add default realization
+    default String askLine(String message, String... possibleLines) {
+        return null;
+    }
 
     /**
      * Method receive Integer
