@@ -29,4 +29,8 @@ public class Users {
     //TODO JavaDoc
     public void printEmailsWithNumeration(User user) {
     }
+
+    //TODO JavaDoc
+    public void deleteEmail(User user, int index) {
+    }
 }
