@@ -255,7 +255,9 @@ public interface Input {
      *         from array
      *         acceptableNumbers.
      */
-    int askInt(String message, int... acceptableNumbers); //TODO add default realization
+    default int askInt(String message, int... acceptableNumbers) {
+        return -1;
+    }
 
     /**
      * Method receive Email
