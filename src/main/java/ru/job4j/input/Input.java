@@ -150,7 +150,9 @@ public interface Input {
      *         interact process with
      *         user
      */
-    int askInt(String message); //TODO add default realization
+    default int askInt(String message) {
+        return -1;
+    }
 
     /**
      * Method receive Integer
