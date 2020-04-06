@@ -10,4 +10,7 @@ public class Vertex {
     private boolean usedStatus;
     //TODO JavaDoc
     private List<Vertex> edges;
+    //TODO JavaDoc
+    public Vertex(int id) {
+    }
 }
