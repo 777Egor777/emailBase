@@ -8,4 +8,7 @@ public class Graph {
     private int numberOfVertex;
     //TODO JavaDoc
     private List<Vertex> vertexes;
+    //TODO JavaDoc
+    public Graph(int numberOfVertex) {
+    }
 }
