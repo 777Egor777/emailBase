@@ -179,7 +179,9 @@ public interface Input {
      *         not from this diapason,
      *         exception will be thrown
      */
-    int askInt(int max); //TODO add default realization
+    default int askInt(int max) {
+        return -1;
+    }
 
     /**
      * Method receive Integer
