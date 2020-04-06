@@ -1,5 +1,7 @@
 package ru.job4j.model.user.util;
 
+import ru.job4j.model.user.User;
+
 /**
  * Help utility class for
  * data model "User".
@@ -16,4 +18,8 @@ public class Users {
      * that we will create
      */
     public static Integer nextUserId = 1;
+
+    //TODO JavDoc
+    public void cleanEmailsList(User user) {
+    }
 }
