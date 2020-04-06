@@ -24,6 +24,7 @@ import ru.job4j.model.user.User;
  *
  * @author Geraskin Egor(yegeraskin13@gmail.com)
  */
+@SuppressWarnings("checkstyle:WhitespaceAround")
 public interface Input {
     /**
      * Method receive String
@@ -394,7 +395,9 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-    User askUser(String message); //TODO add default realization
+    default User askUser(String message) {
+        return null;
+    }
 
     /**
      * Method receive Data
