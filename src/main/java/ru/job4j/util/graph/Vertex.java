@@ -17,4 +17,8 @@ public class Vertex {
     public int getId() {
         return -1;
     }
+    //TODO JavaDoc
+    public boolean getUsedStatus() {
+        return true;
+    }
 }
