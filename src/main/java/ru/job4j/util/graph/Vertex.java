@@ -30,4 +30,7 @@ public class Vertex {
     public Vertex getSource() {
         return null;
     }
+    //TODO JavaDoc
+    public void dfs(Vertex source) {
+    }
 }
