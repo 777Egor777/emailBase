@@ -23,18 +23,18 @@ public class Users {
     public static Integer nextUserId = 1;
 
     //TODO JavDoc
-    public void cleanEmailsList(User user) {
+    public static void cleanEmailsList(User user) {
     }
 
     //TODO JavaDoc
-    public void printEmailsWithNumeration(User user) {
+    public static void printEmailsWithNumeration(User user) {
     }
 
     //TODO JavaDoc
-    public void deleteEmail(User user, int index) {
+    public static void deleteEmail(User user, int index) {
     }
 
     //TODO JavaDoc
-    public void addEmail(User user, int index) {
+    public static void addEmail(User user, int index) {
     }
 }
