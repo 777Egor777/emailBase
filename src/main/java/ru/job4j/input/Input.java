@@ -24,7 +24,6 @@ import ru.job4j.model.user.User;
  *
  * @author Geraskin Egor(yegeraskin13@gmail.com)
  */
-@SuppressWarnings("checkstyle:WhitespaceAround")
 public interface Input {
     /**
      * Method receive String
