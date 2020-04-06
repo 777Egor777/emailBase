@@ -36,7 +36,13 @@ public class User {
 
     }
 
+    //TODO JavDoc
     public User(List<Email> emails) {
+    }
+
+    //TODO JavaDoc
+    public List<Email> getEmails() {
+        return null;
     }
 
     /**
