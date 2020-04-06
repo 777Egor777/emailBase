@@ -21,4 +21,7 @@ public class Vertex {
     public boolean getUsedStatus() {
         return true;
     }
+    //TODO JavaDoc
+    public void addEdge(Vertex vertex) {
+    }
 }
