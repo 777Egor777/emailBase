@@ -97,7 +97,9 @@ public interface Input {
      *                        If line not contains
      *                        in this array, method
      *                        throws special exception
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.ImpossibleLineException -
+     *         if array {@code possibleLines} isn't contains
+     *         received {@code String} object
      * @return line - object of String
      *         class that we receive
      *         from user
