@@ -8,7 +8,10 @@ import ru.job4j.model.user.User;
  *
  * This class be very helpful when
  * we decide to make class {@code User}
- * Immutable
+ * Immutable, because here only
+ * wrappers for methods of class
+ * {@code User}, that modifying
+ * object.
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Users {
