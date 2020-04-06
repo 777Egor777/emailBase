@@ -13,4 +13,8 @@ public class Vertex {
     //TODO JavaDoc
     public Vertex(int id) {
     }
+    //TODO JavaDoc
+    public int getId() {
+        return -1;
+    }
 }
