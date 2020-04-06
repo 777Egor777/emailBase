@@ -36,6 +36,9 @@ public class User {
 
     }
 
+    public User(List<Email> emails) {
+    }
+
     /**
      * Getter for field {@code id}
      * @return value of field
