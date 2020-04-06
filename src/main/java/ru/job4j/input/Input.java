@@ -60,7 +60,9 @@ public interface Input {
      *         class that we receive
      *         from user
      */
-    String askLine(String message); //TODO add default realization
+    default String askLine(String message) {
+        return null;
+    }
 
     /**
      * Method receive String
