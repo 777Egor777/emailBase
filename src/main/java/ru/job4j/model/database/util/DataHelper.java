@@ -8,4 +8,8 @@ public class DataHelper {
     //TODO JavaDoc
     public static void addUser(Data data, User user) {
     }
+
+    //TODO JavaDoc
+    public static void clean(Data data) {
+    }
 }
