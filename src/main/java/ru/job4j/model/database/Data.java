@@ -66,4 +66,8 @@ public class Data {
     public int[] allId() {
         return null;
     }
+
+    //TODO JavaDoc
+    public void deleteUser(int id) {
+    }
 }
