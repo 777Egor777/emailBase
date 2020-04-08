@@ -70,4 +70,9 @@ public class Data {
     //TODO JavaDoc
     public void deleteUser(int id) {
     }
+
+    //TODO JavaDoc
+    public User getUser(int id) {
+        return null;
+    }
 }
