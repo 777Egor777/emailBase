@@ -21,4 +21,8 @@ public class DataHelper {
     //TODO JavaDoc
     public static void deleteUser(int userId) {
     }
+
+    //TODO JavaDoc
+    public static void deleteEmail(int userID, int emailIndex) {
+    }
 }
