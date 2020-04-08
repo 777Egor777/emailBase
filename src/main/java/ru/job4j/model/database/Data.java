@@ -22,4 +22,7 @@ public class Data {
     //TODO JavaDoc
     private List<User> users;
 
+    //TODO JavaDoc
+    public void addUser(User user) {
+    }
 }
