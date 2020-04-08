@@ -246,7 +246,8 @@ public interface Input {
      * that is one of parameters.
      * Otherwise, method will
      * throw exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.NotAcceptableNumberException -
+     * if received integer not contains in {@code acceptableNumbers}
      * @param acceptableNumbers - array of integer numbers.
      *                            Received number must be
      *                            in it. Otherwise method
@@ -278,7 +279,8 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.IncorrectEmailException -
+     * if received {@code Email} object is invalid
      * @return Email object that
      *         user enters.
      */
@@ -302,7 +304,8 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.IncorrectEmailException -
+     * if received {@code Email} object is invalid
      * @param message - String that consist
      *                  some information about
      *                  desired Email. For example
