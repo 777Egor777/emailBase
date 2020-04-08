@@ -17,6 +17,9 @@ public final class Email {
     private String value;
     //TODO after implementing constructor, make this field final
 
+    //TODO JavaDoc
+    private String name;
+
     /**
      * Constructor of class.
      * Has one parameter -
