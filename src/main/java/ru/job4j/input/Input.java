@@ -427,7 +427,8 @@ public interface Input {
      * object,
      * method just throw
      * respective exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.InvalidDataException -
+     * if received {@code Data} object is invalid
      * @return Data object that
      *         user enters.
      */
