@@ -171,7 +171,8 @@ public interface Input {
      * [1, max].
      * Otherwise, method will
      * throw exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.NumberNotFromRangeException -
+     * if received integer not contains in range [1, max]
      * @param max - upper border of the
      *              diapason, that
      *              returned value must
@@ -205,7 +206,8 @@ public interface Input {
      * [1, max].
      * Otherwise, method will
      * throw exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.NumberNotFromRangeException -
+     * if received integer not contains in range [1, max]
      * @param max - upper border of the
      *              diapason, that
      *              returned value must
