@@ -75,4 +75,8 @@ public class Data {
     public User getUser(int id) {
         return null;
     }
+
+    //TODO JavaDoc
+    public void deleteEmail(int id) {
+    }
 }
