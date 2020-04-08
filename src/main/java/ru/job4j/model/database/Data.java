@@ -77,6 +77,10 @@ public class Data {
     }
 
     //TODO JavaDoc
-    public void deleteEmail(int id) {
+    public void deleteEmail(int id, int emailIndex) {
+    }
+
+    //TODO JavaDoc
+    public void compressBase() {
     }
 }
