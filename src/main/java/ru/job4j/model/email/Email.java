@@ -108,4 +108,9 @@ public final class Email {
     public String getName() {
         return null;
     }
+
+    //TODO JavaDoc
+    public String getService() {
+        return null;
+    }
 }
