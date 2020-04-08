@@ -1,7 +1,12 @@
 package ru.job4j.input;
 
+import java.io.BufferedReader;
+
 //TODO Add JavaDoc
 public class ConsoleInput implements Input {
+    //TODO Add JavaDoc and initialise
+    private BufferedReader reader;
+
     //TODO fix JavaDoc
     /**
      * Method receive String
