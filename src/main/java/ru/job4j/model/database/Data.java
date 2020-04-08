@@ -52,4 +52,8 @@ public class Data {
     public String toString() {
         return super.toString();
     }
+
+    //TODO JavaDoc
+    public void clean() {
+    }
 }
