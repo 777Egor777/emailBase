@@ -1,5 +1,6 @@
 package ru.job4j.model.database;
 
+import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
 import java.util.List;
@@ -55,5 +56,9 @@ public class Data {
 
     //TODO JavaDoc
     public void clean() {
+    }
+
+    //TODO JavaDoc
+    public void addEmail(int id, Email email) {
     }
 }
