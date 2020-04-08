@@ -1,5 +1,9 @@
 package ru.job4j.model.database;
 
+import ru.job4j.model.user.User;
+
+import java.util.List;
+
 /**
  * Data model of the
  * user's email database.
@@ -15,4 +19,7 @@ package ru.job4j.model.database;
  * @author Egor Geraskin(yegeraskin13@gmail.com)
  */
 public class Data {
+    //TODO JavaDoc
+    private List<User> users;
+
 }
