@@ -19,10 +19,14 @@ public class DataHelper {
     }
 
     //TODO JavaDoc
-    public static void deleteUser(int userId) {
+    public static void deleteUser(Data data, int userId) {
     }
 
     //TODO JavaDoc
-    public static void deleteEmail(int userID, int emailIndex) {
+    public static void deleteEmail(Data data, int userID, int emailIndex) {
+    }
+
+    //TODO JavaDoc
+    public static void compressBase(Data data) {
     }
 }
