@@ -5,6 +5,10 @@ public class ValidateInput implements Input {
     //TODO JavaDoc
     private Input input;
 
+    //TODO JavaDoc
+    public ValidateInput(Input input) {
+    }
+
     //TODO Fix JavaDoc
     /**
      * Method receive String
