@@ -2,6 +2,9 @@ package ru.job4j.input;
 
 //TODO JavaDoc
 public class ValidateInput implements Input {
+    //TODO JavaDoc
+    private Input input;
+
     //TODO Fix JavaDoc
     /**
      * Method receive String
