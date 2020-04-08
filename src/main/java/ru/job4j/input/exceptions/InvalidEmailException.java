@@ -1,6 +1,6 @@
 package ru.job4j.input.exceptions;
 
 //TODO JavaDoc
-public class NumberNotFromRangeException extends IllegalArgumentException {
+public class InvalidEmailException extends IllegalArgumentException {
     //TODO Constructor
 }

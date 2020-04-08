@@ -1,5 +1,8 @@
 package ru.job4j.input;
 
+import ru.job4j.input.exceptions.InvalidEmailException;
+import ru.job4j.input.exceptions.InvalidIntegerException;
+import ru.job4j.input.exceptions.InvalidLineException;
 import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
@@ -97,7 +100,7 @@ public interface Input {
      *                        If line not contains
      *                        in this array, method
      *                        throws special exception
-     * @throws ru.job4j.input.exceptions.ImpossibleLineException -
+     * @throws InvalidLineException -
      *         if array {@code possibleLines} isn't contains
      *         received {@code String} object
      * @return line - object of String
@@ -117,7 +120,7 @@ public interface Input {
      * If user enter not an
      * integer number, it will
      * throw exception
-     * @throws ru.job4j.input.exceptions.IncorrectIntegerNumberException -
+     * @throws InvalidIntegerException -
      *         if received line is not represent
      *         correct integer number
      * @return integer number, that
@@ -143,7 +146,7 @@ public interface Input {
      * If user enter not an
      * integer number, it will
      * throw exception
-     * @throws ru.job4j.input.exceptions.IncorrectIntegerNumberException -
+     * @throws InvalidIntegerException -
      *         if received line is not represent
      *         correct integer number
      * @param message - String that consist
@@ -171,7 +174,7 @@ public interface Input {
      * [1, max].
      * Otherwise, method will
      * throw exception.
-     * @throws ru.job4j.input.exceptions.NumberNotFromRangeException -
+     * @throws InvalidIntegerException -
      * if received integer not contains in range [1, max]
      * @param max - upper border of the
      *              diapason, that
@@ -206,7 +209,7 @@ public interface Input {
      * [1, max].
      * Otherwise, method will
      * throw exception.
-     * @throws ru.job4j.input.exceptions.NumberNotFromRangeException -
+     * @throws InvalidIntegerException -
      * if received integer not contains in range [1, max]
      * @param max - upper border of the
      *              diapason, that
@@ -246,7 +249,7 @@ public interface Input {
      * that is one of parameters.
      * Otherwise, method will
      * throw exception.
-     * @throws ru.job4j.input.exceptions.NotAcceptableNumberException -
+     * @throws InvalidIntegerException -
      * if received integer not contains in {@code acceptableNumbers}
      * @param acceptableNumbers - array of integer numbers.
      *                            Received number must be
@@ -279,7 +282,7 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
-     * @throws ru.job4j.input.exceptions.IncorrectEmailException -
+     * @throws InvalidEmailException -
      * if received {@code Email} object is invalid
      * @return Email object that
      *         user enters.
@@ -304,7 +307,7 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
-     * @throws ru.job4j.input.exceptions.IncorrectEmailException -
+     * @throws InvalidEmailException -
      * if received {@code Email} object is invalid
      * @param message - String that consist
      *                  some information about
@@ -343,7 +346,8 @@ public interface Input {
      * enter incorrect Email
      * method just throw
      * respective exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws InvalidEmailException -
+     * if received {@code Email} object is invalid
      * @param message - String that consist
      *                  some information about
      *                  desired Email. For example
@@ -372,7 +376,8 @@ public interface Input {
      * object,
      * method just throw
      * respective exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.InvalidUserException -
+     * if received {@code User} object is invalid
      * @return User object that
      *         user enters.
      */
@@ -396,7 +401,8 @@ public interface Input {
      * enter incorrect User
      * method just throw
      * respective exception.
-     * //TODO after implementing method add information about exception to JavaDoc
+     * @throws ru.job4j.input.exceptions.InvalidUserException -
+     * if received {@code User} object is invalid
      * @param message - String that consist
      *                  some information about
      *                  desired User. For example
