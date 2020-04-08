@@ -61,4 +61,9 @@ public class Data {
     //TODO JavaDoc
     public void addEmail(int id, Email email) {
     }
+
+    //TODO JavaDoc
+    public int[] allId() {
+        return null;
+    }
 }
