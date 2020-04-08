@@ -20,6 +20,9 @@ public final class Email {
     //TODO JavaDoc
     private String name;
 
+    //TODO JavaDoc
+    private String service;
+
     /**
      * Constructor of class.
      * Has one parameter -
