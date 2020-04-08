@@ -113,4 +113,9 @@ public final class Email {
     public String getService() {
         return null;
     }
+
+    //TODO JavaDoc
+    public String getDomain() {
+        return null;
+    }
 }
