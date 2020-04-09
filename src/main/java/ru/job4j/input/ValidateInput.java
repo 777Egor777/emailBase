@@ -1,5 +1,8 @@
 package ru.job4j.input;
 
+import ru.job4j.model.email.Email;
+import ru.job4j.model.user.User;
+
 //TODO JavaDoc
 public class ValidateInput implements Input {
     //TODO JavaDoc
@@ -242,5 +245,107 @@ public class ValidateInput implements Input {
     @Override
     public int askInt(String message, int... acceptableNumbers) {
         return 0;
+    }
+
+    //TODO Fix JavaDoc
+    /**
+     * Method receive Email
+     * object from some
+     * input essence and
+     * return it.
+     * <p>
+     * Method has no
+     * validation. If user
+     * enter incorrect Email
+     * method just throw
+     * respective exception.
+     *
+     * @return Email object that
+     * user enters.
+     * @throws ru.job4j.input.exceptions.InvalidEmailException -
+     *                               if received {@code Email} object is invalid
+     */
+    @Override
+    public Email askEmail() {
+        return null;
+    }
+
+    //TODO Fix JavaDoc
+    /**
+     * Method receive Email
+     * object from some
+     * input essence and
+     * return it.
+     * <p>
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired Email
+     * <p>
+     * Method has no
+     * validation. If user
+     * enter incorrect Email
+     * method just throw
+     * respective exception.
+     *
+     * @param message - String that consist
+     *                some information about
+     *                desired Email. For example
+     *                we can print it to console
+     *                and user can read it
+     * @return Email object that
+     * user enters.
+     * @throws ru.job4j.input.exceptions.InvalidEmailException -
+     *                               if received {@code Email} object is invalid
+     */
+    @Override
+    public Email askEmail(String message) {
+        return null;
+    }
+
+    //TODO Fix JavaDoc
+    /**
+     * Method receive Email
+     * object from some
+     * input essence and
+     * return it.
+     * <p>
+     * Method also checks if
+     * this Email already
+     * belong to that user
+     * that came to method
+     * as parameter.
+     * If such Email already
+     * exist, method throws
+     * respective exception.
+     * <p>
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired Email
+     * <p>
+     * Method has no
+     * validation. If user
+     * enter incorrect Email
+     * method just throw
+     * respective exception.
+     *
+     * @param message - String that consist
+     *                some information about
+     *                desired Email. For example
+     *                we can print it to console
+     *                and user can read it
+     * @param user    - if received e-mail already
+     *                belong to this user,
+     *                method throws respective
+     *                exception
+     * @return Email object that
+     * user enters.
+     * @throws ru.job4j.input.exceptions.InvalidEmailException -
+     *                               if received {@code Email} object is invalid
+     */
+    @Override
+    public Email askEmail(String message, User user) {
+        return null;
     }
 }
