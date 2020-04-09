@@ -17,6 +17,10 @@ public class StubInput implements Input {
      */
     private List<String> lines;
 
+    //TODO JavaDoc
+    public StubInput(List<String> lines) {
+    }
+
     /**
      * Method receive String
      * from {@code String}
