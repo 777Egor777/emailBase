@@ -2,7 +2,13 @@ package ru.job4j.input;
 
 import java.io.BufferedReader;
 
-//TODO Add JavaDoc
+/**
+ * This class - implementation of
+ * interface "Input", in which we
+ * receive data from standard
+ * console input
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class ConsoleInput implements Input {
     //TODO Add JavaDoc and initialise
     private BufferedReader reader;
