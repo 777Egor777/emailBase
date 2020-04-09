@@ -162,18 +162,27 @@ public class ValidateInput implements Input {
         return 0;
     }
 
-    //TODO Fix JavaDoc
-    /**
-     * Method receive Integer
-     * number from some input
-     * essence and return it.
+     /**
+     *<p>
+     *  Method return integer
+     * number that receive
+     * from parsing line
+     * that receive from
+     * {@code askLine} method
+     * of the program.
+     *</p>
      * <p>
-     * Method has no validation -
-     * received number can be
-     * only from diapason
-     * [1, max].
-     * Otherwise, method will
-     * throw exception.
+     * Method has validation.
+     * If we can't parse
+     * received line into
+     * correct integer number or
+     * result number is not
+     * from range
+     * [{@code 1}, {@code max}],
+     * we receive another lines
+     * until successful
+     * parse.
+     * </p>
      *
      * @param max - upper border of the
      *            diapason, that
@@ -181,14 +190,8 @@ public class ValidateInput implements Input {
      *            be in.
      * @return integer number, that
      * we received from
-     * interact process with
-     * user. Number must be
+     * {@code askLine()} method. Number
      * from diapason [1, max].
-     * If user enter number
-     * not from this diapason,
-     * exception will be thrown
-     * @throws ru.job4j.input.exceptions.InvalidIntegerException -
-     *                                 if received integer not contains in range [1, max]
      */
     @Override
     public int askInt(int max) {
