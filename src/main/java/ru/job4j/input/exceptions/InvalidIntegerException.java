@@ -7,5 +7,7 @@ package ru.job4j.input.exceptions;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class InvalidIntegerException extends IllegalArgumentException {
-    //TODO Constructor1
+    //TODO JavaDoc
+    public InvalidIntegerException(String message) {
+    }
 }
