@@ -96,24 +96,26 @@ public class ValidateInput implements Input {
         return null;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive Integer
-     * number from some input
-     * essence and return it.
-     * <p>
-     * Method has no validation.
-     * If user enter not an
-     * integer number, it will
-     * throw exception
+     * Method return integer
+     * number that receive
+     * from parsing line
+     * that receive from
+     * {@code askline} method
+     * of the program.
+     *
+     * Method has validation.
+     * If we can't parse
+     * received line into
+     * correct integer number,
+     * we receive another lines
+     * until successful
+     * parse.
      *
      * @return integer number, that
-     * we received from
-     * interact process with
-     * user
-     * @throws ru.job4j.input.exceptions.InvalidIntegerException -
-     *                                 if received line is not represent
-     *                                 correct integer number
+     * we receive from {@code askLine}
+     * method by parsin {@code String}
+     * object into integer number
      */
     @Override
     public int askInt() {
