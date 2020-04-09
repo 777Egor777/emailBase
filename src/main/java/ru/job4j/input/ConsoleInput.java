@@ -18,7 +18,14 @@ public class ConsoleInput implements Input {
      */
     private BufferedReader reader;
 
-    //TODO JavaDoc
+    /**
+     * Constructor of class.
+     * Here we initialise
+     * field "reader" by
+     * object that scan
+     * data from standard
+     * output
+     */
     public ConsoleInput() {
     }
 
