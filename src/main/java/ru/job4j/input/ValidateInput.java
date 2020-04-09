@@ -403,22 +403,24 @@ public class ValidateInput implements Input {
     /**
      * <p>
      * Method receive {@code User}
-     * object from {@code input}
-     * object's method
-     * {@code askUser}
+     * object from {@code this}
+     * object's method's
+     * {@code askInt},
+     * {@code askEmail}
      * </p>
      * <p>
      * Method has validation.
-     * If received {@code User}
-     * object is invalid,
+     * If received data
+     * is invalid,
      * we receive another
      * until success.
      * </p>
      *
      * @return valid {@code User}
-     * object that we receive from
-     * {@code input} object's
-     * method {@code askUser}
+     * object that we receive
+     * with help of
+     * other methods of this
+     * object
      */
     @Override
     public User askUser() {
@@ -428,14 +430,15 @@ public class ValidateInput implements Input {
     /**
      * <p>
      * Method receive {@code User}
-     * object from {@code input}
-     * object's method
-     * {@code askUser}
+     * object from {@code this}
+     * object's method's
+     * {@code askInt},
+     * {@code askEmail}
      * </p>
      * <p>
      * Method has validation.
-     * If received {@code User}
-     * object is invalid,
+     * If received data
+     * is invalid,
      * we receive another
      * until success.
      * </p>
@@ -451,33 +454,38 @@ public class ValidateInput implements Input {
      *                we can print it to console
      *                and user can read it
      * @return valid {@code User}
-     * object that we receive from
-     * {@code input} object's
-     * method {@code askUser}
+     * object that we receive
+     * with help of
+     * other methods of this
+     * object
      */
     @Override
     public User askUser(String message) {
         return null;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive Data
-     * object from some
-     * input essence and
-     * return it.
      * <p>
-     * Method has no
-     * validation. If user
-     * enter incorrect Data
-     * object,
-     * method just throw
-     * respective exception.
+     * Method receive {@code Data}
+     * object from {@code this}
+     * object's method's
+     * {@code askInt},
+     * {@code askUser}
+     * </p>
+     * <p>
+     * Method has validation.
+     * If received {@code Data}
+     * object is invalid,
+     * we receive another
+     * until success.
+     * </p>
      *
-     * @return Data object that
-     * user enters.
-     * @throws InvalidDataException -
-     *                              if received {@code Data} object is invalid
+     * @return valid {@code Data}
+     * object that we receive from
+     * {@code this}
+     * object's method's
+     * {@code askInt},
+     * {@code askUser}
      */
     @Override
     public Data askData() {
