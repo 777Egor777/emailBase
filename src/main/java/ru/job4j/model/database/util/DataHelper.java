@@ -4,7 +4,15 @@ import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
-//TODO JavaDoc
+/**
+ * Help {@code class} for {@code Data}
+ * model {@code class}.
+ *
+ * With this {@code class} we
+ * will make all {@code Data} objects
+ * in the program {@code Immutable}.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class DataHelper {
     //TODO JavaDoc
     public static void addUser(Data data, User user) {
