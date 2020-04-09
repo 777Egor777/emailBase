@@ -1,7 +1,5 @@
 package ru.job4j.input.exceptions;
 
-import com.sun.jdi.InvalidLineNumberException;
-
 /**
  * This exception throw, when
  * received line is invalid

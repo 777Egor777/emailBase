@@ -1,6 +1,11 @@
 package ru.job4j.input.exceptions;
 
-//TODO JavaDoc
+/**
+ * This exception throw, when
+ * received {@code User} object
+ * is invalid
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class InvalidUserException extends IllegalArgumentException {
     //TODO Constructor
 }
