@@ -7,5 +7,7 @@ package ru.job4j.input.exceptions;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class InvalidUserException extends IllegalArgumentException {
-    //TODO Constructor
+    //TODO JavaDoc
+    public InvalidUserException(String message) {
+    }
 }
