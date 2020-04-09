@@ -1,6 +1,11 @@
 package ru.job4j.input.exceptions;
 
-//TODO JavaDoc
+/**
+ * This exception throw, when
+ * received {@code Email} object
+ * is invalid
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class InvalidEmailException extends IllegalArgumentException {
     //TODO Constructor
 }
