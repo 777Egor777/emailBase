@@ -9,7 +9,6 @@ import ru.job4j.model.database.Data;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class StubAction implements UserAction {
-    //TODO change JavaDoc
     /**
      * Method give name of
      * this action.
@@ -26,10 +25,10 @@ public class StubAction implements UserAction {
 
     //TODO change JavaDoc
     /**
-     * Inside this method
-     * performs all needed
-     * operations on this
-     * type of user's action
+     * This action end work-
+     * cycle of the program.
+     * It just return false,
+     * and work-cycle ends.
      *
      * @param input - instance of object,
      *              that we use to input
@@ -37,12 +36,8 @@ public class StubAction implements UserAction {
      * @param data  - instance of Data
      *              object, that we will
      *              make operations with
-     * @return boolean value that
-     * reports, should
-     * program stop or
-     * continue work-
-     * cycle after this
-     * action.
+     * @return always false. This action
+     *         ends program execution
      */
     @Override
     public boolean execute(Input input, Data data) {
