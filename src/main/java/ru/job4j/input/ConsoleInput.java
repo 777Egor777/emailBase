@@ -18,6 +18,10 @@ public class ConsoleInput implements Input {
      */
     private BufferedReader reader;
 
+    //TODO JavaDoc
+    public ConsoleInput() {
+    }
+
     //TODO fix JavaDoc
     /**
      * Method receive String
