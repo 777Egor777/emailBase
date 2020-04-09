@@ -23,7 +23,6 @@ public class StubAction implements UserAction {
         return null;
     }
 
-    //TODO change JavaDoc
     /**
      * This action end work-
      * cycle of the program.

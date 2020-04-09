@@ -1,6 +1,11 @@
 package ru.job4j.input.exceptions;
 
-//TODO JavaDoc
+/**
+ * This exception throw, when
+ * received {@code Data} object
+ * is invalid
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class InvalidDataException extends IllegalArgumentException {
     //TODO Constructor
 }
