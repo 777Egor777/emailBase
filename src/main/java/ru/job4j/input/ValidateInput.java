@@ -40,18 +40,16 @@ public class ValidateInput implements Input {
     public ValidateInput(Input input) {
     }
 
-    //TODO Fix JavaDoc
     /**
      * Method receive String
-     * from some input essence
-     * and return it.
-     * <p>
-     * Method has no validation.
-     * It receive line in
-     * "fresh" condition
+     * with help of method
+     * {@code askLine} of object
+     * {@code input}
      *
      * @return line - object of String
-     * class
+     * class, that we receive with help
+     * {@code askLine} method
+     * of object {@code input}
      */
     @Override
     public String askLine() {
