@@ -31,7 +31,18 @@ public class DataHelper {
     public static void addUser(Data data, User user) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Delete all users
+     * from {@code data}
+     * user's list
+     * @param data - {@code Data} object
+     *               that we delete all
+     *               user's from.
+     *               After it size of
+     *               {@code data}'s
+     *               user-list is
+     *               {@code 0}.
+     */
     public static void clean(Data data) {
     }
 
