@@ -6,7 +6,13 @@ import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
-//TODO JavaDoc
+/**
+ * Class-wrapper for objects of
+ * {@code Input} interface,
+ * provides validation for
+ * all data scan process.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class ValidateInput implements Input {
     //TODO JavaDoc
     private Input input;
