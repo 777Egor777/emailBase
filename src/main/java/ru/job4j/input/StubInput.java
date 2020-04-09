@@ -1,5 +1,7 @@
 package ru.job4j.input;
 
+import java.util.List;
+
 /**
  * Input interface implementation
  * Need for testing.
@@ -8,6 +10,9 @@ package ru.job4j.input;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class StubInput implements Input {
+    //TODO JavaDoc
+    private List<String> lines;
+
     /**
      * Method receive String
      * from {@code String}
