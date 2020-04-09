@@ -29,11 +29,9 @@ public class ConsoleInput implements Input {
     public ConsoleInput() {
     }
 
-    //TODO fix JavaDoc
     /**
      * Method receive String
-     * from some input essence
-     * and return it.
+     * from standard output
      * <p>
      * Method has no validation.
      * It receive line in
