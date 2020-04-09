@@ -244,41 +244,47 @@ public class ValidateInput implements Input {
         return 0;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive Integer
-     * number from some input
-     * essence and return it.
+     *<p>
+     *  Method return integer
+     * number that receive
+     * from parsing line
+     * that receive from
+     * {@code askLine} method
+     * of the program.
+     *</p>
+     * <p>
+     * Method has validation.
+     * If we can't parse
+     * received line into
+     * correct integer number or
+     * result number is not
+     * from {@code array}
+     * {@code acceptableNumbers},
+     * we receive another lines
+     * until successful
+     * parse.
+     * </p>
      * <p>
      * Method also can use
      * "message" that consist
      * some information about
      * desired number
-     * <p>
-     * Method has no validation -
-     * received number must be
-     * in array acceptableNumbers,
-     * that is one of parameters.
-     * Otherwise, method will
-     * throw exception.
-     *
-     * @param message           - String that consist
-     *                          some information about
-     *                          desired number. For example
-     *                          we can print it to console
-     *                          and user can read it
+     * </p>
+     * @param message - String that consist
+     *                some information about
+     *                desired line. For example
+     *                we can print it to console
+     *                and user can read it
      * @param acceptableNumbers - array of integer numbers.
      *                          Received number must be
-     *                          in it. Otherwise method
-     *                          throws exception.
+     *                          in it.
      * @return integer number, that
      * we received from
-     * interact process with
-     * user. Number must be
-     * from array
-     * acceptableNumbers.
-     * @throws ru.job4j.input.exceptions.InvalidIntegerException -
-     *                                 if received integer not contains in {@code acceptableNumbers}
+     * {@code askline()} method.
+     * Number contains
+     *  in {@code array}
+     * {@code acceptableNumbers}
      */
     @Override
     public int askInt(String message, int... acceptableNumbers) {
