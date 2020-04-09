@@ -1,5 +1,6 @@
 package ru.job4j.input;
 
+import ru.job4j.input.exceptions.InvalidUserException;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
@@ -346,6 +347,63 @@ public class ValidateInput implements Input {
      */
     @Override
     public Email askEmail(String message, User user) {
+        return null;
+    }
+
+    //TODO Fix JavaDoc
+    /**
+     * Method receive User
+     * object from some
+     * input essence and
+     * return it.
+     * <p>
+     * Method has no
+     * validation. If user
+     * enter incorrect User
+     * object,
+     * method just throw
+     * respective exception.
+     *
+     * @return User object that
+     * user enters.
+     * @throws InvalidUserException -
+     *                              if received {@code User} object is invalid
+     */
+    @Override
+    public User askUser() {
+        return null;
+    }
+
+    //TODO Fix JavaDoc
+    /**
+     * Method receive User
+     * object from some
+     * input essence and
+     * return it.
+     * <p>
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired User
+     * <p>
+     * Method has no
+     * validation. If user
+     * enter incorrect User
+     * method just throw
+     * respective exception.
+     *
+     * @param message - String that consist
+     *                some information about
+     *                desired User. For example
+     *                we can print it to console
+     *                and user can read it
+     * @return User object that
+     * user enters.
+     * @throws InvalidUserException -
+     *                              if received {@code User} object is invalid
+     */
+    @Override
+    public User askUser(String message) {
         return null;
     }
 }
