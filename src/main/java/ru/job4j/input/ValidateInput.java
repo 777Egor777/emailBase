@@ -307,40 +307,43 @@ public class ValidateInput implements Input {
      * </p>
      *
      * @return valid Email object
-     * that user enters.
+     * that we receive from
+     * {@code input} object
      */
     @Override
     public Email askEmail() {
         return null;
     }
 
-    //TODO Fix JavaDoc
     /**
+     * <p>
      * Method receive Email
-     * object from some
-     * input essence and
-     * return it.
+     * object from {@code input}
+     * object's method
+     * {@code askEmail}
+     * </p>
+     * <p>
+     * Method has validation.
+     * If received {@code Email}
+     * object is invalid,
+     * we receive another
+     * until success.
+     * </p>
      * <p>
      * Method also can use
      * "message" that consist
      * some information about
      * desired Email
-     * <p>
-     * Method has no
-     * validation. If user
-     * enter incorrect Email
-     * method just throw
-     * respective exception.
+     * </p>
      *
      * @param message - String that consist
      *                some information about
      *                desired Email. For example
      *                we can print it to console
      *                and user can read it
-     * @return Email object that
-     * user enters.
-     * @throws ru.job4j.input.exceptions.InvalidEmailException -
-     *                               if received {@code Email} object is invalid
+     * @return valid Email object
+     * that we receive from
+     * {@code input} object
      */
     @Override
     public Email askEmail(String message) {
