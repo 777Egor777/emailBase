@@ -10,11 +10,24 @@ import ru.job4j.model.user.User;
  *
  * With this {@code class} we
  * will make all {@code Data} objects
- * in the program {@code Immutable}.
+ * in the program {@code Immutable} .
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class DataHelper {
-    //TODO JavaDoc
+    /**
+     * Add object {@code user}
+     * of class {@code User}
+     * to user's list of
+     * object {@code data}
+     * @param data - object of class {@code Data}
+     *               that we will modify -
+     *               add new user(object of
+     *               class {@code User})
+     *               for it
+     * @param user - object of class {@code User}
+     *              that we add to dataBase
+     *              {@code data}
+     */
     public static void addUser(Data data, User user) {
     }
 
