@@ -12,7 +12,7 @@ import java.util.List;
 public class StubInput implements Input {
     /**
      * {@code Array} of {@code String}
-     * objects that recieve from
+     * objects that receive from
      * constructor
      */
     private List<String> lines;

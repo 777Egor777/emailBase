@@ -122,34 +122,40 @@ public class ValidateInput implements Input {
         return 0;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive Integer
-     * number from some input
-     * essence and return it.
+     *<p>
+     *  Method return integer
+     * number that receive
+     * from parsing line
+     * that receive from
+     * {@code askLine} method
+     * of the program.
+     *</p>
+     * <p>
+     * Method has validation.
+     * If we can't parse
+     * received line into
+     * correct integer number,
+     * we receive another lines
+     * until successful
+     * parse.
+     * </p>
      * <p>
      * Method also can use
      * "message" that consist
      * some information about
      * desired number
-     * <p>
-     * Method has no validation.
-     * If user enter not an
-     * integer number, it will
-     * throw exception
-     *
+     * </p>
      * @param message - String that consist
      *                some information about
      *                desired line. For example
      *                we can print it to console
      *                and user can read it
      * @return integer number, that
-     * we received from
-     * interact process with
-     * user
-     * @throws ru.job4j.input.exceptions.InvalidIntegerException -
-     *                                 if received line is not represent
-     *                                 correct integer number
+     * we received as result of
+     * parsing {@code String}
+     * object from
+     * {@code askLine} method
      */
     @Override
     public int askInt(String message) {
