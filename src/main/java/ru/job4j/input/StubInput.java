@@ -17,7 +17,15 @@ public class StubInput implements Input {
      */
     private List<String> lines;
 
-    //TODO JavaDoc
+    /**
+     * Constructor of class.
+     * Here we receive {@code array}
+     * of {@code String} objects
+     * that we will use in
+     * {@code askLine} method
+     * @param lines - initial state of
+     *                {@code lines} field
+     */
     public StubInput(List<String> lines) {
     }
 
