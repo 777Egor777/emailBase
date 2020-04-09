@@ -10,7 +10,12 @@ import java.io.BufferedReader;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class ConsoleInput implements Input {
-    //TODO Add JavaDoc and initialise
+    /**
+     * {@code BufferedReader} object
+     * that we use to input data
+     * from standard console
+     * input
+     */
     private BufferedReader reader;
 
     //TODO fix JavaDoc
