@@ -8,11 +8,12 @@ package ru.job4j.input;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class StubInput implements Input {
-    //TODO Fix JavaDoc
     /**
      * Method receive String
-     * from some input essence
-     * and return it.
+     * from {@code String}
+     * {@code array} that
+     * was initial with
+     * constructor
      * <p>
      * Method has no validation.
      * It receive line in
