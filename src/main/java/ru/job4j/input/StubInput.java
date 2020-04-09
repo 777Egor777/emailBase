@@ -1,6 +1,12 @@
 package ru.job4j.input;
 
-//TODO Add JavaDoc
+/**
+ * Input interface implementation
+ * Need for testing.
+ * Here we send {@code String} {@code array}
+ * to constructor and then work with this.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class StubInput implements Input {
     //TODO Fix JavaDoc
     /**
