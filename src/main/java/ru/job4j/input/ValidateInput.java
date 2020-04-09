@@ -14,7 +14,14 @@ import ru.job4j.model.user.User;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class ValidateInput implements Input {
-    //TODO JavaDoc
+    /**
+     * Object that implements
+     * {@code Input} interface.
+     * This class - wrapper
+     * for this object.
+     * Field initialise in
+     * constructor.
+     */
     private Input input;
 
     //TODO JavaDoc
