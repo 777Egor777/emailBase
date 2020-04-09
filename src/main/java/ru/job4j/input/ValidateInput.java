@@ -1,6 +1,8 @@
 package ru.job4j.input;
 
+import ru.job4j.input.exceptions.InvalidDataException;
 import ru.job4j.input.exceptions.InvalidUserException;
+import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
@@ -30,8 +32,6 @@ public class ValidateInput implements Input {
     public String askLine() {
         return null;
     }
-
-    //TODO Override methods
 
     /**
      * Method receive String
@@ -404,6 +404,30 @@ public class ValidateInput implements Input {
      */
     @Override
     public User askUser(String message) {
+        return null;
+    }
+
+    //TODO Fix JavaDoc
+    /**
+     * Method receive Data
+     * object from some
+     * input essence and
+     * return it.
+     * <p>
+     * Method has no
+     * validation. If user
+     * enter incorrect Data
+     * object,
+     * method just throw
+     * respective exception.
+     *
+     * @return Data object that
+     * user enters.
+     * @throws InvalidDataException -
+     *                              if received {@code Data} object is invalid
+     */
+    @Override
+    public Data askData() {
         return null;
     }
 }
