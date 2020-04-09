@@ -3,7 +3,11 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
 
-//TODO JavaDoc
+/**
+ * Class implements "UserAction" interface.
+ * Will be used in testing
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class StubAction implements UserAction {
     //TODO change JavaDoc
     /**
