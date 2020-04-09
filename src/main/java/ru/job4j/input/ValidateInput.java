@@ -24,7 +24,19 @@ public class ValidateInput implements Input {
      */
     private Input input;
 
-    //TODO JavaDoc
+    /**
+     * Constructor of the class.
+     * Here we initialise
+     * {@code input} field
+     * by object that impl
+     * {@code Input} interface
+     * @param input - received object,
+     *               that impl {@code Input}
+     *               interface and will
+     *               initialise field
+     *               {@code input} of this
+     *               class.
+     */
     public ValidateInput(Input input) {
     }
 
