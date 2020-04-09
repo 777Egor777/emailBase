@@ -10,7 +10,11 @@ import java.util.List;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class StubInput implements Input {
-    //TODO JavaDoc
+    /**
+     * {@code Array} of {@code String}
+     * objects that recieve from
+     * constructor
+     */
     private List<String> lines;
 
     /**
