@@ -425,33 +425,35 @@ public class ValidateInput implements Input {
         return null;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive User
-     * object from some
-     * input essence and
-     * return it.
+     * <p>
+     * Method receive {@code User}
+     * object from {@code input}
+     * object's method
+     * {@code askUser}
+     * </p>
+     * <p>
+     * Method has validation.
+     * If received {@code User}
+     * object is invalid,
+     * we receive another
+     * until success.
+     * </p>
      * <p>
      * Method also can use
      * "message" that consist
      * some information about
      * desired User
-     * <p>
-     * Method has no
-     * validation. If user
-     * enter incorrect User
-     * method just throw
-     * respective exception.
-     *
+     * </p>
      * @param message - String that consist
      *                some information about
      *                desired User. For example
      *                we can print it to console
      *                and user can read it
-     * @return User object that
-     * user enters.
-     * @throws InvalidUserException -
-     *                              if received {@code User} object is invalid
+     * @return valid {@code User}
+     * object that we receive from
+     * {@code input} object's
+     * method {@code askUser}
      */
     @Override
     public User askUser(String message) {
