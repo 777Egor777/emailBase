@@ -308,7 +308,8 @@ public class ValidateInput implements Input {
      *
      * @return valid Email object
      * that we receive from
-     * {@code input} object
+     * {@code input} object's
+     * mathod {@code askEmail}
      */
     @Override
     public Email askEmail() {
@@ -343,7 +344,8 @@ public class ValidateInput implements Input {
      *                and user can read it
      * @return valid Email object
      * that we receive from
-     * {@code input} object
+     * {@code input} object's
+     * method {@code askEmail}
      */
     @Override
     public Email askEmail(String message) {
@@ -388,7 +390,8 @@ public class ValidateInput implements Input {
      *                belong to this user
      * @return valid {@code Email} object
      * that we receive from
-     * {@code input} object,
+     * {@code input} object's
+     * method {@code  askEmail},
      * and that belong
      * to {@code user} email-list
      */
@@ -397,24 +400,25 @@ public class ValidateInput implements Input {
         return null;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive User
-     * object from some
-     * input essence and
-     * return it.
      * <p>
-     * Method has no
-     * validation. If user
-     * enter incorrect User
-     * object,
-     * method just throw
-     * respective exception.
+     * Method receive {@code User}
+     * object from {@code input}
+     * object's method
+     * {@code askUser}
+     * </p>
+     * <p>
+     * Method has validation.
+     * If received {@code User}
+     * object is invalid,
+     * we receive another
+     * until success.
+     * </p>
      *
-     * @return User object that
-     * user enters.
-     * @throws InvalidUserException -
-     *                              if received {@code User} object is invalid
+     * @return valid {@code User}
+     * object that we receive from
+     * {@code input} object's
+     * method {@code askUser}
      */
     @Override
     public User askUser() {
