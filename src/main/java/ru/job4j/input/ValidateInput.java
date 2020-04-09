@@ -350,46 +350,47 @@ public class ValidateInput implements Input {
         return null;
     }
 
-    //TODO Fix JavaDoc
     /**
-     * Method receive Email
-     * object from some
-     * input essence and
-     * return it.
      * <p>
-     * Method also checks if
-     * this Email already
-     * belong to that user
-     * that came to method
-     * as parameter.
-     * If such Email already
-     * exist, method throws
-     * respective exception.
+     * Method receive Email
+     * object from {@code input}
+     * object's method
+     * {@code askEmail}
+     * </p>
+     * <p>
+     * Method has validation.
+     * If received {@code Email}
+     * object is invalid or
+     * not belong to {@code user}
+     * param, we receive another
+     * {@code Email} object
+     * until success.
+     * </p>
      * <p>
      * Method also can use
      * "message" that consist
      * some information about
      * desired Email
+     * </p>
+     * Method also can use
+     * "message" that consist
+     * some information about
+     * desired Email
      * <p>
-     * Method has no
-     * validation. If user
-     * enter incorrect Email
-     * method just throw
-     * respective exception.
      *
      * @param message - String that consist
      *                some information about
      *                desired Email. For example
      *                we can print it to console
      *                and user can read it
-     * @param user    - if received e-mail already
-     *                belong to this user,
-     *                method throws respective
-     *                exception
-     * @return Email object that
-     * user enters.
-     * @throws ru.job4j.input.exceptions.InvalidEmailException -
-     *                               if received {@code Email} object is invalid
+     * @param user    - returned {@code Email}
+     *                object will
+     *                belong to this user
+     * @return valid {@code Email} object
+     * that we receive from
+     * {@code input} object,
+     * and that belong
+     * to {@code user} email-list
      */
     @Override
     public Email askEmail(String message, User user) {
