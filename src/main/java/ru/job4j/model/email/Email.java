@@ -35,7 +35,13 @@ public final class Email {
      */
     private String service;
 
-    //TODO JavaDoc
+    /**
+     * Third part of email's
+     * {@code String}
+     * representation.
+     * For example:
+     * egor@yandex.domain
+     */
     private String domain;
 
     /**
