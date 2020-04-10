@@ -10,6 +10,7 @@ import java.util.List;
  *
  * We can make this class
  * Immutable in future
+ * @version 1.0.
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class User {
