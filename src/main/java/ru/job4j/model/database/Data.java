@@ -85,7 +85,11 @@ public class Data {
         return super.toString();
     }
 
-    //TODO JavaDoc
+    /**
+     * Method cleans field
+     * {@code users} of this
+     * object.
+     */
     public void clean() {
     }
 
