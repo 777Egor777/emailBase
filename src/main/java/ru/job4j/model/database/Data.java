@@ -17,10 +17,14 @@ import java.util.List;
  * common email in their
  * lists.
  *
- * @author Egor Geraskin(yegeraskin13@gmail.com)
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Data {
-    //TODO JavaDoc
+    /**
+     * List of {@code User}
+     * objects - users
+     * in this database
+     */
     private List<User> users;
 
     //TODO JavaDoc
