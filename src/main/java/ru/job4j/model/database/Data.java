@@ -21,6 +21,9 @@ import java.util.List;
  * @version 1.0
  */
 public class Data {
+    //TODO add JavaDoc
+    public static final User EMPTY_USER = new User();
+
     /**
      * List of {@code User}
      * objects - users
@@ -136,7 +139,20 @@ public class Data {
     public void deleteUser(int id) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Method return user
+     * with id {@code id},
+     * if it contains in
+     * {@code users} list.
+     * Otherwise it return
+     * {@code EMPTY_USER}
+     * object.
+     * @param id - id of user
+     *             that we must
+     *             return
+     * @return - {@code User} object
+     *           with id {@code id}
+     */
     public User getUser(int id) {
         return null;
     }
