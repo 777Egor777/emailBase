@@ -46,7 +46,23 @@ public class DataHelper {
     public static void clean(Data data) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Add {@code Email} object
+     * {@code email} to email-
+     * list of {@code User}
+     * object with id
+     * {@code userId}
+     * in database {@code data}
+     * @param data - database that we
+     *               modify user from
+     * @param userId - id of user
+     *                 that we add
+     *                 email to
+     * @param email -  {@code Email} object
+     *                 that we add to email-
+     *                 list of user with
+     *                 id {@code userId}
+     */
     public static void addEmail(Data data, int userId, Email email) {
     }
 
