@@ -26,7 +26,13 @@ public final class Email {
      */
     private String name;
 
-    //TODO JavaDoc
+    /**
+     * second part of email's
+     * {@code String}
+     * representation.
+     * For example:
+     * egor@service.ru
+     */
     private String service;
 
     //TODO JavaDoc
