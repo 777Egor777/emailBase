@@ -82,8 +82,26 @@ public class DataHelper {
     public static void deleteUser(Data data, int userId) {
     }
 
-    //TODO JavaDoc
-    public static void deleteEmail(Data data, int userID, int emailIndex) {
+    /**
+     * Delete {@code Email} object
+     * {@code email} from email-
+     * list of {@code User}
+     * object with id
+     * {@code userId}
+     * in database {@code data}
+     * @param data - database that we
+     *               modify user from
+     * @param userId - id of user
+     *                 that we delete
+     *                 email from
+     * @param emailIndex -  index of
+     *                      {@code Email} object
+     *                      in email-list of user with
+     *                      id {@code userId}.
+     *                      We will delete this
+     *                      {@code Email} object
+     */
+    public static void deleteEmail(Data data, int userId, int emailIndex) {
     }
 
     //TODO JavaDoc
