@@ -43,7 +43,13 @@ public class Vertex {
      */
     private Vertex source;
 
-    //TODO JavaDoc
+    /**
+     * Constructor that
+     * initialise "id"
+     * field
+     * @param id - initialise value
+     *             for field {@code id}
+     */
     public Vertex(int id) {
     }
     //TODO JavaDoc
