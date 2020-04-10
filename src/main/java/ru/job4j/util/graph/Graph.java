@@ -22,7 +22,10 @@ public class Graph {
      * graph
      */
     private int numberOfVertex;
-    //TODO JavaDoc
+    /**
+     * List of vertex'es
+     * of this graph
+     */
     private List<Vertex> vertexes;
     //TODO JavaDoc
     public Graph(int numberOfVertex) {
