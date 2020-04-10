@@ -52,7 +52,9 @@ public final class Email {
      * If value is incorrect,
      * method throw special
      * exception
-     * //TODO Make special Exception class in this package
+     * @throws ru.job4j.input.exceptions.InvalidEmailException -
+     *         if received from {@code value} {@code String}
+     *         {@code Email} object is incorrect
      * @param value - String value
      *                of this Email
      */
