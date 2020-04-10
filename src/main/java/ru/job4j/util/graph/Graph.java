@@ -61,7 +61,41 @@ public class Graph {
      */
     public void addEdge(int firstVertexIndex, int secondVertexIndex) {
     }
-    //TODO JavaDoc
+
+    /**
+     * <p>
+     * Method return
+     * "sources {@code array}
+     * of graph. We can make
+     * this array after
+     * compression process.
+     * </p><p>
+     * Firstly we find
+     * connection-components
+     * of the graph.
+     * </p><p>
+     * Next step we put
+     * in accordance
+     * to each component
+     * number of one
+     * vertex from
+     * this component.
+     * </p><p>
+     * Next we create
+     * {@code array} -
+     * for each vertux
+     * value in this array will
+     * be number of vertux
+     * that put in accordance
+     * to connected-component
+     * of this vertex.
+     * </p><p>
+     * {@code Array} that we
+     * get finally -
+     * "source array".
+     * We return it
+     * @return "source array"
+     */
     public int[] getSources() {
         return null;
     }
