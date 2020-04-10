@@ -35,7 +35,14 @@ public class Vertex {
      */
     private List<Vertex> edges;
 
+    /**
+     * Reference to vertex -
+     * source of connected-
+     * component to which
+     * this vertex belong
+     */
     private Vertex source;
+
     //TODO JavaDoc
     public Vertex(int id) {
     }
