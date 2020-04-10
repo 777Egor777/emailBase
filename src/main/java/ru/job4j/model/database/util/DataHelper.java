@@ -50,7 +50,19 @@ public class DataHelper {
     public static void addEmail(Data data, int userId, Email email) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Delete object
+     * of class {@code User}
+     * with id {@code userId}
+     * from {@code data}'s user list
+     * @param data - object of class {@code Data}
+     *               that we will modify -
+     *               delete user from it
+     * @param userId - id of user that we
+     *                 should delete from
+     *                 {@code data}'s
+     *                 user list
+     */
     public static void deleteUser(Data data, int userId) {
     }
 
