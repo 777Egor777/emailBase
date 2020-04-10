@@ -1,5 +1,6 @@
 package ru.job4j.model.user.util;
 
+import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
 /**
@@ -67,6 +68,6 @@ public class Users {
     }
 
     //TODO JavaDoc
-    public static void addEmail(User user, int index) {
+    public static void addEmail(User user, Email email) {
     }
 }
