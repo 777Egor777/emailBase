@@ -24,9 +24,17 @@ public class Vertex {
      * in this vertex
      */
     private boolean usedStatus;
-    //TODO JavaDoc
+
+    /**
+     * List of edges.
+     * In this list - references
+     * to all {@code Vertex}
+     * object's that have
+     * edge with {@code this}
+     * vertex
+     */
     private List<Vertex> edges;
-    //TODO JavaDoc
+
     private Vertex source;
     //TODO JavaDoc
     public Vertex(int id) {
