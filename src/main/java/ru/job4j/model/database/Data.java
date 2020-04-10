@@ -21,7 +21,14 @@ import java.util.List;
  * @version 1.0
  */
 public class Data {
-    //TODO add JavaDoc
+    /**
+     * Stub for object {@code User}
+     * We use it to not to return
+     * {@code null} - reference.
+     * We return it when can't
+     * return another valid
+     * {@code User} - object
+     */
     public static final User EMPTY_USER = new User();
 
     /**
