@@ -18,6 +18,7 @@ import java.util.List;
  * lists.
  *
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ * @version 1.0
  */
 public class Data {
     /**
@@ -40,7 +41,18 @@ public class Data {
     public Data() {
     }
 
-    //TODO JavaDoc
+    /**
+     * Constructor with {@code List}
+     * of {@code User} objects.
+     * We need it to make this
+     * {@code class} final
+     * in future version of
+     * program.
+     * @param users - {@code List} of {@code User}
+     *                objects that we use to
+     *                initialise field
+     *                {@code users}
+     */
     public Data(List<User> users) {
     }
 
