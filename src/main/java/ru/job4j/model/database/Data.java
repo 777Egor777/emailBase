@@ -93,7 +93,21 @@ public class Data {
     public void clean() {
     }
 
-    //TODO JavaDoc
+    /**
+     * Method add new {@code Email}
+     * object - new email to user
+     * with id {@code id},
+     * that contains in
+     * {@code users} list
+     * @param id - ID of user that we
+     *             modify - user new
+     *             email to his
+     *             email's list
+     * @param email - {@code Email} object -
+     *                new email that we add
+     *                to user's with id {@code id}
+     *                email-list
+     */
     public void addEmail(int id, Email email) {
     }
 
