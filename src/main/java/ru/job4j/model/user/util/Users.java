@@ -51,7 +51,18 @@ public class Users {
     public static void printEmails(User user) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Method delete from
+     * user's email-list
+     * email, that has
+     * index {@code index - 1}
+     * @param user - {@code User} object
+     *               that we delete email
+     *               from
+     * @param index - index of email,
+     *                that we should delete,
+     *                in user's email list
+     */
     public static void deleteEmail(User user, int index) {
     }
 
