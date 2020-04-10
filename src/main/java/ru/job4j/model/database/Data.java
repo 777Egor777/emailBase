@@ -56,7 +56,13 @@ public class Data {
     public Data(List<User> users) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Add new user
+     * to this database
+     * @param user - {@code User} object,
+     *               new user that we add
+     *               to this database
+     */
     public void addUser(User user) {
     }
 
