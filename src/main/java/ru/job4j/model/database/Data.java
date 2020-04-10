@@ -27,7 +27,16 @@ public class Data {
      */
     private List<User> users;
 
-    //TODO JavaDoc
+    /**
+     * Empty constructor
+     * of class "Data".
+     * Here we just
+     * initialise field
+     * {@code users} with
+     * empty {@code List}
+     * of {@code User}
+     * objects.
+     */
     public Data() {
     }
 
