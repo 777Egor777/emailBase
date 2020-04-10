@@ -36,7 +36,17 @@ public class User {
 
     }
 
-    //TODO JavDoc
+    /**
+     * Constructor of class
+     * that receive list
+     * of email as param/
+     * Need in future version
+     * of class, when we will
+     * make it Immutable
+     * @param emails - initialise value of
+     *                 field {@code emails}
+     *                 of class
+     */
     public User(List<Email> emails) {
     }
 
@@ -127,7 +137,8 @@ public class User {
      * object to user's email-list
      * {@code emails}.
      * Email add to the end of list.
-     * @param email - object of {@Email} class
+     * @param email - object of {@code Email}
+     *                {@code class}
      *                that we must add to
      *                user's email-list
      *                in this method
