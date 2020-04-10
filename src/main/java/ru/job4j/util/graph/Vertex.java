@@ -2,9 +2,14 @@ package ru.job4j.util.graph;
 
 import java.util.List;
 
-//TODO JavaDoc
+/**
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class Vertex {
-    //TODO JavaDoc
+    /**
+     * Unique id of this
+     * vertex in graph.
+     */
     private int id;
     //TODO JavDoc
     private boolean usedStatus;
