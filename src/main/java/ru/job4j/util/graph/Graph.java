@@ -15,7 +15,12 @@ import java.util.List;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Graph {
-    //TODO JavaDoc
+    /**
+     * Integer number,
+     * value - number of
+     * vertexes in this
+     * graph
+     */
     private int numberOfVertex;
     //TODO JavaDoc
     private List<Vertex> vertexes;
