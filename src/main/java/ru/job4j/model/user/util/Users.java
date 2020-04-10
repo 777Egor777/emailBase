@@ -34,8 +34,21 @@ public class Users {
     public static void cleanEmailsList(User user) {
     }
 
-    //TODO JavaDoc
-    public static void printEmailsWithNumeration(User user) {
+    /**
+     * Method print email-list
+     * of {@code User} object
+     * {@code user} at this
+     * type:
+     * 1. Email1
+     * 2. Email2
+     * ...
+     * n. Emailn
+     * @param user - {@code User} object
+     *               whose email-list
+     *               we print with numeration
+     *               to standard output
+     */
+    public static void printEmails(User user) {
     }
 
     //TODO JavaDoc
