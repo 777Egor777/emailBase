@@ -11,7 +11,18 @@ public class Vertex {
      * vertex in graph.
      */
     private int id;
-    //TODO JavDoc
+
+    /**
+     * {@code boolean} value
+     * that mark dfs entry
+     * to this vertex.
+     * If this field "false" -
+     * dfs algorithm was not
+     * in this vertex.
+     * If this field "true" -
+     * dfs algorithm was
+     * in this vertex
+     */
     private boolean usedStatus;
     //TODO JavaDoc
     private List<Vertex> edges;
