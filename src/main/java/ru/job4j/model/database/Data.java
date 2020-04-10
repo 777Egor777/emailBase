@@ -157,7 +157,20 @@ public class Data {
         return null;
     }
 
-    //TODO JavaDoc
+    /**
+     * Method delete email
+     * on position
+     * {@code emailIndex}
+     * in email's list
+     * of {@code User}
+     * with id {@code id}
+     * @param id - if of user
+     *             whose email we
+     *            must delete
+     * @param emailIndex - index of email
+     *                     in user's email-
+     *                     list
+     */
     public void deleteEmail(int id, int emailIndex) {
     }
 
