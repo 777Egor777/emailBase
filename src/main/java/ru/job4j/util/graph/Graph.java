@@ -4,7 +4,16 @@ import ru.job4j.model.database.Data;
 
 import java.util.List;
 
-//TODO JavaDoc
+/**
+ * Data model "Graph".
+ * This is math model.
+ * Graph has n vertex-es
+ * and m edges.
+ * Each edge connect
+ * two vertex-ex of
+ * graph.
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ */
 public class Graph {
     //TODO JavaDoc
     private int numberOfVertex;
