@@ -17,7 +17,13 @@ public final class Email {
     private String value;
     //TODO after implementing constructor, make this field final
 
-    //TODO JavaDoc
+    /**
+     * First part of email's
+     * {@code String}
+     * representation.
+     * For example:
+     * name@yandex.ru
+     */
     private String name;
 
     //TODO JavaDoc
