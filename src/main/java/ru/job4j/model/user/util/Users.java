@@ -67,7 +67,17 @@ public class Users {
     public static void deleteEmail(User user, int index) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Add email to user's
+     * email-list
+     * @param user - {@code User} object
+     *               to whose email-list
+     *               we add new email
+     * @param email - {@code Email}-object
+     *                that we add to
+     *                user's {@code user}
+     *                email-list
+     */
     public static void addEmail(User user, Email email) {
     }
 }
