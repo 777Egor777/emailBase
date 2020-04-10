@@ -42,7 +42,23 @@ public class Graph {
      */
     public Graph(int numberOfVertex) {
     }
-    //TODO JavDoc
+
+    /**
+     * Method that add new
+     * edge into graph.
+     * This type of graph is
+     * non-oriented, so
+     * we must add two
+     * oriented edges
+     * into graph:
+     * (firstV, secondV)
+     * and
+     * (secondV, firstV)
+     * @param firstVertexIndex - one vertex of new edge
+     *                           in this graph
+     * @param secondVertexIndex - another vertex of new edge
+     *                            in this graph
+     */
     public void addEdge(int firstVertexIndex, int secondVertexIndex) {
     }
     //TODO JavaDoc
