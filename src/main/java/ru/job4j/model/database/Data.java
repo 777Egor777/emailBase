@@ -111,7 +111,14 @@ public class Data {
     public void addEmail(int id, Email email) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Method return {@code array}
+     * of ID of all user's in
+     * {@code users} list.
+     * @return {@code array} of
+     *         all ID's in
+     *         this database
+     */
     public int[] allId() {
         return null;
     }
