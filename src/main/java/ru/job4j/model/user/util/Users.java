@@ -22,7 +22,15 @@ public class Users {
      */
     public static Integer nextUserId = 1;
 
-    //TODO JavDoc
+    /**
+     * Method clean {@code List}
+     * of {@code Email} object -
+     * field {@code emails}
+     * of object {@code user}
+     * @param user - method clean
+     *               email-list
+     *               of this user
+     */
     public static void cleanEmailsList(User user) {
     }
 
