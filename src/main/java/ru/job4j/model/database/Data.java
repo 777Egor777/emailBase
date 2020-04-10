@@ -123,7 +123,16 @@ public class Data {
         return null;
     }
 
-    //TODO JavaDoc
+    /**
+     * Method delete user
+     * with id {@code id}
+     * from this database -
+     * delete it from
+     * {@code users} list
+     * @param id - id of {@code User}
+     *             object that we delete
+     *             from base
+     */
     public void deleteUser(int id) {
     }
 
