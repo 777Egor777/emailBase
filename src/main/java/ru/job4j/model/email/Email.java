@@ -124,7 +124,11 @@ public final class Email {
         return null;
     }
 
-    //TODO JavaDoc
+    /**
+     * Getter for field "name"
+     * @return field "value" of
+     *         this class
+     */
     public String getName() {
         return null;
     }
