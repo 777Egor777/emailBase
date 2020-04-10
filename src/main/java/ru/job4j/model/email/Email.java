@@ -126,7 +126,7 @@ public final class Email {
 
     /**
      * Getter for field "name"
-     * @return field "value" of
+     * @return field "name" of
      *         this class
      */
     public String getName() {
@@ -135,14 +135,18 @@ public final class Email {
 
     /**
      * Getter for field "service"
-     * @return field "value" of
+     * @return field "service" of
      *         this class
      */
     public String getService() {
         return null;
     }
 
-    //TODO JavaDoc
+    /**
+     * Getter for field "domain"
+     * @return field "domain" of
+     *         this class
+     */
     public String getDomain() {
         return null;
     }
