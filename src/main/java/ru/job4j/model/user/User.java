@@ -50,7 +50,14 @@ public class User {
     public User(List<Email> emails) {
     }
 
-    //TODO JavaDoc
+    /**
+     * Method return {@code List}
+     * of {@code Email} objects
+     * - email's-list of this
+     * user
+     * @return email-s list
+     *         of this user
+     */
     public List<Email> getEmails() {
         return null;
     }
