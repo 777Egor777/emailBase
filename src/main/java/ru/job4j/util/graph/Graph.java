@@ -22,12 +22,24 @@ public class Graph {
      * graph
      */
     private int numberOfVertex;
+
     /**
      * List of vertex'es
      * of this graph
      */
     private List<Vertex> vertexes;
-    //TODO JavaDoc
+
+    /**
+     * Constructor of class.
+     * Receive single param -
+     * number of vertex in
+     * graph.
+     * Initialise field
+     * {@code numberOfVertex}
+     * @param numberOfVertex - initialise value
+     *                         of field
+     *                        {@code numberOfVertex}
+     */
     public Graph(int numberOfVertex) {
     }
     //TODO JavDoc
