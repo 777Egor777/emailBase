@@ -28,7 +28,20 @@ public class VertexTest {
     }
 
     @Test
-    public void getUsedStatus() {
+    public void getUsedStatus1() {
+        Vertex vertex = new Vertex(0);
+        boolean result = vertex.getUsedStatus();
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getUsedStatus2() {
+        Vertex vertex = new Vertex(0);
+        vertex.dfs(vertex);
+        boolean result = vertex.getUsedStatus();
+        boolean expected = true;
+        assertThat(result, is(expected));
     }
 
     @Test
