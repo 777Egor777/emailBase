@@ -2,7 +2,6 @@ package ru.job4j.util.graph;
 
 import java.util.List;
 
-//TODO make Immutable
 /**
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
