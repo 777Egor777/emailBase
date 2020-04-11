@@ -11,7 +11,20 @@ import static org.hamcrest.Matchers.is;
 public class VertexTest {
 
     @Test
-    public void getId() {
+    public void getId1() {
+        Vertex vertex = new Vertex(0);
+        int result = vertex.getId();
+        int expected = 0;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getId2() {
+        Vertex vertex = new Vertex(0);
+        vertex = new Vertex(911);
+        int result = vertex.getId();
+        int expected = 911;
+        assertThat(result, is(expected));
     }
 
     @Test
