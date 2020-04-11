@@ -72,13 +72,28 @@ public class Vertex {
     public boolean getUsedStatus() {
         return true;
     }
-    //TODO JavaDoc
+
+    /**
+     * Add new oriented
+     * edge (this, vertex).
+     * Add new reference
+     * of type {@code Vertex}
+     * to edges-list of
+     * {@code this} vertex
+     * @param vertex - reference of type
+     *                 {@code Vertex} that
+     *                 we add to {@code this}
+     *                 {@code Vertex}
+     *                 object's edge-list
+     */
     public void addEdge(Vertex vertex) {
     }
+
     //TODO JavaDoc
     public Vertex getSource() {
         return null;
     }
+
     //TODO JavaDoc
     public void dfs(Vertex source) {
     }
