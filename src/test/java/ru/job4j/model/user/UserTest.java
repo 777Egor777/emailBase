@@ -213,7 +213,59 @@ public class UserTest {
     }
 
     @Test
-    public void deleteEmail() {
+    public void deleteEmail1() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.deleteEmail(1);
+        assertThat(user.getNumberOfEmails(), is(0));
+    }
+
+    @Test
+    public void deleteEmail2() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.addEmail(new Email("vasyapupkin777@rambler.net"));
+        user.addEmail(new Email("vasiliiPolegaev123@yandex.ru"));
+        user.addEmail(new Email("batman@gmail.com"));
+        user.addEmail(new Email("robin@gmail.com"));
+        user.addEmail(new Email("alexey@gmail.com"));
+        user.addEmail(new Email("viktorRahov@rambler.net"));
+        user.deleteEmail(3);
+        assertThat(user.getEmail(3), is(new Email("batman@gmail.com")));
+    }
+
+    @Test
+    public void deleteEmail3() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.addEmail(new Email("vasyapupkin777@rambler.net"));
+        user.addEmail(new Email("vasiliiPolegaev123@yandex.ru"));
+        user.addEmail(new Email("batman@gmail.com"));
+        user.addEmail(new Email("robin@gmail.com"));
+        user.addEmail(new Email("alexey@gmail.com"));
+        user.addEmail(new Email("viktorRahov@rambler.net"));
+        user.deleteEmail(3);
+        assertThat(user.getNumberOfEmails(), is(6));
+    }
+
+    @Test
+    public void deleteEmail4() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("egor" + (index+1) + "@yandex.ru"));
+        }
+        user.deleteEmail(77777);
+        assertThat(user.getEmail(77777), is(new Email("egor77778@yandex.ru")));
+    }
+
+    @Test
+    public void deleteEmail5() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("egor" + (index+1) + "@yandex.ru"));
+        }
+        user.deleteEmail(77777);
+        assertThat(user.getNumberOfEmails(), is(100499));
     }
 
     @Test
