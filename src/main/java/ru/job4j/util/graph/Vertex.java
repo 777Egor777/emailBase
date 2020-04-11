@@ -1,6 +1,7 @@
 package ru.job4j.util.graph;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
@@ -34,6 +35,8 @@ public class Vertex {
      * vertex
      */
     private List<Vertex> edges;
+
+    private Set<Vertex> uniqueEdges;
 
     /**
      * Reference to vertex -
