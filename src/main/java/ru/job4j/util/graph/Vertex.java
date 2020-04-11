@@ -62,7 +62,13 @@ public class Vertex {
     public int getId() {
         return -1;
     }
-    //TODO JavaDoc
+
+    /**
+     * Getter for field
+     * {@code getUsedStatus}
+     * @return value of field
+     *         {@code getUsedStatus}
+     */
     public boolean getUsedStatus() {
         return true;
     }
