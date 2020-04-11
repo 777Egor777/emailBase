@@ -46,7 +46,11 @@ public class Vertex {
     /**
      * Constructor that
      * initialise "id"
-     * field
+     * field.
+     * Initialise
+     * {@code source} field
+     * by {@code this}
+     * object's reference
      * @param id - initialise value
      *             for field {@code id}
      */
