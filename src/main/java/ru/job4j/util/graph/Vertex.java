@@ -52,7 +52,13 @@ public class Vertex {
      */
     public Vertex(int id) {
     }
-    //TODO JavaDoc
+
+    /**
+     * Getter for field
+     * {@code id}
+     * @return value of field
+     *         {@code id}
+     */
     public int getId() {
         return -1;
     }
