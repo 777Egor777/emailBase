@@ -51,7 +51,6 @@ public class VertexTest {
         vertex1.addEdge(vertex2);
         vertex1.dfs(vertex1);
         assertThat(vertex2.getUsedStatus(), is(true));
-        assertThat(vertex2.getSource(), is(vertex1));
     }
 
     @Test
@@ -60,12 +59,26 @@ public class VertexTest {
         Vertex vertex2 = new Vertex(1);
         vertex1.dfs(vertex1);
         assertThat(vertex2.getUsedStatus(), is(false));
-        assertThat(vertex2.getSource(), is(vertex2));
     }
 
     @Test
-    public void getSource() {
+    public void getSource1() {
+        Vertex vertex1 = new Vertex(0);
+        Vertex vertex2 = new Vertex(1);
+        vertex1.addEdge(vertex2);
+        vertex1.dfs(vertex1);
+        assertThat(vertex2.getSource(), is(vertex1));
+
     }
+
+    @Test
+    public void getSource2() {
+        Vertex vertex1 = new Vertex(0);
+        Vertex vertex2 = new Vertex(1);
+        vertex1.dfs(vertex1);
+        assertThat(vertex2.getSource(), is(vertex2));
+    }
+
 
     @Test
     public void dfs() {
