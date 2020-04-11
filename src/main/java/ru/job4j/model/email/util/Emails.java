@@ -9,9 +9,27 @@ import ru.job4j.model.email.Email;
  */
 public class Emails {
     /**
-     * Method checks if received
-     * Email object is
-     * acceptable
+     * <p>
+     *     Method checks if received
+     *     Email object is
+     *     acceptable.
+     * </p>
+     * <p>
+     *     Email acceptable,
+     *     if it's {@code value}
+     *     field has type:
+     *     "name@service.domain",
+     *     where:
+     *     1. name and service -
+     *        {@code String}
+     *        objects with
+     *        {@code length() >= 3}
+     *     2. domain - {@code String}
+     *        from set:
+     *        {"ru", "com", "net",
+     *        "org", "edu"}
+     * </p>
+     *
      * @param email - verifiable Email
      *                object
      * @return true - if param -  correct Email object

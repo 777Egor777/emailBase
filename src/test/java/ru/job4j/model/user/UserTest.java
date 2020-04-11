@@ -306,5 +306,9 @@ public class UserTest {
 
     @Test
     public void addEmail() {
+        User user = new User();
+        user.addEmail(new Email("xxx@xxx.net"));
+        assertThat(user.getEmail(1),
+                   is(new Email("xxx@xxx.net")));
     }
 }

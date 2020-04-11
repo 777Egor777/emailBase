@@ -101,14 +101,14 @@ public final class Email {
      * be returned
      * @param obj - reference to object, that we compare
      *              with {@code this} object
-     * @return {@code true} if {@code obj} - not {@code null} reference and
+     * @return              {@code true} -  if {@code obj} - not {@code null} reference and
      *                      object by reference {@code obj} -
      *                      instance of {@code Email}
      *                      class and field {@code value}
      *                      of object by reference {@code obj}
      *                      equals to field {@code value} of
      *                      {@code this} object as {@code String} object.
-     *          {@code false} Otherwise
+     *                      {@code false} -  Otherwise
      */
     @Override
     public boolean equals(Object obj) {
