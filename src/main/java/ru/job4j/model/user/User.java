@@ -124,13 +124,20 @@ public class User {
     }
 
     /**
-     * Method return {@code String}
-     * representative of this
-     * {@code User} object
-     * Format is there:
-     * User#userId->email1, email2, ..., emailN
-     * Where N - count of emails
-     * that this user has
+     * <p>
+     *     If email's list not empty:
+     *     Method return {@code String}
+     *     representative of this
+     *     {@code User} object
+     *     Format is there:
+     *     User#userId->email1, email2, ..., emailN;
+     *     Where N - count of emails
+     *     that this user has
+     * </p>
+     * <p>
+     *     If email's list empty:
+     *     User#userId;
+     * </p>
      * @return {@code String}
      *      representative of this
      *      {@code User} object

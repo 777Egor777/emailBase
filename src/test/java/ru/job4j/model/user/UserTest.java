@@ -269,7 +269,39 @@ public class UserTest {
     }
 
     @Test
-    public void testToString() {
+    public void testToString1() {
+        User user = new User();
+        String result = user.toString();
+        String expected = "User#1;";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString2() {
+        User user = new User();
+        user = new User();
+        user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        String result = user.toString();
+        String expected = "User#3->yegeraskin13@gmail.com;";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString3() {
+        User user = new User();
+        user = new User();
+        user = new User();
+        user = new User();
+        user = new User();
+        user = new User();
+        user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.addEmail(new Email("vasyapupkin@yandex.ru"));
+        user.addEmail(new Email("ivanivanov@rambler.net"));
+        String result = user.toString();
+        String expected = "User#7->yegeraskin13@gmail.com, vasyapupkin@yandex.ru, ivanivanov@rambler.net;";
+        assertThat(result, is(expected));
     }
 
     @Test
