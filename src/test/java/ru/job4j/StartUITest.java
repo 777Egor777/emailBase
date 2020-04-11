@@ -5,6 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import ru.job4j.action.StubAction;
 import ru.job4j.action.UserAction;
+import ru.job4j.input.Input;
+import ru.job4j.input.StubInput;
+import ru.job4j.model.database.Data;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -109,6 +112,284 @@ public class StartUITest {
             joiner.add(index + ".STUBACTION");
         }
         ui.showMenu(list);
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start1() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start2() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction(),
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "2"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("2.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start3() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "3"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("2.STUBACTION");
+        joiner.add("3.STUBACTION");
+        joiner.add("4.STUBACTION");
+        joiner.add("5.STUBACTION");
+        joiner.add("6.STUBACTION");
+        joiner.add("7.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start4() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "5"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("2.STUBACTION");
+        joiner.add("3.STUBACTION");
+        joiner.add("4.STUBACTION");
+        joiner.add("5.STUBACTION");
+        joiner.add("6.STUBACTION");
+        joiner.add("7.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start5() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "5"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("2.STUBACTION");
+        joiner.add("3.STUBACTION");
+        joiner.add("4.STUBACTION");
+        joiner.add("5.STUBACTION");
+        joiner.add("6.STUBACTION");
+        joiner.add("7.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start6() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "7"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("2.STUBACTION");
+        joiner.add("3.STUBACTION");
+        joiner.add("4.STUBACTION");
+        joiner.add("5.STUBACTION");
+        joiner.add("6.STUBACTION");
+        joiner.add("7.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start7() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = Arrays.asList(
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction(),
+                new StubAction()
+        );
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        joiner.add("1.STUBACTION");
+        joiner.add("2.STUBACTION");
+        joiner.add("3.STUBACTION");
+        joiner.add("4.STUBACTION");
+        joiner.add("5.STUBACTION");
+        joiner.add("6.STUBACTION");
+        joiner.add("7.STUBACTION");
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start8() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = new ArrayList<>();
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        int size = 1174191;
+        for(int index = 1; index <= size; ++index) {
+            actions.add(new StubAction());
+            joiner.add(index + ".STUBACTION");
+        }
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start9() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = new ArrayList<>();
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        int size = 1174191;
+        for(int index = 1; index <= size; ++index) {
+            actions.add(new StubAction());
+            joiner.add(index + ".STUBACTION");
+        }
+        Input input = new StubInput(Arrays.asList(
+                "100000"
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
+        String result = baos.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void start10() {
+        StartUI ui = new StartUI();
+        List<UserAction> actions = new ArrayList<>();
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        joiner.add("MENU");
+        int size = 1174191;
+        for(int index = 1; index <= size; ++index) {
+            actions.add(new StubAction());
+            joiner.add(index + ".STUBACTION");
+        }
+        Input input = new StubInput(Arrays.asList(
+                ""+size
+        ));
+        Data data = new Data();
+        ui.start(actions, input, data);
+        joiner.add("Enter menu's item number: ");
+        joiner.add("===STUBACTION===");
         String result = baos.toString();
         String expected = joiner.toString();
         assertThat(result, is(expected));
