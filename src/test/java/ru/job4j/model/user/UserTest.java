@@ -158,7 +158,58 @@ public class UserTest {
     }
 
     @Test
-    public void getEmail() {
+    public void getEmail1() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        assertThat(user.getEmail(1), is(new Email("yegeraskin13@gmail.com")));
+    }
+
+    @Test
+    public void getEmail2() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.addEmail(new Email("vasyapupkin777@rambler.net"));
+        user.addEmail(new Email("vasiliiPolegaev123@yandex.ru"));
+        user.addEmail(new Email("batman@gmail.com"));
+        user.addEmail(new Email("robin@gmail.com"));
+        user.addEmail(new Email("alexey@gmail.com"));
+        user.addEmail(new Email("viktorRahov@rambler.net"));
+        assertThat(user.getEmail(1), is(new Email("yegeraskin13@gmail.com")));
+    }
+
+    @Test
+    public void getEmail3() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.addEmail(new Email("vasyapupkin777@rambler.net"));
+        user.addEmail(new Email("vasiliiPolegaev123@yandex.ru"));
+        user.addEmail(new Email("batman@gmail.com"));
+        user.addEmail(new Email("robin@gmail.com"));
+        user.addEmail(new Email("alexey@gmail.com"));
+        user.addEmail(new Email("viktorRahov@rambler.net"));
+        assertThat(user.getEmail(2), is(new Email("vasyapupkin777@rambler.net")));
+    }
+
+    @Test
+    public void getEmail4() {
+        User user = new User();
+        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        user.addEmail(new Email("vasyapupkin777@rambler.net"));
+        user.addEmail(new Email("vasiliiPolegaev123@yandex.ru"));
+        user.addEmail(new Email("batman@gmail.com"));
+        user.addEmail(new Email("robin@gmail.com"));
+        user.addEmail(new Email("alexey@gmail.com"));
+        user.addEmail(new Email("viktorRahov@rambler.net"));
+        assertThat(user.getEmail(7), is(new Email("viktorRahov@rambler.net")));
+    }
+
+    @Test
+    public void getEmail5() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("egor" + (index+1) + "@yandex.ru"));
+        }
+        assertThat(user.getEmail(91234), is(new Email("egor91234@yandex.ru")));
     }
 
     @Test
