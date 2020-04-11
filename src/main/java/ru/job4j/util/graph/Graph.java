@@ -4,6 +4,7 @@ import ru.job4j.model.database.Data;
 
 import java.util.List;
 
+//TODO make Immutable
 /**
  * Data model "Graph".
  * This is math model.
