@@ -39,7 +39,44 @@ public class UserTest {
     }
 
     @Test
-    public void getId() {
+    public void getId1() {
+        User user = new User();
+        assertThat(user.getId(), is(1));
+    }
+
+    @Test
+    public void getId2() {
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        assertThat(user3.getId(), is(3));
+    }
+
+    @Test
+    public void getId3() {
+        User user = null;
+        for(int index = 0; index < 7; ++index) {
+            user = new User();
+        }
+        assertThat(user.getId(), is(7));
+    }
+
+    @Test
+    public void getId4() {
+        User user = null;
+        for(int index = 0; index < 7; ++index) {
+            user = new User();
+        }
+        assertThat(user.getId(), is(7));
+    }
+
+    @Test
+    public void getId5() {
+        User[] users = new User[100500];
+        for(int index = 0; index < 7; ++index) {
+            users[index] = new User();
+        }
+        assertThat(user[7777].getId(), is(7777));
     }
 
     @Test
