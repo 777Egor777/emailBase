@@ -76,15 +76,53 @@ public class UserTest {
         for(int index = 0; index < 7; ++index) {
             users[index] = new User();
         }
-        assertThat(user[7777].getId(), is(7777));
+        assertThat(users[7777].getId(), is(7777));
     }
 
     @Test
-    public void cleanEmailsList() {
+    public void cleanEmailsList1() {
+        User user = new User();
+        user.cleanEmailsList();
+        assertThat(user.getEmails(),
+                   is(new ArrayList<Email>()));
+    }
+
+    @Test
+    public void cleanEmailsList2() {
+        User user = new User();
+        user.addEmail(new Email("topJavaDev777777@gmail.com"));
+        user.cleanEmailsList();
+        assertThat(user.getEmails(),
+                is(new ArrayList<Email>()));
+    }
+
+    @Test
+    public void cleanEmailsList3() {
+        User user = new User();
+        user.addEmail(new Email("topJavaDev777777@gmail.com"));
+        user.addEmail(new Email("topJavaDev777777@yandex.ru"));
+        user.addEmail(new Email("topJavaDev777777@derevnya.net"));
+        user.addEmail(new Email("iamnot@qwerty.com"));
+        user.cleanEmailsList();
+        assertThat(user.getEmails(),
+                is(new ArrayList<Email>()));
+    }
+
+    @Test
+    public void cleanEmailsList4() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("JavaDeveloperNumber" + index +
+                                     "@yandex.ru"));
+        }
+        user.cleanEmailsList();
+        assertThat(user.getEmails(),
+                is(new ArrayList<Email>()));
     }
 
     @Test
     public void getNumberOfEmails() {
+
     }
 
     @Test
