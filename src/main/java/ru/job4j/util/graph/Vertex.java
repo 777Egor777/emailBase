@@ -100,7 +100,30 @@ public class Vertex {
         return null;
     }
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     * Method start dfs algorithm
+     * from this vertex.
+     * </p><p>
+     * We iterate all edges of
+     * this vertex and try to
+     * start dfs algorithm from
+     * them.
+     * </p><p>
+     * We can do it only if
+     * vertex has {@code false}
+     * {@code usedStatus} field.
+     * </p><p>
+     * We also set {@code source}
+     * for all vertex from this
+     * connected-component.
+     * </p>
+     * @param source - vertex that we
+     *                 set as source
+     *                 vertex to this
+     *                 connected-component
+     *                 in graph
+     */
     public void dfs(Vertex source) {
     }
 }
