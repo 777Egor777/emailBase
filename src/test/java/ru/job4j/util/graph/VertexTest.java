@@ -81,6 +81,49 @@ public class VertexTest {
 
 
     @Test
-    public void dfs() {
+    public void dfs1 () {
+        Vertex vertex1 = new Vertex(1);
+        Vertex vertex2 = new Vertex(2);
+        Vertex vertex3 = new Vertex(3);
+        Vertex vertex4 = new Vertex(4);
+        Vertex vertex5 = new Vertex(5);
+        Vertex vertex6 = new Vertex(6);
+        Vertex vertex7 = new Vertex(7);
+        Vertex vertex8 = new Vertex(8);
+
+        vertex1.addEdge(vertex2);
+        vertex1.addEdge(vertex3);
+        vertex3.addEdge(vertex5);
+        vertex5.addEdge(vertex4);
+        vertex5.addEdge(vertex6);
+        vertex5.addEdge(vertex7);
+        vertex4.addEdge(vertex8);
+
+        vertex1.dfs(vertex1);
+
+        assertThat(vertex8.getSource(), is(vertex1));
+    }
+
+    @Test
+    public void dfs2() {
+        Vertex vertex1 = new Vertex(1);
+        Vertex vertex2 = new Vertex(2);
+        Vertex vertex3 = new Vertex(3);
+        Vertex vertex4 = new Vertex(4);
+        Vertex vertex5 = new Vertex(5);
+        Vertex vertex6 = new Vertex(6);
+        Vertex vertex7 = new Vertex(7);
+        Vertex vertex8 = new Vertex(8);
+
+        vertex1.addEdge(vertex2);
+        vertex1.addEdge(vertex3);
+        vertex3.addEdge(vertex5);
+        vertex5.addEdge(vertex4);
+        vertex5.addEdge(vertex6);
+        vertex5.addEdge(vertex7);
+
+        vertex1.dfs(vertex1);
+
+        assertThat(vertex8.getSource(), is(vertex8));
     }
 }
