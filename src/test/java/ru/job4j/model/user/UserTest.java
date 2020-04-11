@@ -121,8 +121,40 @@ public class UserTest {
     }
 
     @Test
-    public void getNumberOfEmails() {
+    public void getNumberOfEmails1() {
+        User user = new User();
+        assertThat(user.getNumberOfEmails(),
+                is(0));
+    }
 
+    @Test
+    public void getNumberOfEmails2() {
+        User user = new User();
+        user.addEmail(new Email("topJavaDev777777@gmail.com"));
+        assertThat(user.getNumberOfEmails(),
+                is(1));
+    }
+
+    @Test
+    public void getNumberOfEmails3() {
+        User user = new User();
+        user.addEmail(new Email("topJavaDev777777@gmail.com"));
+        user.addEmail(new Email("topJavaDev777777@yandex.ru"));
+        user.addEmail(new Email("topJavaDev777777@derevnya.net"));
+        user.addEmail(new Email("iamnot@qwerty.com"));
+        assertThat(user.getNumberOfEmails(),
+                is(4));
+    }
+
+    @Test
+    public void getNumberOfEmails4() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("JavaDeveloperNumber" + index +
+                    "@yandex.ru"));
+        }
+        assertThat(user.getNumberOfEmails(),
+                is(100500));
     }
 
     @Test
