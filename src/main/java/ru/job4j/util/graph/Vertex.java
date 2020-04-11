@@ -36,6 +36,24 @@ public class Vertex {
      */
     private List<Vertex> edges;
 
+    /**
+     * <p>Set of all unique edges
+     * from {@code edges} list.
+     * We need to except
+     * duplicates in this list.
+     * Firstly we check if
+     * vertux contains in this list.
+     * If no - we add vertux
+     * to set and to list.</p>
+     * <p>
+     *     Must be initialise with
+     *     {@code HashSet} object.
+     *     So we will have linear
+     *     time and complexity of
+     *     program will save as
+     *     previous.
+     * </p>
+     */
     private Set<Vertex> uniqueEdges;
 
     /**
@@ -47,13 +65,24 @@ public class Vertex {
     private Vertex source;
 
     /**
-     * Constructor that
-     * initialise "id"
-     * field.
-     * Initialise
-     * {@code source} field
-     * by {@code this}
-     * object's reference
+     * <p>
+     *     Constructor that
+     *     initialise "id"
+     *     field.
+     * </p>
+     * <p>
+     *     Initialise
+     *     {@code source} field
+     *     by {@code this}
+     *     object's reference
+     * </p>
+     * <p>
+     *     Initialise
+     *     {@code uniqueEdges}
+     *     field by
+     *     {@code HashSet}
+     *     object
+     * </p>
      * @param id - initialise value
      *             for field {@code id}
      */
