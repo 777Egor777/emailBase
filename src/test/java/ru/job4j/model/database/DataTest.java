@@ -297,7 +297,224 @@ public class DataTest {
     }
 
     @Test
-    public void allId() {
+    public void allId1() {
+        Data data = new Data();
+        assertThat(data.allId(), is(new int[]{}));
+    }
+
+    @Test
+    public void allId2() {
+        Data data = new Data();
+        User user = new User();
+        data.addUser(user);
+        assertThat(data.allId(), is(new int[]{
+                user.getId()
+        }));
+    }
+
+    @Test
+    public void allId3() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId()
+        }));
+    }
+
+    @Test
+    public void allId4() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user3.getId()
+        }));
+    }
+
+    @Test
+    public void allId5() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        User user5 = new User();
+        User user6 = new User();
+        User user7 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user3.getId(),
+                user4.getId(),
+                user5.getId(),
+                user6.getId(),
+                user7.getId()
+        }));
+    }
+
+    @Test
+    public void allId6() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        User user5 = new User();
+        User user6 = new User();
+        User user7 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        data.deleteUser(user3.getId());
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user4.getId(),
+                user5.getId(),
+                user6.getId(),
+                user7.getId()
+        }));
+    }
+
+    @Test
+    public void allId7() {
+        Data data = new Data();
+        User[] users = new User[100500];
+        int[] ids = new int[100500];
+        for(int i = 0; i < 100500; ++i) {
+            users[i] = new User();
+            ids[i] = users[i].getId();
+            data.addUser(users[i]);
+        }
+        assertThat(data.allId(), is(ids));
+    }
+
+    @Test
+    public void allId8() {
+        Data data = new Data();
+        User[] users = new User[100500];
+        for(int i = 0; i < 100500; ++i) {
+            users[i] = new User();
+            data.addUser(users[i]);
+        }
+        data.deleteUser(users[77777].getId());
+        int[] ids = new int[100499];
+        int pos = 0;
+        for(int i = 0; i < 77777; ++i) {
+            ids[pos++] = users[i].getId();
+        }
+        for(int i = 77778; i < 100500; ++i) {
+            ids[pos++] = users[i].getId();
+        }
+        assertThat(data.allId(), is(ids));
+    }
+
+    @Test
+    public void allId9() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        user2.addEmail(new Email("yegeraskin13@gmail.com"));
+        data.addUser(user1);
+        data.addUser(user2);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId()
+        }));
+    }
+
+    @Test
+    public void allId10() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        user2.addEmail(new Email("yegeraskin13@gmail.com"));
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user3.getId()
+        }));
+    }
+
+    @Test
+    public void allId11() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        user2.addEmail(new Email("yegeraskin13@gmail.com"));
+        user3.addEmail(new Email("geraskin@phystech.edu"));
+        user4.addEmail(new Email("geraskin@phystech.edu"));
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user3.getId()
+        }));
+    }
+
+    @Test
+    public void allId12() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        User user5 = new User();
+        User user6 = new User();
+        User user7 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        user1.addEmail(new Email("petrov13@mail.ru"));
+        user1.addEmail(new Email("geraskin@phystech.edu"));
+        user2.addEmail(new Email("yegeraskin13@gmail.com"));
+        user3.addEmail(new Email("geraskin@phystech.edu"));
+        user4.addEmail(new Email("geraskin@phystech.edu"));
+        user7.addEmail(new Email("petrov13@mail.ru"));
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user5.getId(),
+                user6.getId()
+        }));
     }
 
     @Test
