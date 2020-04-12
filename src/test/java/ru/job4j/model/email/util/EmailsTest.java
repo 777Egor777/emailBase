@@ -1,6 +1,8 @@
 package ru.job4j.model.email.util;
 
 import org.junit.Test;
+import ru.job4j.model.email.Email;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
 
@@ -11,7 +13,390 @@ import static org.hamcrest.Matchers.is;
 public class EmailsTest {
 
     @Test
-    public void isCorrectEmail() {
+    public void isCorrectEmail1() {
+        String value = "yegeraskin13@gmail.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail2() {
+        String value = "geraskin@phystech.edu";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail3() {
+        String value = "vasek7@rambler.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail4() {
+        String value = "egor@yandex.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail5() {
+        String value = "kyrpatov777@mail.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail6() {
+        String value = "ivanovalex@rambler.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail7() {
+        String value = "petrovsasha@qqq.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail8() {
+        String value = "pp@yandex.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail9() {
+        String value = "p7@yandex.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail10() {
+        String value = "77@yandex.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail11() {
+        String value = "as.@yandex.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail12() {
+        String value = "Ass@gmail.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail13() {
+        String value = "sAs@gmail.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail14() {
+        String value = "ooO@mail.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail15() {
+        String value = "ZZZ@gmail.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail16() {
+        String value = "asdasdsZaqwqwwqw@mail.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail17() {
+        String value = "mmm9XXXasasaqweq@rambler.net";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail18() {
+        String value = "petrKuznetsov@rambler.net";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail19() {
+        String value = "petr.kuznetsov@rambler.net";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail20() {
+        String value = "yegeraskin13@gm.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail21() {
+        String value = "yegeraskin13@gm1.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail22() {
+        String value = "yegeraskin13@7gm.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail23() {
+        String value = "yegeraskin13@gmAil.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail24() {
+        String value = "yegeraskin13@Gmail.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail25() {
+        String value = "yegeraskin13@@mak.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail26() {
+        String value = "yegeraskin13@gm@il.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail27() {
+        String value = "yegeraskin13@gmaiL.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail28() {
+        String value = "yegeraskin13@hh.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail29() {
+        String value = "yegeraskin13@bk.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail30() {
+        String value = "yegeraskin13@gmail..com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail31() {
+        String value = "petrivanov@yandex..ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail32() {
+        String value = "vasyarevtov22@gmail.orgg";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail33() {
+        String value = "tveri4anin@gmail.c0m";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail34() {
+        String value = "1math@yandex.eduu";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail35() {
+        String value = "yegeraskin13@gmail.Com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail36() {
+        String value = "uiuiiu123@asdasd.cOm";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail37() {
+        String value = "iamaher33o@yandex.Ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail38() {
+        String value = "redhotch1lid0g@saratov.org";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail39() {
+        String value = "q1w2e3r4t5y6@mail777..org";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail40() {
+        String value = "papanya@qweqweqw.ru";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail41() {
+        String value = "egor5@service.com";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail42() {
+        String value = "geraskin@phystech.edu";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectEmail43() {
+        String value = "geraskin4@rambler.org";
+        Email email = new Email(value);
+        boolean result = Emails.isCorrectEmail(email);
+        boolean expected = true;
+        assertThat(result, is(expected));
     }
 
     @Test
