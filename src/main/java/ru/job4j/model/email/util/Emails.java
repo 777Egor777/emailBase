@@ -39,4 +39,8 @@ public class Emails {
         boolean result = false;
         return false;
     }
+
+    public static boolean isCorrectValue(String value) {
+        return false;
+    }
 }
