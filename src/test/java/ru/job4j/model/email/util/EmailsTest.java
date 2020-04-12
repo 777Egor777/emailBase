@@ -400,7 +400,19 @@ public class EmailsTest {
     }
 
     @Test
-    public void isCorrectValue() {
+    public void isCorrectValue1() {
+        String value = "yegeraskin13@gmail.com";
+        boolean result = Emails.isCorrectValue(value);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectValue2() {
+        String value = "yegeraskin13@gmaiL.com";
+        boolean result = Emails.isCorrectValue(value);
+        boolean expected = false;
+        assertThat(result, is(expected));
     }
 
     @Test
