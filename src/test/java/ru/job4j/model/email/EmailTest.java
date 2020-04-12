@@ -571,11 +571,92 @@ public class EmailTest {
     }
 
     @Test
-    public void getService() {
+    public void getService1() {
+        String value = "dfasdfasdfsafsdaf";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService2() {
+        String value = "asdasdasd.ru";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService3() {
         String value = "";
         Email email = new Email(value);
         String result = email.getService();
         String expected = "";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService4() {
+        String value = "egor@yandexru";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService5() {
+        String value = "egor@";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService6() {
+        String value = "yegeraskin13@gmail.com";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "gmail";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService7() {
+        String value = "geraskin@phystech.edu";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "phystech";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService8() {
+        String value = "egor@pa@ram.pam.pam.net";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "pa@ram";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService9() {
+        String value = "egor...asdaef.qweq@lkjlK@jkj@Lj@LKjL@KJ.asd.@Q@.asdf@..net.@aewrrwe.ru";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "lkjlK@jkj@Lj@LKjL@KJ";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getService10() {
+        String value = "eg.@or@yandex.ru";
+        Email email = new Email(value);
+        String result = email.getService();
+        String expected = "or@yandex";
         assertThat(result, is(expected));
     }
 
