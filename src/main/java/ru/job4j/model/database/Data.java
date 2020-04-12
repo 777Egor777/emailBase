@@ -66,6 +66,10 @@ public class Data {
     public Data(List<User> users) {
     }
 
+    public List<User> getUserList() {
+        return null;
+    }
+
     /**
      * Add new user
      * to this database
@@ -83,10 +87,10 @@ public class Data {
      * be a concise but informative representation that is easy for a
      * person to read.
      * Finally, string representation of this object will have
-     * such format: User#id_1: Email1,Email2,...,EmailN_1
-     *              User#id_2: Email1,Email2,...,EmailN_2
+     * such format: User#id_1->Email1,Email2,...,EmailN_1
+     *              User#id_2->Email1,Email2,...,EmailN_2
      *              ...
-     *              User#id_n: Email1,Email2,...,EmailN_n
+     *              User#id_n->Email1,Email2,...,EmailN_n
      *
      * @return a string representation of the object.
      */

@@ -1,7 +1,10 @@
 package ru.job4j.model.database;
 
 import org.junit.Test;
+import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
+
+import java.util.StringJoiner;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
@@ -113,11 +116,100 @@ public class DataTest {
     }
 
     @Test
-    public void testToString() {
+    public void testToString1() {
+        Data data = new Data();
+        String result = data.toString();
+        String expected = "EMPTY EMAILS BASE";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString2() {
+        Data data = new Data();
+        User user = new User();
+        data.addUser(user);
+        String result = data.toString();
+        String expected = user.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString3() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
+        joiner.add(user1.toString());
+        joiner.add(user2.toString());
+        String result = data.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString4() {
+        Data data = new Data();
+        User[] users = new User[100500];
+        for(int i = 0; i < 100500; ++i) {
+            users[i] = new User();
+        }
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
+        for(int i = 0; i < 100500; ++i) {
+            data.addUser(users[i]);
+            joiner.add(users[i].toString());
+        }
+        String result = data.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString5() {
+        Data data = new Data();
+        User[] users = new User[100500];
+        for(int i = 0; i < 100500; ++i) {
+            users[i] = new User();
+            for(int j = 0; j < 10; ++j) {
+                users[i].addEmail(new Email("user#" + users[i].getId() + "email#" + j));
+            }
+        }
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
+        for(int i = 0; i < 100500; ++i) {
+            data.addUser(users[i]);
+            joiner.add(users[i].toString());
+        }
+        String result = data.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString6() {
+        Data data = new Data();
+        User[] users = new User[100500];
+        for(int i = 0; i < 100500; ++i) {
+            users[i] = new User();
+            if (i % 3 == 0) {
+                for (int j = 0; j < 10; ++j) {
+                    users[i].addEmail(new Email("user#" + users[i].getId() + "email#" + j));
+                }
+            }
+        }
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
+        for(int i = 0; i < 100500; ++i) {
+            data.addUser(users[i]);
+            joiner.add(users[i].toString());
+        }
+        String result = data.toString();
+        String expected = joiner.toString();
+        assertThat(result, is(expected));
     }
 
     @Test
     public void clean() {
+
     }
 
     @Test
