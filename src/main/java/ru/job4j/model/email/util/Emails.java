@@ -98,6 +98,7 @@ public class Emails {
      *     only lower-case latin
      *     characters ('a'..'z')
      *     and digits ('0'..'9')
+     *     and length more than 2
      * </p>
      * @param name - {@code String} object that
      *               we check to be correct
@@ -115,7 +116,32 @@ public class Emails {
         return false;
     }
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     *     Method check if param
+     *     {@code service} can be
+     *     correct {@code service}
+     *     part of correct
+     *     {@code Email} object
+     * </p>
+     * <p>
+     *     It correct if contains
+     *     only lower-case latin
+     *     characters ('a'..'z'),
+     *     and length more than 2
+     * </p>
+     * @param service - {@code String} object that
+     *               we check to be correct
+     *               {@code service} part
+     *               of correct {@code Email}
+     *               object
+     * @return true - if param {@code service}
+     *                can be correct
+     *                {@code service} field
+     *                of correct
+     *                {@code Email}-object
+     *         false - otherwise
+     */
     public static boolean isCorrectService(String service) {
         return false;
     }
