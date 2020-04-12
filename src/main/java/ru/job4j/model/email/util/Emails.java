@@ -40,7 +40,47 @@ public class Emails {
         return false;
     }
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     *     Checks if param
+     *     {@code value}
+     *     could be correct
+     *     {@code value}
+     *     field of
+     *     {@code Email}
+     *     object.
+     * </p>
+     * <p>
+     *     Method don't work
+     *     with strings and
+     *     characters.
+     *     It just use the
+     *     result of work
+     *     of methods
+     *     {@code isCorrectName},
+     *     {@code isCorrectService},
+     *     {@code isCorrectDomain}.
+     *     If all af this results
+     *     are {@code true} than
+     *     result of work of this
+     *     method if {@code true}
+     *     too.
+     *     Otherwise result of
+     *     work of this method
+     *     if {@code false}
+     * </p>
+     * @param value - {@code String} object
+     *                that we check to be
+     *                field {@code value}
+     *                of correct
+     *                {@code Email} object
+     * @return true - if param {@code value}
+     *                can be value of
+     *                field {@code value}
+     *                of correct
+     *                {@code Email}
+     *                object
+     */
     public static boolean isCorrectValue(String value) {
         return false;
     }
