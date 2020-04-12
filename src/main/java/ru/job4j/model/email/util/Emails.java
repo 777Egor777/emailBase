@@ -49,4 +49,9 @@ public class Emails {
     public static boolean isCorrectName(String value) {
         return false;
     }
+
+    //TODO JavaDoc
+    public static boolean isCorrectService(String value) {
+        return false;
+    }
 }
