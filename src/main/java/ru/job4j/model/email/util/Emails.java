@@ -146,7 +146,31 @@ public class Emails {
         return false;
     }
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     *     Method check if param
+     *     {@code domain} can be
+     *     correct {@code domain}
+     *     part of correct
+     *     {@code Email} object
+     * </p>
+     * <p>
+     *     It correct if contains
+     *     in set {"ru", "com",
+     *     "net", "org", "edu"}
+     * </p>
+     * @param domain - {@code String} object that
+     *               we check to be correct
+     *               {@code domain} part
+     *               of correct {@code Email}
+     *               object
+     * @return true - if param {@code domain}
+     *                can be correct
+     *                {@code domain} field
+     *                of correct
+     *                {@code Email}-object
+     *         false - otherwise
+     */
     public static boolean isCorrectDomain(String domain) {
         return false;
     }
