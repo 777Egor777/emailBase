@@ -208,8 +208,82 @@ public class DataTest {
     }
 
     @Test
-    public void clean() {
+    public void clean1() {
+        Data data = new Data();
+        assertThat(data.getUserList().size(), is(0));
+    }
 
+    @Test
+    public void clean2() {
+        Data data = new Data();
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean3() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean4() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.addUser(new User());
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean5() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean6() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean7() {
+        Data data = new Data();
+        for(int i = 0; i < 100500; ++i) {
+            data.addUser(new User());
+        }
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean8() {
+        Data data = new Data();
+        for(int i = 0; i < 100500; ++i) {
+            User user = new User();
+            for (int j = 0; j < 100; ++j) {
+                user.addEmail(new Email("EMail#" + (i*100 + j)));
+            }
+        }
+        data.clean();
+        assertThat(data.getUserList().size(), is(0));
     }
 
     @Test
@@ -234,5 +308,9 @@ public class DataTest {
 
     @Test
     public void compressBase() {
+    }
+
+    @Test
+    public void getUserList() {
     }
 }

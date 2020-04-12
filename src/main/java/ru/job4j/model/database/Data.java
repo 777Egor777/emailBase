@@ -66,6 +66,12 @@ public class Data {
     public Data(List<User> users) {
     }
 
+    /**
+     * Getter for field
+     * {@code users}
+     * @return field {@code users}
+     *         value
+     */
     public List<User> getUserList() {
         return null;
     }
