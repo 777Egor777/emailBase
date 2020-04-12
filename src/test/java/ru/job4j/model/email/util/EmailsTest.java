@@ -23,8 +23,923 @@ public class EmailsTest {
     }
 
     @Test
-    public void isCorrectService() {
+    public void isCorrectService1() {
+        String service = "";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
     }
+
+    @Test
+    public void isCorrectService2() {
+        String service = "..";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService3() {
+        String service = "._";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService4() {
+        String service = "__";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService5() {
+        String service = "_.";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService6() {
+        String service = "@@";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService7() {
+        String service = "@.";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService8() {
+        String service = ".@";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService9() {
+        String service = "#!";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService10() {
+        String service = "!@";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService11() {
+        String service = "a@";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService12() {
+        String service = ".A";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService13() {
+        String service = "AA";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService14() {
+        String service = "aa";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService15() {
+        String service = "ad";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService16() {
+        String service = "gj";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService17() {
+        String service = "zi";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService18() {
+        String service = "ae";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService19() {
+        String service = "2e";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService20() {
+        String service = "bb";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void isCorrectService21() {
+        String service = "ag";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService22() {
+        String service = "zx";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService23() {
+        String service = "zxc.";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService24() {
+        String service = "zx.";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService25() {
+        String service = "@.@.";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService26() {
+        String service = "ru@";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService27() {
+        String service = "ru@.ass,s;kdfjsdil";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService28() {
+        String service = "asd_assdasdas";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService29() {
+        String service = "asd<asdads";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService30() {
+        String service = "ghj,qweqwew";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService31() {
+        String service = ",asd,asd,asd,as,das,d";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService32() {
+        String service = "";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService33() {
+        String service = "autodrive_";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService34() {
+        String service = "autodrive.";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService35() {
+        String service = "socksoc1ker";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService36() {
+        String service = "1xxx";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService37() {
+        String service = "asDD)qweqew";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService38() {
+        String service = "asFasas";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService39() {
+        String service = "aspas?";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService40() {
+        String service = "asd#asd";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService41() {
+        String service = "asd:asd";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService42() {
+        String service = "asd:";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService43() {
+        String service = "asd;";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService44() {
+        String service = "qwerty'";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService45() {
+        String service = "asdasasd3";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService46() {
+        String service = "1egor";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService47() {
+        String service = "yandex2";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService48() {
+        String service = "ya2ndex";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService49() {
+        String service = "sdasdasdadasdasd9asdasdasdasds";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService50() {
+        String service = "asdasdasdas5asdasdasdasdas";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService51() {
+        String service = "asdas9asd9asd9as9ad9as9d";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService52() {
+        String service = "1sh";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService53() {
+        String service = "jh2";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService54() {
+        String service = "kk2";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService55() {
+        String service = "kk4";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService56() {
+        String service = "jg45";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService57() {
+        String service = "as888";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService58() {
+        String service = "999ds";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService59() {
+        String service = "999";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService60() {
+        String service = "zxc1";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService61() {
+        String service = "zzz8";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService62() {
+        String service = "zx2n";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService63() {
+        String service = "b5n";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService64() {
+        String service = "aaa";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService65() {
+        String service = "xyz";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService66() {
+        String service = "mnq";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService67() {
+        String service = "abs";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService68() {
+        String service = "zob";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService69() {
+        String service = "ppp";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService70() {
+        String service = "mnq";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService71() {
+        String service = "yyy";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService72() {
+        String service = "yjs";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService73() {
+        String service = "poz";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService74() {
+        String service = "qfj";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService75() {
+        String service = "ljh";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService76() {
+        String service = "pjh";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void isCorrectService77() {
+        String service = "pqy";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService78() {
+        String service = "ppp";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService79() {
+        String service = "xxx";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService80() {
+        String service = "xxX";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService81() {
+        String service = "xXx";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService82() {
+        String service = "Xxx";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService83() {
+        String service = "asdasdsDxxxx";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService84() {
+        String service = "Qxcvdssdf";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService85() {
+        String service = "Yandex";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService86() {
+        String service = "yandeX";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService87() {
+        String service = "Gmail";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService88() {
+        String service = "gMail";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService89() {
+        String service = "Mail";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService91() {
+        String service = "asdjaskjdhaskjdha";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService92() {
+        String service = "yandex";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService93() {
+        String service = "gmail";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService94() {
+        String service = "rambler";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService95() {
+        String service = "yahoo";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService96() {
+        String service = "mail";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService97() {
+        String service = "hotbox";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService98() {
+        String service = "asdasgnbvdahsgdva";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService99() {
+        String service = "ertieorteirpto";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService100() {
+        String service = "popper";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService101() {
+        String service = "proper";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService102() {
+        String service = "vinyl";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService103() {
+        String service = "stas";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService104() {
+        String service = "viktor";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService105() {
+        String service = "qwerty";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService106() {
+        String service = "oiu";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService107() {
+        String service = "iop";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService108() {
+        String service = "ioip";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService109() {
+        String service = "java";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService110() {
+        String service = "jobs";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService111() {
+        String service = "hhh";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService112() {
+        String service = "zyxel";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService113() {
+        String service = "zxcvb";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService114() {
+        String service = "cvbnn";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService115() {
+        String service = "cannabis";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void isCorrectService116() {
+        String service = "mari";
+        boolean result = Emails.isCorrectService(service);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
 
     @Test
     public void isCorrectDomain1() {
