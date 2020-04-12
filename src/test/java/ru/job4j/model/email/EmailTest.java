@@ -191,7 +191,203 @@ public class EmailTest {
     }
 
     @Test
-    public void testEquals() {
+    public void testEquals1() {
+        String value = "yegeraskin13@gmail.com";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals2() {
+        String value = "";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals3() {
+        String value = "yegeraskin13@rambler.com";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals4() {
+        String value = "xxx@yyy.org";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals5() {
+        String value = "xxx@yyy.edu";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals6() {
+        String value = "qw@po.net";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals7() {
+        String value = "eg@mipt.ru";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals8() {
+        String value = "@serv.";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals9() {
+        String value = "@";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals10() {
+        String value = "fglsfgj ;lskj erioj reigj aeropi _";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals11() {
+        String value = "yegeraskin13@gmail.com";
+        Email email1 = new Email(value);
+        Email email2 = new Email("");
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals12() {
+        String value = "";
+        Email email1 = new Email(value);
+        Email email2 = new Email(value+".");
+        boolean result = email1.equals(email2);
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals13() {
+        String value = "yegeraskin13@rambler.com";
+        Email email1 = new Email(value+".");
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals14() {
+        String value = "xxx@yyy.org";
+        Email email1 = new Email(value);
+        Email email2 = new Email("xxx@yxy.org");
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals15() {
+        String value = "xxx@yyy.edu";
+        Email email1 = new Email("yxx@yyy.edu");
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals16() {
+        String value = "qw@po.net";
+        Email email1 = new Email(value);
+        Email email2 = new Email("qw@po.edu");
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals17() {
+        String value = "eg@mipt.ru";
+        Email email1 = new Email("eg@diht.ru");
+        Email email2 = new Email(value);
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals18() {
+        String value = "@serv.";
+        Email email1 = new Email(value);
+        Email email2 = new Email("@serv");
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals19() {
+        String value = "@";
+        Email email1 = new Email(value);
+        Email email2 = new Email(".");
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testEquals20() {
+        String value = "fglsfgj ;lskj erioj reigj aeropi _";
+        Email email1 = new Email(value);
+        Email email2 = new Email("fglsfgj ;lskj erioj reigj aropi _");
+        boolean result = email1.equals(email2);
+        boolean expected = false;
+        assertThat(result, is(expected));
     }
 
     @Test
