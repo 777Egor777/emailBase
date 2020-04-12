@@ -111,7 +111,7 @@ public class UsersTest {
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
         User user = new User();
-        user.addEmail(new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
         Users.printEmails(user);
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
         joiner.add("1. yegeraskin13@gmail.com");
@@ -130,8 +130,8 @@ public class UsersTest {
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
         User user = new User();
-        user.addEmail(new Email("yegeraskin13@gmail.com"));
-        user.addEmail(new Email("vasiliupypkin@gmail.com"));
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(user, new Email("vasiliupypkin@gmail.com"));
         Users.printEmails(user);
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
         joiner.add("1. yegeraskin13@gmail.com");
@@ -151,9 +151,9 @@ public class UsersTest {
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
         User user = new User();
-        user.addEmail(new Email("yegeraskin13@gmail.com"));
-        user.addEmail(new Email("vasiliupypkin@gmail.com"));
-        user.addEmail(new Email("vasiliupypkin@gmail.com"));
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(user, new Email("vasiliupypkin@gmail.com"));
+        Users.addEmail(user, new Email("vasiliupypkin@gmail.com"));
         Users.printEmails(user);
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
         joiner.add("1. yegeraskin13@gmail.com");
@@ -174,15 +174,15 @@ public class UsersTest {
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
         User user = new User();
-        user.addEmail(new Email("yegeraskin13@gmail.com"));
-        user.addEmail(new Email("vasiliupypkin@gmail.com"));
-        user.addEmail(new Email("vasiliupypkin@gmail.com"));
-        user.addEmail(new Email("vanyapetrov@angarsk.net"));
-        user.addEmail(new Email("egor@saratov.edu"));
-        user.addEmail(new Email("geraskin@phystech.edu"));
-        user.addEmail(new Email("nikepro@rambler.net"));
-        user.addEmail(new Email("xxx@xxx.org"));
-        user.addEmail(new Email("xxx@xxx.edu"));
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(user, new Email("vasiliupypkin@gmail.com"));
+        Users.addEmail(user, new Email("vasiliupypkin@gmail.com"));
+        Users.addEmail(user, new Email("vanyapetrov@angarsk.net"));
+        Users.addEmail(user, new Email("egor@saratov.edu"));
+        Users.addEmail(user, new Email("geraskin@phystech.edu"));
+        Users.addEmail(user, new Email("nikepro@rambler.net"));
+        Users.addEmail(user, new Email("xxx@xxx.org"));
+        Users.addEmail(user, new Email("xxx@xxx.edu"));
         Users.printEmails(user);
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
         joiner.add("1. yegeraskin13@gmail.com");
@@ -212,7 +212,7 @@ public class UsersTest {
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
         for(int index = 0; index < 100500; ++index) {
             Email email = new Email("email" + (index+1) + "@yandex.ru");
-            user.addEmail(email);
+            Users.addEmail(user, email);
             joiner.add((index+1) + ". email" + (index + 1) + "@yandex.ru");
         }
         Users.printEmails(user);
@@ -224,10 +224,66 @@ public class UsersTest {
     }
 
     @Test
-    public void deleteEmail() {
+    public void deleteEmail1() {
+        User user = new User();
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        Users.deleteEmail(user, 1);
+        assertThat(user.getNumberOfEmails(), is(0));
+    }
+
+    @Test
+    public void deleteEmail2() {
+        User user = new User();
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(user, new Email("vasyapupkin777@rambler.net"));
+        Users.addEmail(user, new Email("vasiliiPolegaev123@yandex.ru"));
+        Users.addEmail(user, new Email("batman@gmail.com"));
+        Users.addEmail(user, new Email("robin@gmail.com"));
+        Users.addEmail(user, new Email("alexey@gmail.com"));
+        Users.addEmail(user, new Email("viktorRahov@rambler.net"));
+        Users.deleteEmail(user,3);
+        assertThat(user.getEmail(3), is(new Email("batman@gmail.com")));
+    }
+
+    @Test
+    public void deleteEmail3() {
+        User user = new User();
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(user, new Email("vasyapupkin777@rambler.net"));
+        Users.addEmail(user, new Email("vasiliiPolegaev123@yandex.ru"));
+        Users.addEmail(user, new Email("batman@gmail.com"));
+        Users.addEmail(user, new Email("robin@gmail.com"));
+        Users.addEmail(user, new Email("alexey@gmail.com"));
+        Users.addEmail(user, new Email("viktorRahov@rambler.net"));
+        Users.deleteEmail(user,3);
+        assertThat(user.getNumberOfEmails(), is(6));
+    }
+
+    @Test
+    public void deleteEmail4() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            Users.addEmail(user, new Email("egor" + (index+1) + "@yandex.ru"));
+        }
+        Users.deleteEmail(user, 77777);
+        assertThat(user.getEmail(77777), is(new Email("egor77778@yandex.ru")));
+    }
+
+    @Test
+    public void deleteEmail5() {
+        User user = new User();
+        for(int index = 0; index < 100500; ++index) {
+            Users.addEmail(user, new Email("egor" + (index+1) + "@yandex.ru"));
+        }
+        Users.deleteEmail(user,77777);
+        assertThat(user.getNumberOfEmails(), is(100499));
     }
 
     @Test
     public void addEmail() {
+        User user = new User();
+        Users.addEmail(user, new Email("xxx@xxx.net"));
+        assertThat(user.getEmail(1),
+                is(new Email("xxx@xxx.net")));
     }
 }
