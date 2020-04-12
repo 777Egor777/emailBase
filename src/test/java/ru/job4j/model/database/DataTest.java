@@ -288,6 +288,12 @@ public class DataTest {
 
     @Test
     public void addEmail() {
+        Data data = new Data();
+        User user = new User();
+        Email email = new Email("");
+        data.addUser(user);
+        data.addEmail(user.getId(), email);
+        assertThat(data.getUser(user.getId()).getEmail(1), is(email));
     }
 
     @Test
