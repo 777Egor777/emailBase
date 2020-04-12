@@ -11,7 +11,93 @@ import static org.hamcrest.Matchers.is;
 public class EmailTest {
 
     @Test
-    public void testToString() {
+    public void testToString1() {
+        String value = "yegeraskin13@gmail.com";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString2() {
+        String value = "";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString3() {
+        String value = "yegeraskin13@rambler.com";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString4() {
+        String value = "xxx@yyy.org";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString5() {
+        String value = "xxx@yyy.edu";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString6() {
+        String value = "qw@po.net";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString7() {
+        String value = "eg@mipt.ru";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString8() {
+        String value = "@serv.";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString9() {
+        String value = "@";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void testToString10() {
+        String value = "fglsfgj ;lskj erioj reigj aeropi _";
+        Email email = new Email(value);
+        String result = email.toString();
+        String expected = "Email{" + value + "}";
+        assertThat(result, is(expected));
     }
 
     @Test
