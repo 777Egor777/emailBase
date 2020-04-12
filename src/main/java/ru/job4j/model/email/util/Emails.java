@@ -85,18 +85,43 @@ public class Emails {
         return false;
     }
 
-    //TODO JavaDoc
-    public static boolean isCorrectName(String value) {
+    /**
+     * <p>
+     *     Method check if param
+     *     {@code name} can be
+     *     correct {@code name}
+     *     part of correct
+     *     {@code Email} object
+     * </p>
+     * <p>
+     *     It correct if contains
+     *     only lower-case latin
+     *     characters ('a'..'z')
+     *     and digits ('0'..'9')
+     * </p>
+     * @param name - {@code String} object that
+     *               we check to be correct
+     *               {@code name} part
+     *               of correct {@code Email}
+     *               object
+     * @return true - if param {@code name}
+     *                can be correct
+     *                {@code name} field
+     *                of correct
+     *                {@code Email}-object
+     *         false - otherwise
+     */
+    public static boolean isCorrectName(String name) {
         return false;
     }
 
     //TODO JavaDoc
-    public static boolean isCorrectService(String value) {
+    public static boolean isCorrectService(String service) {
         return false;
     }
 
     //TODO JavaDoc
-    public static boolean isCorrectDomain(String value) {
+    public static boolean isCorrectDomain(String domain) {
         return false;
     }
 }
