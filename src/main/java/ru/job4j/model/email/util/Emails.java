@@ -40,7 +40,13 @@ public class Emails {
         return false;
     }
 
+    //TODO JavaDoc
     public static boolean isCorrectValue(String value) {
+        return false;
+    }
+
+    //TODO JavaDoc
+    public static boolean isCorrectName(String value) {
         return false;
     }
 }
