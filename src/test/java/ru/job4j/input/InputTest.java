@@ -1,6 +1,7 @@
 package ru.job4j.input;
 
 import org.junit.Test;
+import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
 
 import java.util.Arrays;
@@ -195,7 +196,78 @@ public class InputTest {
     }
 
     @Test
-    public void askInt() {
+    public void askInt1() {
+        String line = "5398";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(), is(5398));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void askInt2() {
+        String line = "5.398";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(), is(5398));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void askInt3() {
+        String line = "egor";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(), is(5398));
+    }
+
+    @Test
+    public void askInt4() {
+        String line = " 5398";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(), is(5398));
+    }
+
+    @Test
+    public void askInt5() {
+        String line = "5398 ";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(), is(5398));
     }
 
     @Test

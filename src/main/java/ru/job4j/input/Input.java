@@ -120,6 +120,10 @@ public interface Input {
      * If user enter not an
      * integer number, it will
      * throw exception
+     *
+     * Spaces at begin and
+     * spaces at end of line are
+     * trims.
      * @throws InvalidIntegerException -
      *         if received line is not represent
      *         correct integer number
