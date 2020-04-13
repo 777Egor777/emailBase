@@ -2,6 +2,7 @@ package ru.job4j.model.database.util;
 
 import org.junit.Test;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
 import static org.junit.Assert.*;
@@ -120,7 +121,82 @@ public class DataHelperTest {
     }
 
     @Test
-    public void clean() {
+    public void clean1() {
+        Data data = new Data();
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean2() {
+        Data data = new Data();
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean3() {
+        Data data = new Data();
+        data.addUser(new User());
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean4() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.addUser(new User());
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean5() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean6() {
+        Data data = new Data();
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        data.addUser(new User());
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean7() {
+        Data data = new Data();
+        for(int i = 0; i < 100500; ++i) {
+            data.addUser(new User());
+        }
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
+    }
+
+    @Test
+    public void clean8() {
+        Data data = new Data();
+        for(int i = 0; i < 100500; ++i) {
+            User user = new User();
+            for (int j = 0; j < 100; ++j) {
+                user.addEmail(new Email("EMail#" + (i*100 + j)));
+            }
+        }
+        DataHelper.clean(data);
+        assertThat(data.getUserList().size(), is(0));
     }
 
     @Test
