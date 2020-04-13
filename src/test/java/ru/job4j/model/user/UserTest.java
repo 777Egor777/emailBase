@@ -2,6 +2,7 @@ package ru.job4j.model.user;
 
 import org.junit.Test;
 import ru.job4j.model.email.Email;
+import ru.job4j.model.user.util.Users;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -310,5 +311,25 @@ public class UserTest {
         user.addEmail(new Email("xxx@xxx.net"));
         assertThat(user.getEmail(1),
                    is(new Email("xxx@xxx.net")));
+    }
+
+    @Test
+    public void containsEmail1() {
+        User user = new User();
+        Email email1 = new Email("yegeraskin13@gmail.com");
+        Email email2 = new Email("geraskin@phystech.edu");
+        Users.addEmail(user, email1);
+        Users.addEmail(user, email2);
+        assertThat(user.containsEmail(new Email("geraskin@phystech.edu")), is(true));
+    }
+
+    @Test
+    public void containsEmail2() {
+        User user = new User();
+        Email email1 = new Email("yegeraskin13@gmail.com");
+        Email email2 = new Email("geraskin@phystech.edu");
+        Users.addEmail(user, email1);
+        Users.addEmail(user, email2);
+        assertThat(user.containsEmail(new Email("geraskin@phytech.edu")), is(false));
     }
 }
