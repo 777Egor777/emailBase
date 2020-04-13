@@ -160,4 +160,8 @@ public class User {
      */
     public void addEmail(Email email) {
     }
+
+    public boolean containsEmail(Email email) {
+        return false;
+    }
 }
