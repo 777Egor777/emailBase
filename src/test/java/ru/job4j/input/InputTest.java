@@ -1,8 +1,10 @@
 package ru.job4j.input;
 
 import org.junit.Test;
+import ru.job4j.input.exceptions.InvalidEmailException;
 import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
+import ru.job4j.model.email.Email;
 
 import java.util.Arrays;
 
@@ -421,15 +423,232 @@ public class InputTest {
     }
 
     @Test
-    public void testAskInt2() {
+    public void testAskIntMessageMax1() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number from 1 to 5: ",5), is(5));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void testAskIntMessageMax2() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number from 1 to 4: ",4), is(5));
     }
 
     @Test
-    public void testAskInt3() {
+    public void testAskIntMessageAcceptableNumbers1() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter ID: ",new int[]{
+                1, 7, 5, 100, -1
+        }), is(5));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void testAskIntMessageAcceptableNumbers2() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter ID: ",new int[]{
+                1, 7, 100, -1
+        }), is(5));
     }
 
     @Test
-    public void askEmail() {
+    public void askEmail1() {
+        String line = "yegeraskin13@gmail.com";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test
+    public void askEmail2() {
+        String line = "geraskin@phystech.edu";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test
+    public void askEmail3() {
+        String line = "petrivanov777@mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail4() {
+        String line = "_petrivanov777@mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail5() {
+        String line = "petr_ivanov777@mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail6() {
+        String line = "petr ivanov777@mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail7() {
+        String line = "petrivanov_777@mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail8() {
+        String line = "petr_ivanov777@ mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail9() {
+        String line = "pe@mail.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail10() {
+        String line = "petr@ma.il.ru";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void askEmail11() {
+        String line = "petr@mail.fr";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail(), is(new Email(line)));
     }
 
     @Test
