@@ -346,8 +346,78 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMax() {
+    public void testAskIntMax1() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(5), is(5));
+    }
 
+    @Test
+    public void testAskIntMax2() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(6), is(5));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void testAskIntMax3() {
+        String line = "5";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(4), is(5));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void testAskIntMax4() {
+        String line = "0";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(4), is(0));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void testAskIntMax5() {
+        String line = "-1";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt(4), is(-1));
     }
 
     @Test
