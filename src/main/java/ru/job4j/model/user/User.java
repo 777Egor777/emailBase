@@ -161,6 +161,24 @@ public class User {
     public void addEmail(Email email) {
     }
 
+    /**
+     * <p>
+     *     Method checks if
+     *     {@code param}
+     *     {@code email}
+     *     already contains
+     *     in user's email-
+     *     list.
+     * </p>
+     * @param email - {@code Email} object
+     *                that we check to be
+     *                part of {@code emails}
+     *                field of this object
+     * @return {@code true} - if {@code email} contains
+     *                        in {@code emails} field of
+     *                        {@code this} object
+     *         {@code false} - otherwise
+     */
     public boolean containsEmail(Email email) {
         return false;
     }
