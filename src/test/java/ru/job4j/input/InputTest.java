@@ -652,7 +652,33 @@ public class InputTest {
     }
 
     @Test
-    public void testAskEmail() {
+    public void testAskEmailMessage1() {
+        String line = "yegeraskin13@gmail.com";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail("Enter email: "), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void testAskEmailMessage2() {
+        String line = " yegeraskin13@gmail.com";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askEmail("Enter email: "), is(new Email(line)));
     }
 
     @Test
