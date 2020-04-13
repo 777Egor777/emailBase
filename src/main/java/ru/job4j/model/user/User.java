@@ -21,6 +21,8 @@ public class User {
      */
     private List<Email> emails;
 
+    //TODO Add Set<Email> emailsSet field
+
     /**
      * Unique identifier of this user.
      * We initialise it on constructing

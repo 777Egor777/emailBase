@@ -5,6 +5,8 @@ import ru.job4j.input.exceptions.InvalidEmailException;
 import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
 import ru.job4j.model.email.Email;
+import ru.job4j.model.user.User;
+import ru.job4j.model.user.util.Users;
 
 import java.util.Arrays;
 
@@ -682,7 +684,37 @@ public class InputTest {
     }
 
     @Test
-    public void testAskEmail1() {
+    public void testAskEmailMessageUser1() {
+        String line = " yegeraskin13@gmail.com";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User user = new User();
+        Users.addEmail(user, new Email("geraskin@phystech.edu"));
+        assertThat(input.askEmail("Enter email: ", user), is(new Email(line)));
+    }
+
+    @Test(expected = InvalidEmailException.class)
+    public void testAskEmailMessageUser2() {
+        String line = " yegeraskin13@gmail.com";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User user = new User();
+        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
+        assertThat(input.askEmail("Enter email: ", user), is(new Email(line)));
     }
 
     @Test
