@@ -213,6 +213,13 @@ public class DataHelperTest {
 
     @Test
     public void deleteUser() {
+        Data data = new Data();
+        User user = new User();
+        DataHelper.addUser(data, user);
+        int[] ids = data.allId();
+        User existingUser = data.getUser(ids[0]);
+        DataHelper.deleteUser(data, existingUser.getId());
+        assertThat(data.getUser(ids[0]), is(Data.EMPTY_USER));
     }
 
     @Test
