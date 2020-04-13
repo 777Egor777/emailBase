@@ -104,7 +104,18 @@ public class InputTest {
     }
 
     @Test
-    public void testAskLine() {
+    public void testAskLineMessage() {
+        String line = "ssdfasdfsaf";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askLine("Enter line: "), is(line));
     }
 
     @Test
