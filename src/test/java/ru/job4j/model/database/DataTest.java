@@ -289,6 +289,7 @@ public class DataTest {
             for (int j = 0; j < 100; ++j) {
                 user.addEmail(new Email("EMail#" + (i*100 + j)));
             }
+            data.addUser(user);
         }
         data.clean();
         assertThat(data.getUserList().size(), is(0));

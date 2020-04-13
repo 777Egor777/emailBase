@@ -4,6 +4,7 @@ import org.junit.Test;
 import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
+import ru.job4j.model.user.util.Users;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
@@ -136,7 +137,7 @@ public class DataHelperTest {
     @Test
     public void clean3() {
         Data data = new Data();
-        data.addUser(new User());
+        DataHelper.addUser(data, new User());
         DataHelper.clean(data);
         assertThat(data.getUserList().size(), is(0));
     }
@@ -144,8 +145,8 @@ public class DataHelperTest {
     @Test
     public void clean4() {
         Data data = new Data();
-        data.addUser(new User());
-        data.addUser(new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
         DataHelper.clean(data);
         assertThat(data.getUserList().size(), is(0));
     }
@@ -153,9 +154,9 @@ public class DataHelperTest {
     @Test
     public void clean5() {
         Data data = new Data();
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
         DataHelper.clean(data);
         assertThat(data.getUserList().size(), is(0));
     }
@@ -163,15 +164,15 @@ public class DataHelperTest {
     @Test
     public void clean6() {
         Data data = new Data();
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
-        data.addUser(new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
+        DataHelper.addUser(data, new User());
         DataHelper.clean(data);
         assertThat(data.getUserList().size(), is(0));
     }
@@ -180,7 +181,7 @@ public class DataHelperTest {
     public void clean7() {
         Data data = new Data();
         for(int i = 0; i < 100500; ++i) {
-            data.addUser(new User());
+            DataHelper.addUser(data, new User());
         }
         DataHelper.clean(data);
         assertThat(data.getUserList().size(), is(0));
@@ -192,8 +193,9 @@ public class DataHelperTest {
         for(int i = 0; i < 100500; ++i) {
             User user = new User();
             for (int j = 0; j < 100; ++j) {
-                user.addEmail(new Email("EMail#" + (i*100 + j)));
+                Users.addEmail(user, new Email("EMail#" + (i*100 + j)));
             }
+            DataHelper.addUser(data, user);
         }
         DataHelper.clean(data);
         assertThat(data.getUserList().size(), is(0));
@@ -201,6 +203,12 @@ public class DataHelperTest {
 
     @Test
     public void addEmail() {
+        Data data = new Data();
+        User user = new User();
+        Email email = new Email("");
+        DataHelper.addUser(data, user);
+        DataHelper.addEmail(data, user.getId(), email);
+        assertThat(data.getUser(user.getId()).getEmail(1), is(email));
     }
 
     @Test
