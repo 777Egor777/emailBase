@@ -584,7 +584,153 @@ public class DataTest {
     }
 
     @Test
-    public void compressBase() {
+    public void compressBase1() {
+        Data data = new Data();
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{}));
+    }
+
+    @Test
+    public void compressBase2() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId()
+        }));
+    }
+
+    @Test
+    public void compressBase3() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        User user5 = new User();
+        User user6 = new User();
+        User user7 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user3.getId(),
+                user4.getId(),
+                user5.getId(),
+                user6.getId(),
+                user7.getId(),
+        }));
+    }
+
+    @Test
+    public void compressBase4() {
+        Data data = new Data();
+        User user1 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        User user5 = new User();
+        user5.addEmail(new Email("yegeraskin13@gmail.com"));
+        User user6 = new User();
+        User user7 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user3.getId(),
+                user4.getId(),
+                user6.getId(),
+                user7.getId(),
+        }));
+    }
+
+    @Test
+    public void compressBase5() {
+        Data data = new Data();
+        User user1 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        user1.addEmail(new Email("oppo@gmail.com"));
+        user1.addEmail(new Email("popovalex@mail.ru"));
+        User user2 = new User();
+        User user3 = new User();
+        User user4 = new User();
+        User user5 = new User();
+        user5.addEmail(new Email("yegeraskin13@gmail.com"));
+        user5.addEmail(new Email("petrarsentev@yandex.ru"));
+        user5.addEmail(new Email("xxx@yyy.com"));
+        User user6 = new User();
+        User user7 = new User();
+        user7.addEmail(new Email("yegeraskin13@gmail.com"));
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user3.getId(),
+                user4.getId(),
+                user6.getId(),
+        }));
+    }
+
+    @Test
+    public void compressBase6() {
+        Data data = new Data();
+        User user1 = new User();
+        user1.addEmail(new Email("yegeraskin13@gmail.com"));
+        user1.addEmail(new Email("oppo@gmail.com"));
+        user1.addEmail(new Email("popovalex@mail.ru"));
+        User user2 = new User();
+        user2.addEmail(new Email("geraskin@phystech.edu"));
+        user2.addEmail(new Email("kuzma@gop.org"));
+        User user3 = new User();
+        User user4 = new User();
+        user4.addEmail(new Email("geraskin@phystech.edu"));
+        User user5 = new User();
+        user5.addEmail(new Email("yegeraskin13@gmail.com"));
+        user5.addEmail(new Email("petrarsentev@yandex.ru"));
+        user5.addEmail(new Email("xxx@yyy.com"));
+        User user6 = new User();
+        User user7 = new User();
+        user7.addEmail(new Email("yegeraskin13@gmail.com"));
+        data.addUser(user1);
+        data.addUser(user2);
+        data.addUser(user3);
+        data.addUser(user4);
+        data.addUser(user5);
+        data.addUser(user6);
+        data.addUser(user7);
+        data.compressBase();
+        assertThat(data.allId(), is(new int[]{
+                user1.getId(),
+                user2.getId(),
+                user3.getId(),
+                user6.getId(),
+        }));
     }
 
     @Test
