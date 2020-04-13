@@ -1,6 +1,7 @@
 package ru.job4j.input;
 
 import org.junit.Test;
+import ru.job4j.input.exceptions.InvalidLineException;
 
 import java.util.Arrays;
 
@@ -120,6 +121,77 @@ public class InputTest {
 
     @Test
     public void testAskLine1() {
+        String line = "ssdfasdfsaf";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askLine("Enter line: ",
+                                 new String[]{
+                                         line
+                                 }), is(line));
+    }
+
+    @Test(expected = InvalidLineException.class)
+    public void testAskLine2() {
+        String line = "ssdfasdfsaf";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askLine("Enter line: ",
+                new String[]{}), is(line));
+    }
+
+    @Test(expected = InvalidLineException.class)
+    public void testAskLine3() {
+        String line = "ssdfasdfsaf";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askLine("Enter line: ",
+                new String[]{
+                        "Alex",
+                        "Mike",
+                        "Paul"
+                }), is(line));
+    }
+
+    @Test
+    public void testAskLine4() {
+        String line = "ssdfasdfsaf";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askLine("Enter line: ",
+                new String[]{
+                        "Alex",
+                        "Mike",
+                        line,
+                        "Paul"
+                }), is(line));
     }
 
     @Test
