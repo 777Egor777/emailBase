@@ -4,6 +4,8 @@ import org.junit.Test;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringJoiner;
 
 import static org.junit.Assert.*;
@@ -734,6 +736,27 @@ public class DataTest {
     }
 
     @Test
-    public void getUserList() {
+    public void getUserList1() {
+        Data data = new Data();
+        assertThat(
+                data.getUserList(),
+                is(new ArrayList<User>())
+        );
+    }
+
+    @Test
+    public void getUserList2() {
+        Data data = new Data();
+        User user1 = new User();
+        User user2 = new User();
+        data.addUser(user1);
+        data.addUser(user2);
+        assertThat(
+                data.getUserList(),
+                is(new ArrayList<User>(Arrays.asList(
+                        user1,
+                        user2
+                )))
+        );
     }
 }
