@@ -22,7 +22,25 @@ public class User {
      */
     private List<Email> emails;
 
-    private Set<Email> emailsSet;
+    /**
+     * <p>
+     *     Set of all {@code Email} objects
+     *     from {@code emails}-list.
+     * </p>
+     * <p>
+     *     We need it to except duplicates
+     *     in {@code emails}-list.
+     * </p>
+     * <p>
+     *     Must be initialize with
+     *     {@code HashSet}-object.
+     *     So it will works for
+     *     O(1) time and will not
+     *     change complexity of
+     *     algorithms in program.
+     * </p>
+     */
+    private Set<Email> emailsSet; //TODO initialize by HashSet
 
     /**
      * Unique identifier of this user.
