@@ -114,11 +114,12 @@ public class Data {
     }
 
     /**
-     * Method add new {@code Email}
-     * object - new email to user
-     * with id {@code id},
-     * that contains in
-     * {@code users} list
+     * <p>
+     *     Method add new {@code Email}
+     *     object - new email to user
+     *     with id {@code id},
+     *     that contains in
+     *     {@code users} list
      * @param id - ID of user that we
      *             modify - user new
      *             email to his

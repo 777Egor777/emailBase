@@ -573,6 +573,14 @@ public class DataTest {
 
     @Test
     public void deleteEmail() {
+        Data data = new Data();
+        User user = new User();
+        Email email = new Email("auto@mail.ru");
+        user.addEmail(email);
+        int expected = data.getUser(user.getId()).getNumberOfEmails() - 1;
+        data.deleteEmail(user.getId(), 1);
+        int result = data.getUser(user.getId()).getNumberOfEmails();
+        assertThat(result, is(expected));
     }
 
     @Test
