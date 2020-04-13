@@ -529,7 +529,46 @@ public class DataTest {
     }
 
     @Test
-    public void getUser() {
+    public void getUser1() {
+        Data data = new Data();
+        int id = -1;
+        User result = data.getUser(id);
+        User expected = Data.EMPTY_USER;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getUser2() {
+        Data data = new Data();
+        int id = 100500000;
+        User result = data.getUser(id);
+        User expected = Data.EMPTY_USER;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getUser3() {
+        Data data = new Data();
+        User user = new User();
+        data.addUser(user);
+        int id = user.getId();
+        User result = data.getUser(id);
+        User expected = user;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void getUser4() {
+        Data data = new Data();
+        User[] users = new User[100500];
+        for(int i = 0; i < 100500; ++i) {
+            users[i] = new User();
+            data.addUser(users[i]);
+        }
+        int[] ids = data.allId();
+        User result = data.getUser(ids[8888]);
+        User expected = users[8888];
+        assertThat(result, is(expected));
     }
 
     @Test
