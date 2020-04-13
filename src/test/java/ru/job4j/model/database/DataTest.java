@@ -38,6 +38,7 @@ public class DataTest {
         user = new User();
         user = new User();
         Data data = new Data();
+        data.addUser(user);
         assertThat(data.getUser(user.getId()), is(user));
     }
 
@@ -48,6 +49,7 @@ public class DataTest {
         user = new User();
         user = new User();
         Data data = new Data();
+        data.addUser(user);
         assertThat(data.getUser(user.getId()), is(user));
     }
 
@@ -62,6 +64,7 @@ public class DataTest {
         user = new User();
         user = new User();
         Data data = new Data();
+        data.addUser(user);
         assertThat(data.getUser(user.getId()), is(user));
     }
 
@@ -94,6 +97,7 @@ public class DataTest {
         user = new User();
         user = new User();
         Data data = new Data();
+        data.addUser(user);
         assertThat(data.getUser(user.getId()), is(user));
     }
 
@@ -104,16 +108,18 @@ public class DataTest {
             user = new User();
         }
         Data data = new Data();
+        data.addUser(user);
         assertThat(data.getUser(user.getId()), is(user));
     }
 
     @Test
     public void addUser8() {
         User[] users = new User[100500];
+        Data data = new Data();
         for(int i=0; i < 100500; ++i) {
             users[i] = new User();
+            data.addUser(users[i]);
         }
-        Data data = new Data();
         assertThat(data.getUser(users[77777].getId()), is(users[77777]));
     }
 
