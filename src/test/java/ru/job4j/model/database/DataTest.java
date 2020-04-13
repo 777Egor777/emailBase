@@ -586,6 +586,7 @@ public class DataTest {
         User user = new User();
         Email email = new Email("auto@mail.ru");
         user.addEmail(email);
+        data.addUser(user);
         int expected = data.getUser(user.getId()).getNumberOfEmails() - 1;
         data.deleteEmail(user.getId(), 1);
         int result = data.getUser(user.getId()).getNumberOfEmails();

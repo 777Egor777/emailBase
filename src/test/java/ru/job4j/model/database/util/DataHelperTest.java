@@ -224,6 +224,15 @@ public class DataHelperTest {
 
     @Test
     public void deleteEmail() {
+        Data data = new Data();
+        User user = new User();
+        Email email = new Email("auto@mail.ru");
+        Users.addEmail(user, email);
+        DataHelper.addUser(data, user);
+        int expected = data.getUser(user.getId()).getNumberOfEmails() - 1;
+        DataHelper.deleteEmail(data, user.getId(), 1);
+        int result = data.getUser(user.getId()).getNumberOfEmails();
+        assertThat(result, is(expected));
     }
 
     @Test
