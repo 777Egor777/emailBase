@@ -519,6 +519,13 @@ public class DataTest {
 
     @Test
     public void deleteUser() {
+        Data data = new Data();
+        User user = new User();
+        data.addUser(user);
+        int[] ids = data.allId();
+        User existingUser = data.getUser(ids[0]);
+        data.deleteUser(existingUser.getId());
+        assertThat(data.getUser(ids[0]), is(Data.EMPTY_USER));
     }
 
     @Test
