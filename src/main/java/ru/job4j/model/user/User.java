@@ -2,6 +2,7 @@ package ru.job4j.model.user;
 
 import ru.job4j.model.email.Email;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Data model for the
@@ -21,7 +22,7 @@ public class User {
      */
     private List<Email> emails;
 
-    //TODO Add Set<Email> emailsSet field
+    private Set<Email> emailsSet;
 
     /**
      * Unique identifier of this user.
