@@ -271,11 +271,83 @@ public class InputTest {
     }
 
     @Test
-    public void testAskInt() {
+    public void testAskIntMessage1() {
+        String line = "5398";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number: "), is(5398));
+    }
+
+    @Test(expected = InvalidIntegerException.class)
+    public void testAskIntMessage2() {
+        String line = "5 398";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number: "), is(5398));
     }
 
     @Test
-    public void testAskInt1() {
+    public void testAskIntMessage3() {
+        String line = "0";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number: "), is(0));
+    }
+
+    @Test
+    public void testAskIntMessage4() {
+        String line = "-1";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number: "), is(-1));
+    }
+
+    @Test
+    public void testAskIntMessage5() {
+        String line = "-5398";
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    new String(line)
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        assertThat(input.askInt("Enter number: "), is(-5398));
+    }
+
+    @Test
+    public void testAskIntMax() {
+
     }
 
     @Test
