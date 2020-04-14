@@ -17,8 +17,8 @@ import java.util.List;
  * common email in their
  * lists.
  *
- * @author Geraskin Yegor(yegeraskin13@gmail.com)
  * @version 1.0
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Data {
     /**
@@ -35,6 +35,11 @@ public class Data {
      * List of {@code User}
      * objects - users
      * in this database
+     * <p>
+     *     Size of this list
+     *     {@code <= 100} in version
+     *     1.0 of class
+     * </p>
      */
     private List<User> users;
 
@@ -61,7 +66,13 @@ public class Data {
      * @param users - {@code List} of {@code User}
      *                objects that we use to
      *                initialise field
-     *                {@code users}
+     *                {@code users}.
+     *                <p>
+     *                      {@code Size} of this
+     *                      list {@code <= 100}
+     *                      (in version 1.0
+     *                       of class)
+     *                </p>
      */
     public Data(List<User> users) {
     }
@@ -188,6 +199,11 @@ public class Data {
      * @param emailIndex - index of email
      *                     in user's email-
      *                     list
+     *                     <p>
+     *                          {@code index <= 100}
+     *                          (in version 1.0)
+     *                          of class
+     *                     </p>
      */
     public void deleteEmail(int id, int emailIndex) {
     }

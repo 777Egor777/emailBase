@@ -13,6 +13,7 @@ import ru.job4j.model.user.User;
  * wrappers for methods of class
  * {@code User}, that modifying
  * object.
+ * @version 1.0
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Users {
@@ -62,7 +63,11 @@ public class Users {
      *               from
      * @param index - index of email,
      *                that we should delete,
-     *                in user's email list
+     *                in user's email list.
+     *                <p>
+     *                      {@code index <= 100} in
+     *                      version 1.0 of class
+     *                </p>
      */
     public static void deleteEmail(User user, int index) {
     }

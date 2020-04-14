@@ -19,6 +19,11 @@ public class User {
      * Email's list of {@code this} {@code User}
      * We will try not to allow duplicates
      * in this list.
+     * <p>
+     *     Max size of this list
+     *     is 100.
+     *     (In version 1.0 of class)
+     * </p>
      */
     private List<Email> emails;
 
@@ -39,6 +44,11 @@ public class User {
      *     change complexity of
      *     algorithms in program.
      * </p>
+     * <p>
+     *     Max size of this set
+     *     is 100.
+     *     (In version 1.0 of class)
+     * </p>
      */
     private Set<Email> emailsSet; //TODO initialize by HashSet
 
@@ -46,7 +56,7 @@ public class User {
      * Unique identifier of this user.
      * We initialise it on constructing
      * object and use while interact
-     * with customer of the program
+     * with customer of the program.
      */
     private int id;
 
@@ -61,13 +71,17 @@ public class User {
     /**
      * Constructor of class
      * that receive list
-     * of email as param/
+     * of email as param.
      * Need in future version
      * of class, when we will
      * make it Immutable
      * @param emails - initialise value of
      *                 field {@code emails}
-     *                 of class
+     *                 of class.
+     *                 <p>
+     *                      Mas size if 100.
+     *                      (In version 1.0 of class)
+     *                 </p>
      */
     public User(List<Email> emails) {
     }
@@ -79,6 +93,11 @@ public class User {
      * user
      * @return email-s list
      *         of this user
+     *         <p>
+     *             Max size of list
+     *             is 100. (In version
+     *             1.0 of class)
+     *         </p>
      */
     public List<Email> getEmails() {
         return null;
@@ -120,7 +139,11 @@ public class User {
      * @param index - position of email
      *                that we should
      *                return in user's
-     *                email-list
+     *                email-list.
+     *                <p>
+     *                      {@code index <= 100}
+     *                      in version 1.0 of class
+     *                </p>
      * @return {@code Email} object that
      *         located on position
      *         {@code index} in user's
@@ -140,6 +163,10 @@ public class User {
      *                , that we should
      *                delete, in user's
      *                email-list
+     *                <p>
+     *                      {@code index <= 100}
+     *                      in version 1.0 of class
+     *                </p>
      */
     public void deleteEmail(int index) {
     }

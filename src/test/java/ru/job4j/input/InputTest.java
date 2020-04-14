@@ -4,6 +4,7 @@ import org.junit.Test;
 import ru.job4j.input.exceptions.InvalidEmailException;
 import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
+import ru.job4j.input.exceptions.InvalidUserException;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 import ru.job4j.model.user.util.Users;
@@ -718,7 +719,245 @@ public class InputTest {
     }
 
     @Test
-    public void askUser() {
+    public void askUser1() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+        assertThat(result, is(expected));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser2() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "0",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser3() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "-1",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser4() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "-3",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser5() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "-90",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser6() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "101",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser7() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1000",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser8() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1000000",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser9() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "ye_geraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser10() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "ye geraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser11() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "ye@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser12() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "yegeraskin@gmail13.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void askUser13() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "yegeraskin13@gmail.linux"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+    }
+
+    @Test
+    public void askUser14() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "2",
+                    "yegeraskin13@gmail.com",
+                    "geraskin@phystech.edu"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser();
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+        Users.addEmail(expected, new Email("geraskin@phystech.edu"));
+        assertThat(result, is(expected));
     }
 
     @Test

@@ -11,6 +11,7 @@ import ru.job4j.model.user.User;
  * With this {@code class} we
  * will make all {@code Data} objects
  * in the program {@code Immutable} .
+ * @version 1.0
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class DataHelper {
@@ -99,7 +100,12 @@ public class DataHelper {
      *                      in email-list of user with
      *                      id {@code userId}.
      *                      We will delete this
-     *                      {@code Email} object
+     *                      {@code Email} object.
+     *                      <p>
+     *                          {@code Size} of this list
+     *                          {@code <= 100} (in version
+     *                           1.0 of this class)
+     *                      </p>
      */
     public static void deleteEmail(Data data, int userId, int emailIndex) {
     }
