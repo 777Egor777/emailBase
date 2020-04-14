@@ -961,7 +961,57 @@ public class InputTest {
     }
 
     @Test
-    public void testAskUser() {
+    public void testAskUserMessage1() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "1",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser("Enter user: ");
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+        assertThat(result, is(expected));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void testAskUserMessage2() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "0",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser("Enter user: ");
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+        assertThat(result, is(expected));
+    }
+
+    @Test(expected = InvalidUserException.class)
+    public void testAskUserMessage3() {
+        Input input = new Input() {
+            private Input input = new StubInput(Arrays.asList(
+                    "101",
+                    "yegeraskin13@gmail.com"
+            ));
+            @Override
+            public String askLine() {
+                return input.askLine();
+            }
+        };
+        User result = input.askUser("Enter user: ");
+        User expected = new User();
+        Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
+        assertThat(result, is(expected));
     }
 
     @Test
