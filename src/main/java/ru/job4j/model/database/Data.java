@@ -300,7 +300,33 @@ public class Data {
     public void compressBase() {
     }
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     *     Method asks if
+     *     {@code this} object
+     *     of class {@code Data}
+     *     equals to {@code obj}
+     *     object of class
+     *     {@code Data}
+     * </p>
+     * <p>
+     *     If {@code obj} is not
+     *     object of class
+     *     {@code Data},
+     *     method returns
+     *     {@code false} value
+     * </p>
+     * @param obj - object that we compare
+     *              with {@code this} object
+     *              to find if they equals
+     *              or not
+     * @return {@code true} - if objects {@code this}
+     *                        and {@code obj} are
+     *                        equals.
+     *         {@code false} - if objects {@code this}
+     *                         and {@code obj} are not
+     *                         equals.
+     */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
