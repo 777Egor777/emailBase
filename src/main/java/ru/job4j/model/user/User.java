@@ -231,7 +231,33 @@ public class User {
         return false;
     }
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     *     Method asks if
+     *     {@code this} object
+     *     of class {@code User}
+     *     equals to {@code obj}
+     *     object if class
+     *     {@code User}
+     * </p>
+     * <p>
+     *     If {@code obj} is not
+     *     object of class
+     *     {@code User},
+     *     method returns
+     *     {@code false} value
+     * </p>
+     * @param obj - object that we compare
+     *              with {@code this} object
+     *              to find if they equals
+     *              or not
+     * @return {@code true} - if objects {@code this}
+     *                        and {@code obj} are
+     *                        equals.
+     *         {@code false} - if objects {@code this}
+     *                         and {@code obj} are not
+     *                         equals.
+     */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);

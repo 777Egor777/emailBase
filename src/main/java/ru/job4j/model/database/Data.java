@@ -299,11 +299,13 @@ public class Data {
     public void compressBase() {
     }
 
+    //TODO JavaDoc
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
 
+    //TODO JavaDoc
     @Override
     public int hashCode() {
         return super.hashCode();
