@@ -385,7 +385,7 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-    default User askUser() {
+default User askUser() {
         return null;
     }
 

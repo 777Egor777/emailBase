@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.is;
  * {@code Input}, that has
  * default realisations
  * of methods
- * @auhtor Geraskin Yegor(yegeraskin13@gmail.com)
+ * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class InputTest {
 
