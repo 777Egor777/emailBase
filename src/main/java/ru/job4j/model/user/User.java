@@ -231,11 +231,13 @@ public class User {
         return false;
     }
 
+    //TODO JavaDoc
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
 
+    //TODO JavaDoc
     @Override
     public int hashCode() {
         return super.hashCode();
