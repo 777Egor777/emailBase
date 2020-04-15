@@ -363,8 +363,9 @@ public class ValidateInput implements Input {
      * Method has validation.
      * If received {@code Email}
      * object is invalid or
-     * not belong to {@code user}
-     * param, we receive another
+     * already belong to
+     * {@code user} param,
+     * we receive another
      * {@code Email} object
      * until success.
      * </p>
@@ -379,14 +380,20 @@ public class ValidateInput implements Input {
      * some information about
      * desired Email
      * <p>
-     *
+     * <p>
+     *     Method used to
+     *     input {@code User}
+     *     objects with
+     *     {@code Email}-lists
+     *     that has no duplicates
+     * </p>
      * @param message - String that consist
      *                some information about
      *                desired Email. For example
      *                we can print it to console
      *                and user can read it
      * @param user    - returned {@code Email}
-     *                object will
+     *                object will not
      *                belong to this user
      * @return valid {@code Email} object
      * that we receive from
