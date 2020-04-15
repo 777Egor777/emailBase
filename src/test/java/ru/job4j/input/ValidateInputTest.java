@@ -345,7 +345,108 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskInt3() {
+    public void testAskIntMessageAcceptableNumbers1() {
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        int[] numbers = new int[]{
+                1,
+                2,
+                3
+        };
+        assertThat(input.askInt("message",numbers),is(1));
+    }
+
+    @Test
+    public void testAskIntMessageAcceptableNumbers3() {
+        Input input = new StubInput(Arrays.asList(
+                "3"
+        ));
+        int[] numbers = new int[]{
+                1,
+                2,
+                3
+        };
+        assertThat(input.askInt("message",numbers),is(3));
+    }
+
+    @Test
+    public void testAskIntMessageAcceptableNumbers4() {
+        Input input = new StubInput(Arrays.asList(
+                "49",
+                "7",
+                "asdasasdsa",
+                "yegeraskin13@gmail.com",
+                "2",
+                "4",
+                "7",
+                "1",
+                "3"
+        ));
+        int[] numbers = new int[]{
+                1,
+                5,
+                13
+        };
+        assertThat(input.askInt("message",numbers),is(1));
+    }
+
+    @Test
+    public void testAskIntMessageAcceptableNumbers6() {
+        Input input = new StubInput(Arrays.asList(
+                "49",
+                "7",
+                "asdasasdsa",
+                "yegeraskin13@gmail.com",
+                "2",
+                "13",
+                "4",
+                "5",
+                "7",
+                "1",
+                "3"
+        ));
+        int[] numbers = new int[]{
+                1,
+                5,
+                13
+        };
+        assertThat(input.askInt("message",numbers),is(13));
+    }
+
+    @Test
+    public void testAskIntMessageAcceptableNumbers5() {
+        Input input = new StubInput(Arrays.asList(
+                "49",
+                "7",
+                "asdasasdsa",
+                "yegeraskin13@gmail.com",
+                "2",
+                "4",
+                "5",
+                "7",
+                "1",
+                "3"
+        ));
+        int[] numbers = new int[]{
+                1,
+                5,
+                13
+        };
+        assertThat(input.askInt("message",numbers),is(5));
+    }
+
+    @Test
+    public void testAskIntMessageAcceptableNumbers2() {
+        Input input = new StubInput(Arrays.asList(
+                "2"
+        ));
+        int[] numbers = new int[]{
+                1,
+                2,
+                3
+        };
+        assertThat(input.askInt("message",numbers),is(2));
     }
 
     @Test
