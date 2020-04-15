@@ -2,6 +2,7 @@ package ru.job4j.input;
 
 import org.junit.Test;
 import ru.job4j.model.email.Email;
+import ru.job4j.model.user.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -543,7 +544,29 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskEmail1() {
+    public void testAskEmailMessageUser1() {
+        Input input = new ValidateInput(new StubInput(Arrays.asList(
+                "barsik99@yahoo.com"
+        )));
+        User user = new User();
+        Email result = input.askEmail("Enter email: ", user);
+        Email expected = new Email("barsik99@yahoo.com");
+
+        assertThat(result,is(expected));
+    }
+
+    @Test
+    public void testAskEmailMessageUser2() {
+        Input input = new ValidateInput(new StubInput(Arrays.asList(
+                "barsik99@yahoo.com",
+                "yegeraskin13@gmail.com"
+        )));
+        User user = new User();
+        user.addEmail(new Email("barsik99@yahoo.com"));
+        Email result = input.askEmail("Enter email: ", user);
+        Email expected = new Email("yegeraskin13@gmail.com");
+
+        assertThat(result,is(expected));
     }
 
     @Test
