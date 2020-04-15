@@ -1,6 +1,8 @@
 package ru.job4j.input;
 
 import org.junit.Test;
+import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 import ru.job4j.model.user.util.Users;
@@ -613,5 +615,22 @@ public class ValidateInputTest {
 
     @Test
     public void askData() {
+        Input input = new ValidateInput(new StubInput(Arrays.asList(
+                "101",
+                "0",
+                "-1",
+                "500",
+                "1 0",
+                "1",
+                " 2.2",
+                "1",
+                "kolyabaksov@rambler.net"
+        )));
+        Data result = input.askData();
+        Data expected = new Data();
+        User user = new User();
+        Users.addEmail(user, new Email("kolyabaksov@rambler.net"));
+        DataHelper.addUser(expected, user);
+        assertThat(result, is(expected));
     }
 }
