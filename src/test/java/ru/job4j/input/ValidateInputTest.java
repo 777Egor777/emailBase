@@ -191,10 +191,147 @@ public class ValidateInputTest {
 
     @Test
     public void testAskIntMessage() {
+        Input input = new StubInput(Arrays.asList(
+                "-1000000"
+        ));
+        assertThat(input.askInt("Enter number:"),is(-1000000));
     }
 
     @Test
-    public void testAskInt1() {
+    public void testAskIntMax1() {
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        assertThat(input.askInt(1),is(1));
+    }
+
+    @Test
+    public void testAskIntMax2() {
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        assertThat(input.askInt(2),is(1));
+    }
+
+    @Test
+    public void testAskIntMax3() {
+        Input input = new StubInput(Arrays.asList(
+                "2"
+        ));
+        assertThat(input.askInt(2),is(2));
+    }
+
+    @Test
+    public void testAskIntMax4() {
+        Input input = new StubInput(Arrays.asList(
+                " 1  "
+        ));
+        assertThat(input.askInt(1),is(1));
+    }
+
+
+    @Test
+    public void testAskIntMax5() {
+        Input input = new StubInput(Arrays.asList(
+                "2"
+        ));
+        assertThat(input.askInt(3),is(2));
+    }
+
+
+    @Test
+    public void testAskIntMax6() {
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        assertThat(input.askInt(3),is(1));
+    }
+
+
+    @Test
+    public void testAskIntMax7() {
+        Input input = new StubInput(Arrays.asList(
+                "3"
+        ));
+        assertThat(input.askInt(3),is(3));
+    }
+
+
+    @Test
+    public void testAskIntMax8() {
+        Input input = new StubInput(Arrays.asList(
+                "7"
+        ));
+        assertThat(input.askInt(7),is(7));
+    }
+
+    @Test
+    public void testAskIntMax9() {
+        Input input = new StubInput(Arrays.asList(
+                "5"
+        ));
+        assertThat(input.askInt(7),is(5));
+    }
+
+    @Test
+    public void testAskIntMax10() {
+        Input input = new StubInput(Arrays.asList(
+                "3"
+        ));
+        assertThat(input.askInt(7),is(3));
+    }
+
+    @Test
+    public void testAskIntMax11() {
+        Input input = new StubInput(Arrays.asList(
+                "2"
+        ));
+        assertThat(input.askInt(7),is(2));
+    }
+
+    @Test
+    public void testAskIntMax12() {
+        Input input = new StubInput(Arrays.asList(
+                "1"
+        ));
+        assertThat(input.askInt(7),is(1));
+    }
+
+    @Test
+    public void testAskIntMax13() {
+        Input input = new StubInput(Arrays.asList(
+                "0",
+                "1"
+        ));
+        assertThat(input.askInt(7),is(1));
+    }
+
+    @Test
+    public void testAskIntMax14() {
+        Input input = new StubInput(Arrays.asList(
+                "-1",
+                "1"
+        ));
+        assertThat(input.askInt(7),is(1));
+    }
+
+    @Test
+    public void testAskIntMax15() {
+        Input input = new StubInput(Arrays.asList(
+                "-7",
+                "1"
+        ));
+        assertThat(input.askInt(7),is(1));
+    }
+
+    @Test
+    public void testAskIntMax16() {
+        Input input = new StubInput(Arrays.asList(
+                "-11",
+                "49",
+                "3"
+        ));
+        assertThat(input.askInt(7),is(3));
     }
 
     @Test
