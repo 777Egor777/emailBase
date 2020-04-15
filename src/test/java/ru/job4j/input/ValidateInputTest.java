@@ -335,7 +335,13 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskInt2() {
+    public void testAskIntMessageMax() {
+        Input input = new StubInput(Arrays.asList(
+                "-11",
+                "49",
+                "3"
+        ));
+        assertThat(input.askInt("message",7),is(3));
     }
 
     @Test
