@@ -527,7 +527,19 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskEmail() {
+    public void testAskEmailMessage() {
+        Input input = new ValidateInput(new StubInput(Arrays.asList(
+                "ba.rsik99@yahoo.com",
+                "Barsik99@yahoo.com",
+                "barsik99@yahoo99.com",
+                "barsik99@yahoo.entire",
+                "b@rsik99@yahoo.com",
+                "barsik99@yahoo.com"
+        )));
+        Email result = input.askEmail("Enter email: ");
+        Email expected = new Email("barsik99@yahoo.com");
+
+        assertThat(result,is(expected));
     }
 
     @Test
