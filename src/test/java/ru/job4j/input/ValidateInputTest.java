@@ -600,7 +600,15 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskUser() {
+    public void testAskUserMessage() {
+        Input input = new ValidateInput(new StubInput(Arrays.asList(
+                "1",
+                "kolyabaksov@rambler.net"
+        )));
+        User result = input.askUser("message");
+        User expected = new User();
+        Users.addEmail(expected, new Email("kolyabaksov@rambler.net"));
+        assertThat(result, is(expected));
     }
 
     @Test
