@@ -1,6 +1,13 @@
 package ru.job4j.action;
 
 import org.junit.Test;
+import ru.job4j.input.Input;
+import ru.job4j.model.database.Data;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.StringJoiner;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
 
@@ -18,6 +25,25 @@ public class StubActionTest {
     }
 
     @Test
-    public void execute() {
+    public void execute1() {
+        UserAction action = new StubAction();
+        Input input = null;
+        Data data = null;
+        assertThat(action.execute(input, data), is(false));
+    }
+
+    @Test
+    public void execute2() {
+        UserAction action = new StubAction();
+        Input input = null;
+        Data data = null;
+        PrintStream stdout = System.out;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(baos));
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
+        action.execute(input, data);
+        joiner.add("===STUBACTION===");
+        System.setOut(stdout);
+        assertThat(baos.toString(), is(joiner.toString()));
     }
 }
