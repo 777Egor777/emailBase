@@ -15,6 +15,8 @@ public class CompressDataActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new CompressDataAction();
+        assertThat(action.getTitle(), is("COMPRESS"));
     }
 
     @Test
