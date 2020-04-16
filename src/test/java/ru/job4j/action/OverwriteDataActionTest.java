@@ -25,7 +25,7 @@ public class OverwriteDataActionTest {
     @Test
     public void getTitle() {
         UserAction action = new OverwriteDataAction();
-        assertThat(action.getTitle(), is("OVERWRITE "));
+        assertThat(action.getTitle(), is("OVERWRITE"));
     }
 
     @Test

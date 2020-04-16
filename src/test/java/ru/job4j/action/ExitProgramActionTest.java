@@ -13,6 +13,8 @@ public class ExitProgramActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new OverwriteDataAction();
+        assertThat(action.getTitle(), is("EXIT"));
     }
 
     @Test
