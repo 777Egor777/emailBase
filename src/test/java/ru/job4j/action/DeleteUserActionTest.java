@@ -14,6 +14,8 @@ public class DeleteUserActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new DeleteUserAction();
+        assertThat(action.getTitle(), is("DELETE USER"));
     }
 
     @Test
