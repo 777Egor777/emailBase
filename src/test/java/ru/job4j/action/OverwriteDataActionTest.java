@@ -46,8 +46,7 @@ public class OverwriteDataActionTest {
         joiner.add("===OVERWRITE===");
         joiner.add("Enter user's count: ");
         joiner.add("Enter user's(1) email's count: ");
-        User user = data.getUserList().get(0);
-        joiner.add("user#" + user.getId() +  " email#1: ");
+        joiner.add("Enter user's(1) email#1: ");
         System.setOut(stdout);
         assertThat(baos.toString(), is(joiner.toString()));
     }
