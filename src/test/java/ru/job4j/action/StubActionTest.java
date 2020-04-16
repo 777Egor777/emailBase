@@ -13,6 +13,8 @@ public class StubActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new StubAction();
+        assertThat(action.getTitle(), is("STUBACTION"));
     }
 
     @Test
