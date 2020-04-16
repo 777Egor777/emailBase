@@ -13,6 +13,8 @@ public class OverwriteDataActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new PrintDataAction();
+        assertThat(action.getTitle(), is("OVERWRITE"));
     }
 
     @Test
