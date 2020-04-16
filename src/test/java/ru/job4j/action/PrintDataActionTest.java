@@ -14,6 +14,8 @@ public class PrintDataActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new StubAction();
+        assertThat(action.getTitle(), is("PRINT"));
     }
 
     @Test
