@@ -15,6 +15,8 @@ public class AddUserActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new AddUserAction();
+        assertThat(action.getTitle(), is("ADD USER"));
     }
 
     @Test
