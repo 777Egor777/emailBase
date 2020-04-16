@@ -16,7 +16,6 @@ import static org.hamcrest.Matchers.is;
  * {@code PrintDataAction}
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
-
 public class PrintDataActionTest {
 
     @Test
