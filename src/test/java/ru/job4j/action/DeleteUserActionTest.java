@@ -5,6 +5,7 @@ import ru.job4j.input.Input;
 import ru.job4j.input.StubInput;
 import ru.job4j.input.ValidateInput;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
 import ru.job4j.model.user.User;
 
 import java.io.ByteArrayOutputStream;
@@ -33,7 +34,7 @@ public class DeleteUserActionTest {
         UserAction action = new DeleteUserAction();
         Data data = new Data();
         User user = new User();
-        data.addUser(user);
+        DataHelper.addUser(data, user);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 ""+user.getId()
         )));
@@ -55,7 +56,7 @@ public class DeleteUserActionTest {
         UserAction action = new DeleteUserAction();
         Data data = new Data();
         User user = new User();
-        data.addUser(user);
+        DataHelper.addUser(data, user);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 ""+user.getId()
         )));
