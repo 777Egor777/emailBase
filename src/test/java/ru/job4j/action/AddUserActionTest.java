@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.is;
 
 /**
  * Test class for class
- * {@code CleanBaseAction}
+ * {@code AddUserAction}
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class AddUserActionTest {

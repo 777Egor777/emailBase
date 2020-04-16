@@ -14,6 +14,8 @@ public class AddEmailActionTest {
 
     @Test
     public void getTitle() {
+        UserAction action = new AddEmailAction();
+        assertThat(action.getTitle(), is("ADD EMAIL"));
     }
 
     @Test
