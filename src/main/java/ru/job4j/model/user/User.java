@@ -150,7 +150,8 @@ public class User {
      *         email-list
      */
     public Email getEmail(int index) {
-        return null;
+        index--;
+        return emails.get(index);
     }
 
     /**
