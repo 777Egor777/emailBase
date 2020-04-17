@@ -1,5 +1,7 @@
 package ru.job4j.model.email;
 
+import java.util.Objects;
+
 /**
  * Data model for the
  * single Email of
@@ -118,7 +120,13 @@ public final class Email {
      */
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        boolean result = false;
+        if (obj != null
+        &&  obj.getClass() == this.getClass()) {
+            Email email = (Email) obj;
+            result = value.equals(email.getValue());
+        }
+        return result;
     }
 
     /**
