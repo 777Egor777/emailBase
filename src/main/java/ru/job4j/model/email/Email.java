@@ -59,6 +59,7 @@ public final class Email {
      *                of this Email
      */
     public Email(String value) {
+
     }
 
     /**

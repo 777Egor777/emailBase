@@ -2,12 +2,24 @@ package ru.job4j.model.email.util;
 
 import ru.job4j.model.email.Email;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Help utility class for
  * data model "Email"
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class Emails {
+    private final static Set<String> DOMAINS = new HashSet<>(Arrays.asList(
+            "ru",
+            "com",
+            "net",
+            "org",
+            "edu"
+    ));
+
     /**
      * <p>
      *     Method checks if received
