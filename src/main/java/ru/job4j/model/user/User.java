@@ -1,6 +1,7 @@
 package ru.job4j.model.user;
 
 import ru.job4j.model.email.Email;
+import ru.job4j.model.user.util.Users;
 
 import java.util.*;
 
@@ -65,7 +66,9 @@ public class User {
      * Initialise all fields.
      */
     public User() {
-
+        emails = new ArrayList<>();
+        emailsSet = new HashSet<>();
+        id = Users.nextUserId++;
     }
 
     /**
@@ -75,6 +78,21 @@ public class User {
      * Need in future version
      * of class, when we will
      * make it Immutable
+     * @param id  - initialize value of
+     *              field {@code id}.
+     *              We need it when make
+     *              all fields of class
+     *              as "final".
+     *              So to transform
+     *              old object we need to
+     *              construct new and
+     *              change reference for
+     *              old object.
+     *              But we need to save
+     *              user's {@code id},
+     *              so we can't do as
+     *              we do in default
+     *              constructor
      * @param emails - initialise value of
      *                 field {@code emails}
      *                 of class.
@@ -83,7 +101,10 @@ public class User {
      *                      (In version 1.0 of class)
      *                 </p>
      */
-    public User(List<Email> emails) {
+    public User(int id, List<Email> emails) {
+        emailsSet = new HashSet<>(emails);
+        this.emails = new ArrayList<>(emailsSet);
+        this.id = id;
     }
 
     /**
