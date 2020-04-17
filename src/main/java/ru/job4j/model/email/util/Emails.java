@@ -94,7 +94,7 @@ public class Emails {
      *                object
      */
     public static boolean isCorrectValue(String value) {
-        return false;
+        return isCorrectEmail(new Email(value));
     }
 
     /**
