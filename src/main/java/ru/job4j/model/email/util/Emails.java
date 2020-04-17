@@ -155,7 +155,15 @@ public class Emails {
      *         false - otherwise
      */
     public static boolean isCorrectService(String service) {
-        return false;
+        boolean result = service.length() >= 3;
+        for (int index = 0; index < service.length(); ++index) {
+            char c = service.charAt(index);
+            if (!(c >= 'a' && c <= 'z')) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 
     /**
