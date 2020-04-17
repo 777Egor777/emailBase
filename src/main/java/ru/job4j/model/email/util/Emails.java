@@ -48,8 +48,9 @@ public class Emails {
      *         false - if param -  incorrect Email object
      */
     public static boolean isCorrectEmail(Email email) {
-        boolean result = false;
-        return false;
+        return isCorrectName(email.getName())
+                && isCorrectService(email.getService())
+                && isCorrectDomain(email.getDomain());
     }
 
     /**
