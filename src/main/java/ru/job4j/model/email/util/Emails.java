@@ -184,6 +184,6 @@ public class Emails {
      *         false - otherwise
      */
     public static boolean isCorrectDomain(String domain) {
-        return false;
+        return DOMAINS.contains(domain);
     }
 }
