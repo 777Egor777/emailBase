@@ -78,7 +78,7 @@ public final class Email {
      */
     @Override
     public String toString() {
-        return super.toString();
+        return String.format("Email{%s}", value);
     }
 
     /**
