@@ -125,7 +125,15 @@ public class Emails {
      *         false - otherwise
      */
     public static boolean isCorrectName(String name) {
-        return false;
+        boolean result = name.length() >= 3;
+        for (int index = 0; index < name.length(); ++index) {
+            char c = name.charAt(index);
+            if (!(c >= 'a' && c <= 'z') && !(c >= '0' && c <= '9')) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 
     /**
