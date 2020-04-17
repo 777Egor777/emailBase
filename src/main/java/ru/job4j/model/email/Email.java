@@ -59,7 +59,19 @@ public final class Email {
      *                of this Email
      */
     public Email(String value) {
-
+        this.value = value;
+        name = "";
+        service = "";
+        domain = "";
+        int posDog = value.indexOf('@');
+        if (posDog >= 0) {
+            name = value.substring(0, posDog);
+            int posDot = value.indexOf('.', posDog);
+            if (posDot >= 0) {
+                service = value.substring(posDog + 1, posDot);
+                domain = value.substring(posDot + 1);
+            }
+        }
     }
 
     /**
