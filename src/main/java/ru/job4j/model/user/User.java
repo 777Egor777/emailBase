@@ -346,6 +346,7 @@ public class User {
         for (Email email : emails) {
             result += email.hashCode();
         }
+        result *= id;
         return result;
     }
 }

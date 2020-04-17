@@ -364,6 +364,10 @@ public class Data {
      */
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = 0;
+        for (User user : users) {
+            result += user.hashCode();
+        }
+        return result;
     }
 }
