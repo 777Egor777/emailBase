@@ -144,7 +144,7 @@ public final class Email {
      *         this class
      */
     public String getName() {
-        return null;
+        return name;
     }
 
     /**
