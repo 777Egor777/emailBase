@@ -109,7 +109,7 @@ public class User {
      *         {@code id}
      */
     public int getId() {
-        return -1;
+        return id;
     }
 
     /**
