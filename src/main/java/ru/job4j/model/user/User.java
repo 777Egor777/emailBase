@@ -231,7 +231,7 @@ public class User {
      *         {@code false} - otherwise
      */
     public boolean containsEmail(Email email) {
-        return false;
+        return emailsSet.contains(email);
     }
 
     /**
