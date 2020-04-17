@@ -2,10 +2,7 @@ package ru.job4j.model.user;
 
 import ru.job4j.model.email.Email;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Data model for the
@@ -195,7 +192,18 @@ public class User {
      */
     @Override
     public String toString() {
-        return super.toString();
+        String result = String.format("User#%d", id);
+        if (getNumberOfEmails() == 0) {
+            result += ";";
+        } else {
+            StringJoiner joiner = new StringJoiner(", ", "->", ";");
+            for (Email email : emails) {
+                joiner.add(email.getValue());
+            }
+            result += joiner.toString();
+        }
+
+        return result;
     }
 
     /**
