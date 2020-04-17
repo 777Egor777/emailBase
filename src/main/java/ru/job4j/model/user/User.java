@@ -51,7 +51,7 @@ public class User {
      *     (In version 1.0 of class)
      * </p>
      */
-    private Set<Email> emailsSet; //TODO initialize by HashSet
+    private Set<Email> emailsSet;
 
     /**
      * Unique identifier of this user.
@@ -342,6 +342,10 @@ public class User {
      */
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = 0;
+        for (Email email : emails) {
+            result += email.hashCode();
+        }
+        return result;
     }
 }
