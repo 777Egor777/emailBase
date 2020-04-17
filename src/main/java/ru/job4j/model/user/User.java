@@ -100,7 +100,7 @@ public class User {
      *         </p>
      */
     public List<Email> getEmails() {
-        return null;
+        return emails;
     }
 
     /**
