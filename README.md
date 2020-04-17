@@ -207,7 +207,12 @@ reference
 
 ## Автор
 Гераськин Егор Владимирович
+
 Java-разработчик, стажёр в компании Job4j
+
+yegeraskin13@gmail.com
+
++7 985 159 2988
 
 ## JavaDoc
 [Скачать](https://ya.ru)
