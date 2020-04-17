@@ -3,6 +3,7 @@ package ru.job4j.model.database;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,15 +12,15 @@ import java.util.List;
  * user's email database.
  * For each user we keep
  * their unique email-list
- *
+ * <p>
  * We can also "compress"
  * this database: join users
  * that have at least one
  * common email in their
  * lists.
  *
- * @version 1.0
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
+ * @version 1.0
  */
 public class Data {
     /**
@@ -37,9 +38,9 @@ public class Data {
      * objects - users
      * in this database
      * <p>
-     *     Size of this list
-     *     {@code <= 100} in version
-     *     1.0 of class
+     * Size of this list
+     * {@code <= 100} in version
+     * 1.0 of class
      * </p>
      */
     private List<User> users;
@@ -64,16 +65,17 @@ public class Data {
      * {@code class} final
      * in future version of
      * program.
+     *
      * @param users - {@code List} of {@code User}
-     *                objects that we use to
-     *                initialise field
-     *                {@code users}.
-     *                <p>
-     *                      {@code Size} of this
-     *                      list {@code <= 100}
-     *                      (in version 1.0
-     *                       of class)
-     *                </p>
+     *              objects that we use to
+     *              initialise field
+     *              {@code users}.
+     *              <p>
+     *              {@code Size} of this
+     *              list {@code <= 100}
+     *              (in version 1.0
+     *              of class)
+     *              </p>
      */
     public Data(List<User> users) {
     }
@@ -81,8 +83,9 @@ public class Data {
     /**
      * Getter for field
      * {@code users}
+     *
      * @return field {@code users}
-     *         value
+     * value
      */
     public List<User> getUserList() {
         return null;
@@ -91,9 +94,10 @@ public class Data {
     /**
      * Add new user
      * to this database
+     *
      * @param user - {@code User} object,
-     *               new user that we add
-     *               to this database
+     *             new user that we add
+     *             to this database
      */
     public void addUser(User user) {
     }
@@ -106,9 +110,9 @@ public class Data {
      * person to read.
      * Finally, string representation of this object will have
      * such format: User#id_1->Email1,Email2,...,EmailN_1
-     *              User#id_2->Email1,Email2,...,EmailN_2
-     *              ...
-     *              User#id_n->Email1,Email2,...,EmailN_n
+     * User#id_2->Email1,Email2,...,EmailN_2
+     * ...
+     * User#id_n->Email1,Email2,...,EmailN_n
      *
      * @return a string representation of the object.
      */
@@ -127,19 +131,20 @@ public class Data {
 
     /**
      * <p>
-     *     Method add new {@code Email}
-     *     object - new email to user
-     *     with id {@code id},
-     *     that contains in
-     *     {@code users} list
-     * @param id - ID of user that we
-     *             modify - user new
-     *             email to his
-     *             email's list
+     * Method add new {@code Email}
+     * object - new email to user
+     * with id {@code id},
+     * that contains in
+     * {@code users} list
+     *
+     * @param id    - ID of user that we
+     *              modify - user new
+     *              email to his
+     *              email's list
      * @param email - {@code Email} object -
-     *                new email that we add
-     *                to user's with id {@code id}
-     *                email-list
+     *              new email that we add
+     *              to user's with id {@code id}
+     *              email-list
      */
     public void addEmail(int id, Email email) {
     }
@@ -148,9 +153,10 @@ public class Data {
      * Method return {@code array}
      * of ID of all user's in
      * {@code users} list.
+     *
      * @return {@code array} of
-     *         all ID's in
-     *         this database
+     * all ID's in
+     * this database
      */
     public int[] allId() {
         return null;
@@ -162,9 +168,10 @@ public class Data {
      * from this database -
      * delete it from
      * {@code users} list
+     *
      * @param id - id of {@code User}
-     *             object that we delete
-     *             from base
+     *           object that we delete
+     *           from base
      */
     public void deleteUser(int id) {
     }
@@ -177,11 +184,12 @@ public class Data {
      * Otherwise it return
      * {@code EMPTY_USER}
      * object.
+     *
      * @param id - id of user
-     *             that we must
-     *             return
+     *           that we must
+     *           return
      * @return - {@code User} object
-     *           with id {@code id}
+     * with id {@code id}
      */
     public User getUser(int id) {
         return null;
@@ -194,17 +202,18 @@ public class Data {
      * in email's list
      * of {@code User}
      * with id {@code id}
-     * @param id - if of user
-     *             whose email we
-     *            must delete
+     *
+     * @param id         - if of user
+     *                   whose email we
+     *                   must delete
      * @param emailIndex - index of email
-     *                     in user's email-
-     *                     list
-     *                     <p>
-     *                          {@code index <= 100}
-     *                          (in version 1.0)
-     *                          of class
-     *                     </p>
+     *                   in user's email-
+     *                   list
+     *                   <p>
+     *                   {@code index <= 100}
+     *                   (in version 1.0)
+     *                   of class
+     *                   </p>
      */
     public void deleteEmail(int id, int emailIndex) {
     }
@@ -268,7 +277,7 @@ public class Data {
      * Crate Map<Email, id>.
      * Start for-cycle throw database
      * (for i: users
-     *   for j: i-emails)
+     * for j: i-emails)
      * if next email already contains
      * in base, make edge in graph
      * between two users:
@@ -302,34 +311,40 @@ public class Data {
 
     /**
      * <p>
-     *     Method asks if
-     *     {@code this} object
-     *     of class {@code Data}
-     *     equals to {@code obj}
-     *     object of class
-     *     {@code Data}
+     * Method asks if
+     * {@code this} object
+     * of class {@code Data}
+     * equals to {@code obj}
+     * object of class
+     * {@code Data}
      * </p>
      * <p>
-     *     If {@code obj} is not
-     *     object of class
-     *     {@code Data},
-     *     method returns
-     *     {@code false} value
+     * If {@code obj} is not
+     * object of class
+     * {@code Data},
+     * method returns
+     * {@code false} value
      * </p>
+     *
      * @param obj - object that we compare
-     *              with {@code this} object
-     *              to find if they equals
-     *              or not
+     *            with {@code this} object
+     *            to find if they equals
+     *            or not
      * @return {@code true} - if objects {@code this}
-     *                        and {@code obj} are
-     *                        equals.
-     *         {@code false} - if objects {@code this}
-     *                         and {@code obj} are not
-     *                         equals.
+     * and {@code obj} are
+     * equals.
+     * {@code false} - if objects {@code this}
+     * and {@code obj} are not
+     * equals.
      */
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        boolean result = false;
+        if (obj != null && obj.getClass() == getClass()) {
+            Data data = (Data) obj;
+            result = users.equals(data.getUserList());
+        }
+        return result;
     }
 
     /**

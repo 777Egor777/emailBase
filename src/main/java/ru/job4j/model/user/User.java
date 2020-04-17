@@ -305,7 +305,7 @@ public class User {
         boolean result = false;
         if (obj != null && obj.getClass() == this.getClass()) {
             User user = (User) obj;
-            result = id == user.getId();
+            result = (id == user.getId()) && (emails.equals(user.getEmails()));
         }
         return result;
     }
