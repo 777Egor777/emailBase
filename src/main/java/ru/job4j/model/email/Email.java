@@ -14,8 +14,7 @@ public final class Email {
      * String value of email
      * For example: "yegeraskin13@gmail.com"
      */
-    private String value;
-    //TODO after implementing constructor, make this field final
+    private final String value;
 
     /**
      * First part of email's
@@ -49,12 +48,6 @@ public final class Email {
      * Has one parameter -
      * String value of
      * this Email.
-     * If value is incorrect,
-     * method throw special
-     * exception
-     * @throws ru.job4j.input.exceptions.InvalidEmailException -
-     *         if received from {@code value} {@code String}
-     *         {@code Email} object is incorrect
      * @param value - String value
      *                of this Email
      */
