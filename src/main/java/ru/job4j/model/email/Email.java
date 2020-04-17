@@ -153,7 +153,7 @@ public final class Email {
      *         this class
      */
     public String getService() {
-        return null;
+        return service;
     }
 
     /**
