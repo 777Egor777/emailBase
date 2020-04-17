@@ -91,7 +91,7 @@ public final class Email {
      */
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return value.hashCode();
     }
 
     /**
