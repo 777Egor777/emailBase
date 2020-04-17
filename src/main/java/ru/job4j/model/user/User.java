@@ -3,6 +3,7 @@ package ru.job4j.model.user;
 import ru.job4j.model.email.Email;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -239,7 +240,7 @@ public class User {
      *     {@code this} object
      *     of class {@code User}
      *     equals to {@code obj}
-     *     object if class
+     *     object of class
      *     {@code User}
      * </p>
      * <p>
@@ -262,7 +263,12 @@ public class User {
      */
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        boolean result = false;
+        if (obj != null && obj.getClass() == this.getClass()) {
+            User user = (User) obj;
+            result = id == user.getId();
+        }
+        return result;
     }
 
     /**
