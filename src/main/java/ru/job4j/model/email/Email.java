@@ -162,6 +162,6 @@ public final class Email {
      *         this class
      */
     public String getDomain() {
-        return null;
+        return domain;
     }
 }
