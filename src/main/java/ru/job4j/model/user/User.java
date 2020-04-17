@@ -117,6 +117,8 @@ public class User {
      * Cleans it completely.
      */
     public void cleanEmailsList() {
+        emails.clear();
+        emailsSet.clear();
     }
 
     /**
