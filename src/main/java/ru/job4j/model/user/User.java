@@ -127,7 +127,7 @@ public class User {
      * of emails
      */
     public int getNumberOfEmails() {
-        return -1;
+        return emails.size();
     }
 
     /**
