@@ -210,6 +210,10 @@ public class User {
      *                in this method
      */
     public void addEmail(Email email) {
+        if (!emailsSet.contains(email)) {
+            emailsSet.add(email);
+            emails.add(email);
+        }
     }
 
     /**
