@@ -156,7 +156,7 @@ public class User {
     /**
      * Method delete user's
      * email, that located
-     * on the {@code index}
+     * on the {@code index - 1}
      * position in user's
      * email-list
      * @param index - position of email
@@ -169,6 +169,9 @@ public class User {
      *                </p>
      */
     public void deleteEmail(int index) {
+        index--;
+        emailsSet.remove(emails.get(index));
+        emails.remove(index);
     }
 
     /**
