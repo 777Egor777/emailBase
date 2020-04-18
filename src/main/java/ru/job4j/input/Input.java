@@ -377,8 +377,9 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    default Email askEmail(String message) {
-        return null;
+    default Email askEmail(String message) throws IOException {
+        System.out.print(message);
+        return askEmail();
     }
 
     /**
