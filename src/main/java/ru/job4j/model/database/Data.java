@@ -79,6 +79,7 @@ public class Data {
      *              </p>
      */
     public Data(List<User> users) {
+        this.users = users;
     }
 
     /**
