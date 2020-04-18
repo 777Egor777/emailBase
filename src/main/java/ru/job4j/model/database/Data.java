@@ -74,6 +74,7 @@ public class Data {
      */
     public Data() {
         users = new ArrayList<>();
+        idToUser = new HashMap<>();
     }
 
     /**
