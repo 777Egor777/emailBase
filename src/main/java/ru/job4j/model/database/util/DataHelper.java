@@ -207,5 +207,6 @@ public class DataHelper {
      *               above
      */
     public static void compressBase(Data data) {
+        data.compressBase();
     }
 }
