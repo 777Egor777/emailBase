@@ -421,8 +421,15 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    default Email askEmail(String message, User user) {
-        return null;
+    default Email askEmail(String message, User user) throws IOException {
+        Email result = askEmail(message);
+        if (user.containsEmail(result)) {
+            throw new InvalidEmailException(
+                    String.format("User#%d already has this email",
+                                  user.getId())
+            );
+        }
+        return result;
     }
 
     /**
