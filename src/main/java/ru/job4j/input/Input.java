@@ -113,7 +113,14 @@ public interface Input {
      */
     default String askLine(String message, String... possibleLines) throws IOException {
         String result = askLine(message);
-        if (!Arrays.asList(possibleLines).contains(result)) {
+        boolean contains = false;
+        for (String possible : possibleLines) {
+            if (result.equals(possible)) {
+                contains = true;
+                break;
+            }
+        }
+        if (!contains) {
             throw new InvalidLineException(
                     String.format("Line \"%s\" is incorrect!", result)
             );
@@ -298,8 +305,22 @@ public interface Input {
      *         from array
      *         acceptableNumbers.
      */
-    default int askInt(String message, int... acceptableNumbers) {
-        return -1;
+    default int askInt(String message, int... acceptableNumbers) throws IOException {
+        System.out.print(message);
+        int result = askInt(message);
+        boolean contains = false;
+        for (int acceptableNumber : acceptableNumbers) {
+            if (result == acceptableNumber) {
+                contains = true;
+                break;
+            }
+        }
+        if (!contains) {
+            throw new InvalidIntegerException(
+                    "No such id!"
+            );
+        }
+        return result;
     }
 
     /**
