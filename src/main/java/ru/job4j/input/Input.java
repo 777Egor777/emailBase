@@ -8,6 +8,7 @@ import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Base interface that
@@ -110,8 +111,14 @@ public interface Input {
      *         class that we receive
      *         from user
      */
-    default String askLine(String message, String... possibleLines) {
-        return null;
+    default String askLine(String message, String... possibleLines) throws IOException {
+        String result = askLine(message);
+        if (!Arrays.asList(possibleLines).contains(result)) {
+            throw new InvalidLineException(
+                    String.format("Line \"%s\" is incorrect!", result)
+            );
+        }
+        return result;
     }
 
     /**
