@@ -1,9 +1,6 @@
 package ru.job4j.input;
 
-import ru.job4j.input.exceptions.InvalidEmailException;
-import ru.job4j.input.exceptions.InvalidIntegerException;
-import ru.job4j.input.exceptions.InvalidLineException;
-import ru.job4j.input.exceptions.InvalidUserException;
+import ru.job4j.input.exceptions.*;
 import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.email.util.Emails;
@@ -454,7 +451,7 @@ public interface Input {
         User result = new User();
         try {
             int numberOfEmails = askInt(String.format(
-                    "Enter number of emails of user#%d",
+                    "Enter number of emails of user#%d: ",
                     result.getId()
             ));
             for (int index = 0; index < numberOfEmails; ++index) {
@@ -519,6 +516,19 @@ public interface Input {
      *         user enters.
      */
     default Data askData() {
-        return null;
+        Data result = new Data();
+        try {
+            int numberOfUsers = askInt("Enter number of users in base: ");
+            for (int index = 1; index <= numberOfUsers; ++index) {
+                result.addUser(
+                        askUser("Enter User №" + index + ": ")
+                );
+            }
+        } catch (Exception ex) {
+            throw new InvalidDataException(
+                    "Invalid Base. Try again."
+            );
+        }
+        return result;
     }
 }
