@@ -46,6 +46,7 @@ public class DataHelper {
      *               {@code 0}.
      */
     public static void clean(Data data) {
+        data.clean();
     }
 
     /**
