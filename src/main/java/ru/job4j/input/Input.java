@@ -496,8 +496,9 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-    default User askUser(String message) {
-        return null;
+    default User askUser(String message) throws IOException {
+        System.out.println(message);
+        return askUser();
     }
 
     /**
