@@ -98,6 +98,10 @@ public class Data {
      */
     public Data(List<User> users) {
         this.users = users;
+        idToUser = new HashMap<>();
+        for (User user : users) {
+            idToUser.put(user.getId(), user);
+        }
     }
 
     /**
