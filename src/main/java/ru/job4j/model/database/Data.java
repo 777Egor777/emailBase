@@ -4,10 +4,7 @@ import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 import ru.job4j.model.user.util.Users;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.StringJoiner;
+import java.util.*;
 
 /**
  * Data model of the
@@ -46,6 +43,9 @@ public class Data {
      * </p>
      */
     private List<User> users;
+
+    //TODO JavaDoc
+    private Map<Integer, User> idToUser;
 
     /**
      * Empty constructor
