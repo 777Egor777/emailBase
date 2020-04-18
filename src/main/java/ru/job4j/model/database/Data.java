@@ -135,6 +135,7 @@ public class Data {
      * object.
      */
     public void clean() {
+        users.clear();
     }
 
     /**
