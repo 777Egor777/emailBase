@@ -112,6 +112,7 @@ public class DataHelper {
      *                      </p>
      */
     public static void deleteEmail(Data data, int userId, int emailIndex) {
+        data.deleteEmail(userId, emailIndex);
     }
 
     /**
