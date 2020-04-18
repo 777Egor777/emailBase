@@ -2,6 +2,7 @@ package ru.job4j.model.database;
 
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
+import ru.job4j.model.user.util.Users;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -156,6 +157,8 @@ public class Data {
      *              email-list
      */
     public void addEmail(int id, Email email) {
+        User user = getUser(id);
+        Users.addEmail(user, email);
     }
 
     /**
