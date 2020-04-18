@@ -1,5 +1,7 @@
 package ru.job4j.util.graph;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -87,6 +89,11 @@ public class Vertex {
      *             for field {@code id}
      */
     public Vertex(int id) {
+        this.id = id;
+        usedStatus = false;
+        edges = new ArrayList<>();
+        uniqueEdges = new HashSet<>();
+        source = this;
     }
 
     /**
