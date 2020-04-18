@@ -15,5 +15,6 @@ public class InvalidLineException extends IllegalArgumentException {
      *                  {@code Exception}
      */
     public InvalidLineException(String message) {
+        super(message);
     }
 }
