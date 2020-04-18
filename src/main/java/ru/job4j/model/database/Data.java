@@ -212,6 +212,10 @@ public class Data {
      *           from base
      */
     public void deleteUser(int id) {
+        if (idToUser.containsKey(id)) {
+            idToUser.remove(id);
+            users.remove(Integer.valueOf(id));
+        }
     }
 
     /**
