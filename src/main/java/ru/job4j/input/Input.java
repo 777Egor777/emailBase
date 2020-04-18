@@ -5,6 +5,7 @@ import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
 import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
+import ru.job4j.model.email.util.Emails;
 import ru.job4j.model.user.User;
 
 import java.io.IOException;
@@ -339,8 +340,15 @@ public interface Input {
      * @return Email object that
      *         user enters.
      */
-    default Email askEmail() {
-        return null;
+    default Email askEmail() throws IOException {
+        Email result = new Email(askLine());
+        if (!Emails.isCorrectEmail(result)) {
+            throw new InvalidEmailException(
+                    String.format("%s is incorrect",
+                                  result.toString())
+            );
+        }
+        return result;
     }
 
     /**
