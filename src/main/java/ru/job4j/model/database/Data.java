@@ -90,7 +90,7 @@ public class Data {
      * value
      */
     public List<User> getUserList() {
-        return null;
+        return users;
     }
 
     /**
