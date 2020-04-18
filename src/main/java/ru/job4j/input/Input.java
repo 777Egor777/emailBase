@@ -65,8 +65,9 @@ public interface Input {
      *         class that we receive
      *         from user
      */
-    default String askLine(String message) {
-        return null;
+    default String askLine(String message) throws IOException {
+        System.out.print(message);
+        return askLine();
     }
 
     /**
