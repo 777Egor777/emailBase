@@ -103,7 +103,7 @@ public class Vertex {
      *         {@code id}
      */
     public int getId() {
-        return -1;
+        return id;
     }
 
     /**
