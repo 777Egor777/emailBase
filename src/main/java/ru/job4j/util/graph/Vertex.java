@@ -113,7 +113,7 @@ public class Vertex {
      *         {@code getUsedStatus}
      */
     public boolean getUsedStatus() {
-        return true;
+        return usedStatus;
     }
 
     /**
