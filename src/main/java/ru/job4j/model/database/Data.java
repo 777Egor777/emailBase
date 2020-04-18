@@ -158,6 +158,7 @@ public class Data {
      */
     public void clean() {
         users.clear();
+        idToUser.clear();
     }
 
     /**
