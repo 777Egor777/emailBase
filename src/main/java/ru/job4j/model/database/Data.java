@@ -193,7 +193,11 @@ public class Data {
      * this database
      */
     public int[] allId() {
-        return null;
+        int[] result = new int[users.size()];
+        for (int index = 0; index < users.size(); ++index) {
+            result[index] = users.get(index).getId();
+        }
+        return result;
     }
 
     /**
