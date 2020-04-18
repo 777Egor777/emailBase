@@ -16,5 +16,6 @@ public class InvalidUserException extends IllegalArgumentException {
      *                  {@code Exception}
      */
     public InvalidUserException(String message) {
+        super(message);
     }
 }
