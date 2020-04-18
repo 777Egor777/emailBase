@@ -171,5 +171,12 @@ public class Vertex {
      *                 in graph
      */
     public void dfs(Vertex source) {
+        this.source = source;
+        this.usedStatus = true;
+        for (Vertex edge : edges) {
+            if (!edge.getUsedStatus()) {
+                edge.dfs(source);
+            }
+        }
     }
 }
