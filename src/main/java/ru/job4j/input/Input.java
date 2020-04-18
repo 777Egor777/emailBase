@@ -142,8 +142,17 @@ public interface Input {
      *         interact process with
      *         user
      */
-    default int askInt() {
-        return -1;
+    default int askInt() throws IOException {
+        String line = askLine();
+        int result = 0;
+        try {
+            result = Integer.parseInt(line);
+        } catch (Exception ex) {
+            throw new InvalidIntegerException(
+                    String.format("Can't parse number from this line: \"%s\"", line)
+            );
+        }
+        return result;
     }
 
     /**
