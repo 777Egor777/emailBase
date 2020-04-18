@@ -16,5 +16,6 @@ public class InvalidIntegerException extends IllegalArgumentException {
      *                  {@code Exception}
      */
     public InvalidIntegerException(String message) {
+        super(message);
     }
 }
