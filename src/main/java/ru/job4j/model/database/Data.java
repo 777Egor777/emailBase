@@ -3,6 +3,7 @@ package ru.job4j.model.database;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 import ru.job4j.model.user.util.Users;
+import ru.job4j.util.graph.Graph;
 
 import java.util.*;
 
@@ -357,6 +358,31 @@ public class Data {
      * user we must merge this user.
      */
     public void compressBase() {
+        Graph graph = new Graph(users.size());
+        Map<Email, Integer> emailToIndex = new HashMap<>();
+        for (int userIndex = 0; userIndex < users.size(); ++userIndex) {
+            User user = users.get(userIndex);
+            for (int emailIndex = 0; emailIndex < user.getNumberOfEmails(); emailIndex++) {
+                Email email = user.getEmail(emailIndex);
+                if (emailToIndex.containsKey(email)) {
+                    graph.addEdge(emailToIndex.get(email), userIndex);
+                }
+                emailToIndex.put(email, userIndex);
+            }
+        }
+        int[] sources = graph.getSources();
+        List<User> newUsers = new ArrayList<>();
+        for (int userIndex = users.size() - 1; userIndex >= 0; --userIndex) {
+            if (sources[userIndex] != userIndex) {
+                for (Email email : users.get(userIndex).getEmails()) {
+                    Users.addEmail(users.get(sources[userIndex]), email);
+                }
+                idToUser.remove(users.get(userIndex).getId());
+            } else {
+                newUsers.add(users.get(userIndex));
+            }
+        }
+        users = newUsers;
     }
 
     /**
