@@ -143,7 +143,7 @@ public class Vertex {
      *         {@code source}
      */
     public Vertex getSource() {
-        return null;
+        return source;
     }
 
     /**
