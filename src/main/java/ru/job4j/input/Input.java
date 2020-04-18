@@ -3,6 +3,7 @@ package ru.job4j.input;
 import ru.job4j.input.exceptions.InvalidEmailException;
 import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
+import ru.job4j.input.exceptions.InvalidUserException;
 import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.email.util.Emails;
@@ -449,8 +450,24 @@ public interface Input {
      * @return User object that
      *         user enters.
      */
-default User askUser() {
-        return null;
+    default User askUser() throws IOException {
+        User result = new User();
+        try {
+            int numberOfEmails = askInt(String.format(
+                    "Enter number of emails of user#%d",
+                    result.getId()
+            ));
+            for (int index = 0; index < numberOfEmails; ++index) {
+                result.addEmail(
+                        askEmail(String.format("user#%d email%d: ",
+                                 result.getId(), (index + 1)),
+                                result)
+                );
+            }
+        } catch (Exception ex) {
+            throw new InvalidUserException("Invalid User. Try again");
+        }
+        return result;
     }
 
     /**
