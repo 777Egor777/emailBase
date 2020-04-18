@@ -70,6 +70,7 @@ public class Users {
      *                </p>
      */
     public static void deleteEmail(User user, int index) {
+        user.deleteEmail(index);
     }
 
     /**
