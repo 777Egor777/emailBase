@@ -34,6 +34,7 @@ public class Users {
      *               of this user
      */
     public static void cleanEmailsList(User user) {
+        user.cleanEmailsList();
     }
 
     /**
