@@ -102,6 +102,7 @@ public class Data {
      *             to this database
      */
     public void addUser(User user) {
+        users.add(user);
     }
 
     /**
