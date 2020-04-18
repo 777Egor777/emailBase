@@ -30,6 +30,7 @@ public class DataHelper {
      *              {@code data}
      */
     public static void addUser(Data data, User user) {
+        data.addUser(user);
     }
 
     /**
