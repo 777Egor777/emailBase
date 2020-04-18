@@ -110,6 +110,16 @@ public class Graph {
      * @return "source array"
      */
     public int[] getSources() {
-        return null;
+        int[] result = new int[numberOfVertex];
+        for (int index = 0; index < numberOfVertex; ++index) {
+            Vertex vertex = vertexes.get(index);
+            if (!vertex.getUsedStatus()) {
+                vertex.dfs(vertex);
+            }
+        }
+        for (int index = 0; index < numberOfVertex; ++index) {
+            result[0] = vertexes.get(index).getSource().getId();
+        }
+        return result;
     }
 }
