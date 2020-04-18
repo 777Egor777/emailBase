@@ -259,8 +259,9 @@ public interface Input {
      *         not from this diapason,
      *         exception will be thrown
      */
-    default int askInt(String message, int max) {
-        return -1;
+    default int askInt(String message, int max) throws IOException {
+        System.out.print(message);
+        return askInt(max);
     }
 
     /**
