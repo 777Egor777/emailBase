@@ -1,6 +1,7 @@
 package ru.job4j.input;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -43,7 +44,7 @@ public class ConsoleInput implements Input {
      * class
      */
     @Override
-    public String askLine() {
-        return null;
+    public String askLine() throws IOException {
+        return reader.readLine();
     }
 }

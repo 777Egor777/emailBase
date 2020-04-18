@@ -7,6 +7,8 @@ import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
+import java.io.IOException;
+
 /**
  * Base interface that
  * describes input operations.
@@ -39,7 +41,7 @@ public interface Input {
      * @return line - object of String
      *         class
      */
-    String askLine();
+    String askLine() throws IOException;
 
     /**
      * Method receive String
