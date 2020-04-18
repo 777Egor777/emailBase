@@ -213,8 +213,14 @@ public interface Input {
      *         not from this diapason,
      *         exception will be thrown
      */
-    default int askInt(int max) {
-        return -1;
+    default int askInt(int max) throws IOException {
+        int result = askInt();
+        if (!(result >= 1 && result <= max)) {
+            throw new InvalidIntegerException(
+                    String.format("Number not from range [1, %d]", max)
+            );
+        }
+        return result;
     }
 
     /**
