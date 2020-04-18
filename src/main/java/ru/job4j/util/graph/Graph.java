@@ -66,6 +66,13 @@ public class Graph {
      *                            in this graph
      */
     public void addEdge(int firstVertexIndex, int secondVertexIndex) {
+        vertexes.get(firstVertexIndex).addEdge(
+                vertexes.get(secondVertexIndex)
+        );
+
+        vertexes.get(secondVertexIndex).addEdge(
+                vertexes.get(firstVertexIndex)
+        );
     }
 
     /**
