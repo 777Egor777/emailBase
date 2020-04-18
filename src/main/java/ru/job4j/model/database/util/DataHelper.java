@@ -84,6 +84,7 @@ public class DataHelper {
      *                 user list
      */
     public static void deleteUser(Data data, int userId) {
+        data.deleteUser(userId);
     }
 
     /**
