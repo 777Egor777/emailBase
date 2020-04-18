@@ -130,6 +130,10 @@ public class Vertex {
      *                 object's edge-list
      */
     public void addEdge(Vertex vertex) {
+        if (!uniqueEdges.contains(vertex)) {
+            edges.add(vertex);
+            uniqueEdges.add(vertex);
+        }
     }
 
     /**
