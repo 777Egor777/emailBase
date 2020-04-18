@@ -27,6 +27,7 @@ public class StubInput implements Input {
      *                {@code lines} field
      */
     public StubInput(List<String> lines) {
+        this.lines = lines;
     }
 
     /**
