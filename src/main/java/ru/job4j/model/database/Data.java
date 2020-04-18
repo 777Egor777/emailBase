@@ -44,7 +44,22 @@ public class Data {
      */
     private List<User> users;
 
-    //TODO JavaDoc
+    /**
+     * <p>
+     *     Map that helps to
+     *     speed up work of
+     *     program.
+     * </p>
+     * <p>
+     *     Key - {@code id}
+     *     fields of single
+     *     user
+     *     ({@code User} object).
+     * </p>
+     * <p>
+     *     Value - user itself
+     * </p>
+     */
     private Map<Integer, User> idToUser;
 
     /**
