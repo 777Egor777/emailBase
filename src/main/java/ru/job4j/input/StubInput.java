@@ -46,6 +46,6 @@ public class StubInput implements Input {
      */
     @Override
     public String askLine() {
-        return null;
+        return lines.remove(0);
     }
 }
