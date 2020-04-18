@@ -262,6 +262,10 @@ public class Data {
      *                   </p>
      */
     public void deleteEmail(int id, int emailIndex) {
+        User user = getUser(id);
+        if (!user.equals(EMPTY_USER)) {
+            Users.deleteEmail(user, emailIndex);
+        }
     }
 
     /**
