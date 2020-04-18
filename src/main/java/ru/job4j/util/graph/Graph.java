@@ -2,6 +2,7 @@ package ru.job4j.util.graph;
 
 import ru.job4j.model.database.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,6 +42,11 @@ public class Graph {
      *                        {@code numberOfVertex}
      */
     public Graph(int numberOfVertex) {
+        this.numberOfVertex = numberOfVertex;
+        vertexes = new ArrayList<>();
+        for (int index = 0; index < numberOfVertex; ++index) {
+            vertexes.add(new Vertex(index));
+        }
     }
 
     /**
