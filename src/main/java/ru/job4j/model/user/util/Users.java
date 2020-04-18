@@ -51,6 +51,11 @@ public class Users {
      *               to standard output
      */
     public static void printEmails(User user) {
+        for (int index = 0; index < user.getNumberOfEmails(); ++index) {
+            System.out.print(String.format("%d. %s%s", (index + 1),
+                                                       user.getEmail(index).getValue(),
+                                                       System.lineSeparator()));
+        }
     }
 
     /**
