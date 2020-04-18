@@ -69,7 +69,6 @@ public class Graph {
         vertexes.get(firstVertexIndex).addEdge(
                 vertexes.get(secondVertexIndex)
         );
-
         vertexes.get(secondVertexIndex).addEdge(
                 vertexes.get(firstVertexIndex)
         );

@@ -173,7 +173,6 @@ public class User {
      *         email-list
      */
     public Email getEmail(int index) {
-        index--;
         return emails.get(index);
     }
 
