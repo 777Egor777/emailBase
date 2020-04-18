@@ -16,5 +16,6 @@ public class InvalidDataException extends IllegalArgumentException {
      *                  {@code Exception}
      */
     public InvalidDataException(String message) {
+        super(message);
     }
 }
