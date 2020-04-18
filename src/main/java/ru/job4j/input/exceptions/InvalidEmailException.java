@@ -16,5 +16,6 @@ public class InvalidEmailException extends IllegalArgumentException {
      *                  {@code Exception}
      */
     public InvalidEmailException(String message) {
+        super(message);
     }
 }
