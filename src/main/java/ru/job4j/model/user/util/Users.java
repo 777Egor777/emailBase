@@ -84,5 +84,6 @@ public class Users {
      *                email-list
      */
     public static void addEmail(User user, Email email) {
+        user.addEmail(email);
     }
 }
