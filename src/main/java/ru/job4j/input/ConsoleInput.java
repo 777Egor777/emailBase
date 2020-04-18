@@ -1,6 +1,7 @@
 package ru.job4j.input;
 
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * This class - implementation of
@@ -27,6 +28,7 @@ public class ConsoleInput implements Input {
      * output
      */
     public ConsoleInput() {
+        reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
     /**
