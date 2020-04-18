@@ -234,7 +234,11 @@ public class Data {
      * with id {@code id}
      */
     public User getUser(int id) {
-        return null;
+        User result = EMPTY_USER;
+        if (idToUser.containsKey(id)) {
+            result = idToUser.get(id);
+        }
+        return result;
     }
 
     /**
