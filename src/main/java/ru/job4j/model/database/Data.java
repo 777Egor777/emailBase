@@ -56,6 +56,7 @@ public class Data {
      * objects.
      */
     public Data() {
+        users = new ArrayList<>();
     }
 
     /**
