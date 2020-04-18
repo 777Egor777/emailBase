@@ -67,6 +67,7 @@ public class DataHelper {
      *                 id {@code userId}
      */
     public static void addEmail(Data data, int userId, Email email) {
+        data.addEmail(userId, email);
     }
 
     /**
