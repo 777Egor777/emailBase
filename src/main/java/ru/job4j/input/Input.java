@@ -182,8 +182,9 @@ public interface Input {
      *         interact process with
      *         user
      */
-    default int askInt(String message) {
-        return -1;
+    default int askInt(String message) throws IOException {
+        System.out.print(message);
+        return askInt();
     }
 
     /**
