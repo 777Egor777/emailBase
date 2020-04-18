@@ -6,6 +6,7 @@ import ru.job4j.model.user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Data model of the
@@ -121,7 +122,11 @@ public class Data {
      */
     @Override
     public String toString() {
-        return super.toString();
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
+        for (User user : users) {
+            joiner.add(user.toString());
+        }
+        return joiner.toString();
     }
 
     /**
