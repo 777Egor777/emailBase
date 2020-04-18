@@ -125,6 +125,7 @@ public class Data {
      */
     public void addUser(User user) {
         users.add(user);
+        idToUser.put(user.getId(), user);
     }
 
     /**
