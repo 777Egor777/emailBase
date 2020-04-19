@@ -2,8 +2,10 @@ package ru.job4j.input;
 
 import ru.job4j.input.exceptions.*;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
+import ru.job4j.model.user.util.Users;
 
 import java.io.IOException;
 
@@ -529,7 +531,7 @@ public class ValidateInput implements Input {
                 result.getId()
         ));
         for (int index = 0; index < numberOfEmails; ++index) {
-            result.addEmail(
+            Users.addEmail(result,
                     askEmail(String.format("user#%d email%d: ",
                             result.getId(), (index + 1)),
                             result)
@@ -578,7 +580,7 @@ public class ValidateInput implements Input {
                 message
         ));
         for (int index = 0; index < numberOfEmails; ++index) {
-            result.addEmail(
+            Users.addEmail(result,
                     askEmail(String.format("Enter user's(%s) email#%d: ",
                             message, (index + 1)),
                             result)
@@ -615,7 +617,7 @@ public class ValidateInput implements Input {
         Data result = new Data();
         int numberOfUsers = askInt("Enter user's count: ");
         for (int index = 0; index < numberOfUsers; ++index) {
-            result.addUser(askUser("" + (index + 1)));
+            DataHelper.addUser(result, askUser("" + (index + 1)));
         }
         return result;
     }

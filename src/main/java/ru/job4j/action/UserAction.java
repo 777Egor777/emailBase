@@ -3,6 +3,8 @@ package ru.job4j.action;
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
 
+import java.io.IOException;
+
 /**
  * Single action that
  * user calls.
@@ -42,5 +44,5 @@ public interface UserAction {
      *         cycle after this
      *         action.
      */
-    boolean execute(Input input, Data data);
+    boolean execute(Input input, Data data) throws IOException;
 }

@@ -2,6 +2,10 @@ package ru.job4j.action;
 
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
+import ru.job4j.model.email.Email;
+
+import java.io.IOException;
 
 /**
  * This class execute process
@@ -46,7 +50,11 @@ public class AddEmailAction implements UserAction {
      * action.
      */
     @Override
-    public boolean execute(Input input, Data data) {
-        return false;
+    public boolean execute(Input input, Data data) throws IOException {
+        int id = input.askInt("Enter user's id: ",
+                              data.allId());
+        Email email = input.askEmail("Enter new email: ", data.getUser(id));
+        DataHelper.addEmail(data, id, email);
+        return true;
     }
 }
