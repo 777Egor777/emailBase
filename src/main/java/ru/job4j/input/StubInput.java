@@ -17,6 +17,12 @@ public class StubInput implements Input {
      */
     private List<String> lines;
 
+    /**
+     * Position of the next line
+     * in {@code lines} list
+     * that we will get in
+     * method "askLine()"
+     */
     private int position;
 
     /**
