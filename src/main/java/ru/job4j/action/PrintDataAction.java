@@ -21,7 +21,7 @@ public class PrintDataAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "PRINT";
     }
 
     /**
