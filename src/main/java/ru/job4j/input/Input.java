@@ -515,7 +515,7 @@ public interface Input {
      * @return Data object that
      *         user enters.
      */
-    default Data askData() {
+    default Data askData() throws IOException {
         Data result = new Data();
         try {
             int numberOfUsers = askInt("Enter number of users in base: ");

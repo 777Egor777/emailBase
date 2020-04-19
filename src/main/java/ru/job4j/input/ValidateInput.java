@@ -572,8 +572,19 @@ public class ValidateInput implements Input {
      */
     @Override
     public User askUser(String message) throws IOException {
-        System.out.println(message);
-        return askUser();
+        User result = new User();
+        int numberOfEmails = askInt(String.format(
+                "Enter user's(%s) email's count: ",
+                message
+        ));
+        for (int index = 0; index < numberOfEmails; ++index) {
+            result.addEmail(
+                    askEmail(String.format("Enter user's(%s) email#%d: ",
+                            message, (index + 1)),
+                            result)
+            );
+        }
+        return result;
     }
 
     /**
@@ -600,7 +611,12 @@ public class ValidateInput implements Input {
      * {@code askUser}
      */
     @Override
-    public Data askData() {
-        return null;
+    public Data askData() throws IOException {
+        Data result = new Data();
+        int numberOfUsers = askInt("Enter user's count: ");
+        for (int index = 0; index < numberOfUsers; ++index) {
+            result.addUser(askUser("" + (index + 1)));
+        }
+        return result;
     }
 }
