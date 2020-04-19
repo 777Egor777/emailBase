@@ -24,7 +24,7 @@ public class CompressDataAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "COMPRESS";
     }
 
     /**
