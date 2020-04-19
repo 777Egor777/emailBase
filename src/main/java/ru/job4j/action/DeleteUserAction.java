@@ -21,7 +21,7 @@ public class DeleteUserAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "DELETE USER";
     }
 
     /**

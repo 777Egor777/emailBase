@@ -51,6 +51,6 @@ public class CompressDataAction implements UserAction {
     public boolean execute(Input input, Data data) {
         System.out.println(String.format("===%s===", getTitle()));
         DataHelper.compressBase(data);
-        return true;
+    return true;
     }
 }

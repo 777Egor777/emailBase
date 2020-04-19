@@ -10,6 +10,7 @@ import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.StringJoiner;
@@ -32,7 +33,7 @@ public class CompressDataActionTest {
     }
 
     @Test
-    public void execute1() {
+    public void execute1() throws IOException {
         UserAction action = new CompressDataAction();
         Data data = new Data();
         User user1 = new User();
@@ -58,7 +59,7 @@ public class CompressDataActionTest {
     }
 
     @Test
-    public void execute2() {
+    public void execute2() throws IOException {
         UserAction action = new CompressDataAction();
         Data data = new Data();
         User user1 = new User();

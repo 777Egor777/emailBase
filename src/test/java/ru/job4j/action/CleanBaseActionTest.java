@@ -5,6 +5,7 @@ import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.StringJoiner;
 
@@ -26,7 +27,7 @@ public class CleanBaseActionTest {
     }
 
     @Test
-    public void execute1() {
+    public void execute1() throws IOException {
         Input input = null;
         Data data = new Data();
         UserAction action = new CleanBaseAction();
@@ -43,7 +44,7 @@ public class CleanBaseActionTest {
     }
 
     @Test
-    public void execute2() {
+    public void execute2() throws IOException {
         Input input = null;
         Data data = new Data();
         UserAction action = new CleanBaseAction();

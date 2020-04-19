@@ -2,6 +2,11 @@ package ru.job4j.action;
 
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
+import ru.job4j.model.user.User;
+import ru.job4j.model.user.util.Users;
+
+import java.io.IOException;
 
 /**
  * This class execute process
@@ -47,7 +52,14 @@ public class DeleteEmailAction implements UserAction {
      * action.
      */
     @Override
-    public boolean execute(Input input, Data data) {
-        return false;
+    public boolean execute(Input input, Data data) throws IOException {
+        System.out.println(String.format("===%s===", getTitle()));
+        int id = input.askInt("Enter user's id: ",
+                data.allId());
+        User user = data.getUser(id);
+        Users.printEmails(user);
+        int emailIndex = input.askInt("Enter email's index: ", user.getNumberOfEmails());
+        DataHelper.deleteEmail(data, id, emailIndex);
+        return true;
     }
 }
