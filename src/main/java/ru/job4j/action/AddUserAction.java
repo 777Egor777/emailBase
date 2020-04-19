@@ -49,6 +49,7 @@ public class AddUserAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Data data) throws IOException {
+        System.out.println(String.format("===%s===", getTitle()));
         User newUser = input.askUser();
         DataHelper.addUser(data, newUser);
         return true;

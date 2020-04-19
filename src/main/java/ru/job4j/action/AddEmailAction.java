@@ -51,6 +51,7 @@ public class AddEmailAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Data data) throws IOException {
+        System.out.println(String.format("===%s===", getTitle()));
         int id = input.askInt("Enter user's id: ",
                               data.allId());
         Email email = input.askEmail("Enter new email: ", data.getUser(id));

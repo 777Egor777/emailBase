@@ -2,6 +2,7 @@ package ru.job4j.action;
 
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
 
 /**
  * This class execute process
@@ -44,6 +45,8 @@ public class CleanBaseAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Data data) {
-        return false;
+        System.out.println(String.format("===%s===", getTitle()));
+        DataHelper.clean(data);
+        return true;
     }
 }
