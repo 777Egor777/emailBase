@@ -7,6 +7,7 @@ import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 import ru.job4j.model.user.util.Users;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +23,7 @@ import static org.hamcrest.Matchers.is;
 public class ValidateInputTest {
 
     @Test
-    public void askLine() {
+    public void askLine() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
             "kkjjdkfwemwnfmndsbvo23iu4128u3e2erfnadfkv"
         )));
@@ -30,7 +31,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskLineMessage() {
+    public void testAskLineMessage() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "kkjjdkfwemwnfmndsbvo23iu4128u3e2erfnadfkv"
         )));
@@ -38,7 +39,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt1() {
+    public void askInt1() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-1000000"
         )));
@@ -46,7 +47,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt2() {
+    public void askInt2() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-55"
         )));
@@ -54,7 +55,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt3() {
+    public void askInt3() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "0"
         )));
@@ -62,7 +63,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt4() {
+    public void askInt4() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
@@ -70,7 +71,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt5() {
+    public void askInt5() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
@@ -78,7 +79,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt6() {
+    public void askInt6() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
@@ -86,7 +87,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt7() {
+    public void askInt7() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "7"
         )));
@@ -94,7 +95,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt8() {
+    public void askInt8() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "100"
         )));
@@ -102,7 +103,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt9() {
+    public void askInt9() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1000000"
         )));
@@ -110,7 +111,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt10() {
+    public void askInt10() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 " 1000000 "
         )));
@@ -118,7 +119,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt11() {
+    public void askInt11() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 " 0 "
         )));
@@ -126,7 +127,7 @@ public class ValidateInputTest {
     }
 
     @Test()
-    public void askInt12() {
+    public void askInt12() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "",
                 "-1000000"
@@ -135,7 +136,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt13() {
+    public void askInt13() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "555,555",
                 "-1000000"
@@ -144,7 +145,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt14() {
+    public void askInt14() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "null",
                 "-1000000"
@@ -153,7 +154,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt15() {
+    public void askInt15() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "10 000",
                 "-1000000"
@@ -162,7 +163,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt16() {
+    public void askInt16() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "yegeraskin13@gmail.com",
                 "-1000000"
@@ -171,7 +172,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt17() {
+    public void askInt17() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1e",
                 "yegeraskin13@gmail.com",
@@ -181,7 +182,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askInt18() {
+    public void askInt18() throws IOException {
         List<String> list = new ArrayList<>();
         for(int i = 0; i < 100500; ++i) {
             list.add("xxx" + i);
@@ -191,11 +192,12 @@ public class ValidateInputTest {
         list.add("were");
         list.add("dhwet");
         Input input = new ValidateInput(new StubInput(list));
-        assertThat(input.askInt(),is(49));
+        assertThat(input.
+                askInt(),is(49));
     }
 
     @Test
-    public void testAskIntMessage() {
+    public void testAskIntMessage() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-1000000"
         )));
@@ -203,7 +205,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax1() {
+    public void testAskIntMax1() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
@@ -211,7 +213,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax2() {
+    public void testAskIntMax2() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
@@ -219,7 +221,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax3() {
+    public void testAskIntMax3() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
@@ -227,7 +229,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax4() {
+    public void testAskIntMax4() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 " 1  "
         )));
@@ -236,7 +238,7 @@ public class ValidateInputTest {
 
 
     @Test
-    public void testAskIntMax5() {
+    public void testAskIntMax5() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
@@ -245,7 +247,7 @@ public class ValidateInputTest {
 
 
     @Test
-    public void testAskIntMax6() {
+    public void testAskIntMax6() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
@@ -254,7 +256,7 @@ public class ValidateInputTest {
 
 
     @Test
-    public void testAskIntMax7() {
+    public void testAskIntMax7() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
@@ -263,7 +265,7 @@ public class ValidateInputTest {
 
 
     @Test
-    public void testAskIntMax8() {
+    public void testAskIntMax8() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "7"
         )));
@@ -271,7 +273,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax9() {
+    public void testAskIntMax9() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "5"
         )));
@@ -279,7 +281,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax10() {
+    public void testAskIntMax10() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
@@ -287,7 +289,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax11() {
+    public void testAskIntMax11() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
@@ -295,7 +297,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax12() {
+    public void testAskIntMax12() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
@@ -303,7 +305,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax13() {
+    public void testAskIntMax13() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "0",
                 "1"
@@ -312,7 +314,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax14() {
+    public void testAskIntMax14() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-1",
                 "1"
@@ -321,7 +323,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax15() {
+    public void testAskIntMax15() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-7",
                 "1"
@@ -330,7 +332,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMax16() {
+    public void testAskIntMax16() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-11",
                 "49",
@@ -340,7 +342,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageMax() {
+    public void testAskIntMessageMax() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-11",
                 "49",
@@ -350,7 +352,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers1() {
+    public void testAskIntMessageAcceptableNumbers1() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
@@ -363,7 +365,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers3() {
+    public void testAskIntMessageAcceptableNumbers3() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
@@ -376,7 +378,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers4() {
+    public void testAskIntMessageAcceptableNumbers4() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "49",
                 "7",
@@ -397,7 +399,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers6() {
+    public void testAskIntMessageAcceptableNumbers6() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "49",
                 "7",
@@ -420,7 +422,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers5() {
+    public void testAskIntMessageAcceptableNumbers5() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "49",
                 "7",
@@ -442,7 +444,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers2() {
+    public void testAskIntMessageAcceptableNumbers2() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
@@ -455,7 +457,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askEmail1() {
+    public void askEmail1() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "barsik99@yahoo.com"
         )));
@@ -466,7 +468,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askEmail2() {
+    public void askEmail2() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "Barsik99@yahoo.com",
                 "barsik99@yahoo.com"
@@ -478,7 +480,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askEmail3() {
+    public void askEmail3() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "barsik99@ yahoo.com",
                 "barsik99@yahoo.com"
@@ -490,7 +492,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askEmail4() {
+    public void askEmail4() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "ba.rsik99@ ahoo.com",
                 "barsik99@yahoo.com"
@@ -502,7 +504,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askEmail5() {
+    public void askEmail5() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "ba.rsik99@yahoo.com",
                 "b@rsik99@yahoo.com",
@@ -515,7 +517,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askEmail6() {
+    public void askEmail6() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "",
                 "",
@@ -531,7 +533,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskEmailMessage() {
+    public void testAskEmailMessage() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "ba.rsik99@yahoo.com",
                 "Barsik99@yahoo.com",
@@ -547,7 +549,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskEmailMessageUser1() {
+    public void testAskEmailMessageUser1() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "barsik99@yahoo.com"
         )));
@@ -559,7 +561,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskEmailMessageUser2() {
+    public void testAskEmailMessageUser2() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "barsik99@yahoo.com",
                 "yegeraskin13@gmail.com"
@@ -573,7 +575,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askUser1() {
+    public void askUser1() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1",
                 "yegeraskin13@gmail.com"
@@ -585,7 +587,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askUser2() {
+    public void askUser2() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "101",
                 "0",
@@ -602,7 +604,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void testAskUserMessage() {
+    public void testAskUserMessage() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1",
                 "kolyabaksov@rambler.net"

@@ -8,6 +8,7 @@ import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 import ru.job4j.model.user.util.Users;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -23,14 +24,14 @@ import static org.hamcrest.Matchers.is;
 public class InputTest {
 
     @Test
-    public void askLine1() {
+    public void askLine1() throws IOException {
         String line = "";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                 new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -38,14 +39,14 @@ public class InputTest {
     }
 
     @Test
-    public void askLine2() {
+    public void askLine2() throws IOException {
         String line = "ssdfasdfsaf";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -53,7 +54,7 @@ public class InputTest {
     }
 
     @Test
-    public void askLine3() {
+    public void askLine3() throws IOException {
         String line = "";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
@@ -61,7 +62,7 @@ public class InputTest {
                     "qwerty"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -70,7 +71,7 @@ public class InputTest {
     }
 
     @Test
-    public void askLine4() {
+    public void askLine4() throws IOException {
         String line = "";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
@@ -79,7 +80,7 @@ public class InputTest {
                     "zxczxcsgfghhfgh"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -89,7 +90,7 @@ public class InputTest {
     }
 
     @Test
-    public void askLine5() {
+    public void askLine5() throws IOException {
         String[] lines = new String[100500];
         for(int i = 0; i < 100500; ++i) {
             lines[i] = "line#" + i;
@@ -99,7 +100,7 @@ public class InputTest {
                     lines
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -110,14 +111,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskLineMessage() {
+    public void testAskLineMessage() throws IOException {
         String line = "ssdfasdfsaf";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -125,14 +126,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskLine1() {
+    public void testAskLine1() throws IOException {
         String line = "ssdfasdfsaf";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -143,14 +144,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidLineException.class)
-    public void testAskLine2() {
+    public void testAskLine2() throws IOException {
         String line = "ssdfasdfsaf";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -159,14 +160,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidLineException.class)
-    public void testAskLine3() {
+    public void testAskLine3() throws IOException {
         String line = "ssdfasdfsaf";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -179,14 +180,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskLine4() {
+    public void testAskLine4() throws IOException {
         String line = "ssdfasdfsaf";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -200,14 +201,14 @@ public class InputTest {
     }
 
     @Test
-    public void askInt1() {
+    public void askInt1() throws IOException {
         String line = "5398";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -215,14 +216,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void askInt2() {
+    public void askInt2() throws IOException {
         String line = "5.398";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -230,14 +231,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void askInt3() {
+    public void askInt3() throws IOException {
         String line = "egor";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -245,14 +246,14 @@ public class InputTest {
     }
 
     @Test
-    public void askInt4() {
+    public void askInt4() throws IOException {
         String line = " 5398";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -260,14 +261,14 @@ public class InputTest {
     }
 
     @Test
-    public void askInt5() {
+    public void askInt5() throws IOException {
         String line = "5398 ";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -275,14 +276,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMessage1() {
+    public void testAskIntMessage1() throws IOException {
         String line = "5398";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -290,14 +291,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void testAskIntMessage2() {
+    public void testAskIntMessage2() throws IOException {
         String line = "5 398";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -305,14 +306,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMessage3() {
+    public void testAskIntMessage3() throws IOException {
         String line = "0";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -320,14 +321,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMessage4() {
+    public void testAskIntMessage4() throws IOException {
         String line = "-1";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -335,14 +336,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMessage5() {
+    public void testAskIntMessage5() throws IOException {
         String line = "-5398";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -350,14 +351,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMax1() {
+    public void testAskIntMax1() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -365,14 +366,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMax2() {
+    public void testAskIntMax2() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -380,14 +381,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void testAskIntMax3() {
+    public void testAskIntMax3() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -395,14 +396,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void testAskIntMax4() {
+    public void testAskIntMax4() throws IOException {
         String line = "0";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -410,14 +411,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void testAskIntMax5() {
+    public void testAskIntMax5() throws IOException {
         String line = "-1";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -425,14 +426,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMessageMax1() {
+    public void testAskIntMessageMax1() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -440,14 +441,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void testAskIntMessageMax2() {
+    public void testAskIntMessageMax2() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -455,14 +456,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskIntMessageAcceptableNumbers1() {
+    public void testAskIntMessageAcceptableNumbers1() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -472,14 +473,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidIntegerException.class)
-    public void testAskIntMessageAcceptableNumbers2() {
+    public void testAskIntMessageAcceptableNumbers2() throws IOException {
         String line = "5";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -489,14 +490,14 @@ public class InputTest {
     }
 
     @Test
-    public void askEmail1() {
+    public void askEmail1() throws IOException {
         String line = "yegeraskin13@gmail.com";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -504,14 +505,14 @@ public class InputTest {
     }
 
     @Test
-    public void askEmail2() {
+    public void askEmail2() throws IOException {
         String line = "geraskin@phystech.edu";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -519,14 +520,14 @@ public class InputTest {
     }
 
     @Test
-    public void askEmail3() {
+    public void askEmail3() throws IOException {
         String line = "petrivanov777@mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -534,14 +535,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail4() {
+    public void askEmail4() throws IOException {
         String line = "_petrivanov777@mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -549,14 +550,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail5() {
+    public void askEmail5() throws IOException {
         String line = "petr_ivanov777@mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -564,14 +565,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail6() {
+    public void askEmail6() throws IOException {
         String line = "petr ivanov777@mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -579,14 +580,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail7() {
+    public void askEmail7() throws IOException {
         String line = "petrivanov_777@mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -594,14 +595,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail8() {
+    public void askEmail8() throws IOException {
         String line = "petr_ivanov777@ mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -609,14 +610,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail9() {
+    public void askEmail9() throws IOException {
         String line = "pe@mail.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -624,14 +625,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail10() {
+    public void askEmail10() throws IOException {
         String line = "petr@ma.il.ru";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -639,14 +640,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void askEmail11() {
+    public void askEmail11() throws IOException {
         String line = "petr@mail.fr";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -654,14 +655,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskEmailMessage1() {
+    public void testAskEmailMessage1() throws IOException {
         String line = "yegeraskin13@gmail.com";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -669,14 +670,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void testAskEmailMessage2() {
+    public void testAskEmailMessage2() throws IOException {
         String line = " yegeraskin13@gmail.com";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -684,14 +685,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskEmailMessageUser1() {
+    public void testAskEmailMessageUser1() throws IOException {
         String line = " yegeraskin13@gmail.com";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -701,14 +702,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidEmailException.class)
-    public void testAskEmailMessageUser2() {
+    public void testAskEmailMessageUser2() throws IOException {
         String line = " yegeraskin13@gmail.com";
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     new String(line)
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -718,14 +719,14 @@ public class InputTest {
     }
 
     @Test
-    public void askUser1() {
+    public void askUser1() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -736,14 +737,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser2() {
+    public void askUser2() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "0",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -753,14 +754,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser3() {
+    public void askUser3() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "-1",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -770,14 +771,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser4() {
+    public void askUser4() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "-3",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -787,14 +788,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser5() {
+    public void askUser5() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "-90",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -804,14 +805,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser6() {
+    public void askUser6() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "101",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -821,14 +822,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser7() {
+    public void askUser7() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1000",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -838,14 +839,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser8() {
+    public void askUser8() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1000000",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -855,14 +856,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser9() {
+    public void askUser9() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "ye_geraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -872,14 +873,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser10() {
+    public void askUser10() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "ye geraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -889,14 +890,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser11() {
+    public void askUser11() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "ye@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -906,14 +907,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser12() {
+    public void askUser12() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "yegeraskin@gmail13.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -923,14 +924,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser13() {
+    public void askUser13() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "yegeraskin13@gmail.linux"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -940,7 +941,7 @@ public class InputTest {
     }
 
     @Test
-    public void askUser14() {
+    public void askUser14() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "2",
@@ -948,7 +949,7 @@ public class InputTest {
                     "geraskin@phystech.edu"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -960,7 +961,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void askUser15() {
+    public void askUser15() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "3",
@@ -969,7 +970,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -979,14 +980,14 @@ public class InputTest {
     }
 
     @Test
-    public void testAskUserMessage1() {
+    public void testAskUserMessage1() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -997,14 +998,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void testAskUserMessage2() {
+    public void testAskUserMessage2() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "0",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1015,14 +1016,14 @@ public class InputTest {
     }
 
     @Test(expected = InvalidUserException.class)
-    public void testAskUserMessage3() {
+    public void testAskUserMessage3() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "101",
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1041,7 +1042,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1063,7 +1064,7 @@ public class InputTest {
                     "crazyfrog777@yahoo.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1093,7 +1094,7 @@ public class InputTest {
                     "yyy@xxx.net"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1124,7 +1125,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1145,7 +1146,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1166,7 +1167,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1187,7 +1188,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1208,7 +1209,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1229,7 +1230,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1250,7 +1251,7 @@ public class InputTest {
                     "yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1271,7 +1272,7 @@ public class InputTest {
                     "ye geraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1292,7 +1293,7 @@ public class InputTest {
                     "Yegeraskin13@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1313,7 +1314,7 @@ public class InputTest {
                     "ye@gmail.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1334,7 +1335,7 @@ public class InputTest {
                     "yegeraskin13@gm.com"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };
@@ -1355,7 +1356,7 @@ public class InputTest {
                     "yegeraskin13@gmail.mipt"
             ));
             @Override
-            public String askLine() {
+            public String askLine() throws IOException {
                 return input.askLine();
             }
         };

@@ -2,6 +2,7 @@ package ru.job4j.input;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -14,7 +15,7 @@ import static org.hamcrest.Matchers.is;
  */
 public class StubInputTest {
     @Test
-    public void askLine1() {
+    public void askLine1() throws IOException {
         Input input = new StubInput(Arrays.asList(
                 "Egor"
         ));
@@ -22,7 +23,7 @@ public class StubInputTest {
     }
 
     @Test
-    public void askLine2() {
+    public void askLine2() throws IOException {
         Input input = new StubInput(Arrays.asList(
                 "Egor",
                 "Ivan"
@@ -32,7 +33,7 @@ public class StubInputTest {
     }
 
     @Test
-    public void askLine3() {
+    public void askLine3() throws IOException {
         Input input = new StubInput(Arrays.asList(
                 "Egor",
                 "Ivan",
