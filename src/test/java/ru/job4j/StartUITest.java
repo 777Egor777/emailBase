@@ -134,7 +134,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -157,7 +157,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -190,7 +190,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -223,7 +223,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -256,7 +256,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -289,7 +289,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -322,7 +322,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -332,7 +332,7 @@ public class StartUITest {
         List<UserAction> actions = new ArrayList<>();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         joiner.add("MENU");
-        int size = 1174191;
+        int size = 117419;
         for (int index = 1; index <= size; ++index) {
             actions.add(new StubAction());
             joiner.add(index + ".STUBACTION");
@@ -345,7 +345,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -355,20 +355,20 @@ public class StartUITest {
         List<UserAction> actions = new ArrayList<>();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         joiner.add("MENU");
-        int size = 1174191;
+        int size = 117419;
         for (int index = 1; index <= size; ++index) {
             actions.add(new StubAction());
             joiner.add(index + ".STUBACTION");
         }
         Input input = new StubInput(Arrays.asList(
-                "100000"
+                "10000"
         ));
         Data data = new Data();
         ui.start(actions, input, data);
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 
@@ -378,7 +378,7 @@ public class StartUITest {
         List<UserAction> actions = new ArrayList<>();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         joiner.add("MENU");
-        int size = 1174191;
+        int size = 117419;
         for (int index = 1; index <= size; ++index) {
             actions.add(new StubAction());
             joiner.add(index + ".STUBACTION");
@@ -391,7 +391,7 @@ public class StartUITest {
         joiner.add("Enter menu's item number: ");
         joiner.add("===STUBACTION===");
         String result = baos.toString();
-        String expected = joiner.toString();
+        String expected = joiner.toString() + System.lineSeparator();
         assertThat(result, is(expected));
     }
 }

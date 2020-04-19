@@ -54,6 +54,7 @@ public class StubInput implements Input {
      */
     @Override
     public String askLine() {
+        System.out.println();
         return lines.get(position++);
     }
 }

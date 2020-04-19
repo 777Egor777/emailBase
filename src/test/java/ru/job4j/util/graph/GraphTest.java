@@ -14,7 +14,7 @@ public class GraphTest {
     public void addEdge() {
         Graph graph = new Graph(1);
         int[] sources = graph.getSources();
-        assertThat(sources[0], is(1));
+        assertThat(sources[0], is(0));
     }
 
     @Test

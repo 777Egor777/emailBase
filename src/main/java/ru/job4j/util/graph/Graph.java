@@ -117,7 +117,7 @@ public class Graph {
             }
         }
         for (int index = 0; index < numberOfVertex; ++index) {
-            result[0] = vertexes.get(index).getSource().getId();
+            result[index] = vertexes.get(index).getSource().getId();
         }
         return result;
     }
