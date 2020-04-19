@@ -21,7 +21,7 @@ public class AddEmailAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "ADD EMAIL";
     }
 
     /**
