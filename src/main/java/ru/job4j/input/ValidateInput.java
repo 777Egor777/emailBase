@@ -6,6 +6,8 @@ import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
 
+import java.io.IOException;
+
 /**
  * Class-wrapper for objects of
  * {@code Input} interface,
@@ -53,8 +55,8 @@ public class ValidateInput implements Input {
      * of object {@code input}
      */
     @Override
-    public String askLine() {
-        return null;
+    public String askLine() throws IOException {
+        return input.askLine();
     }
 
     /**
