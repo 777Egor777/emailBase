@@ -17,6 +17,8 @@ public class StubInput implements Input {
      */
     private List<String> lines;
 
+    private int position;
+
     /**
      * Constructor of class.
      * Here we receive {@code array}
