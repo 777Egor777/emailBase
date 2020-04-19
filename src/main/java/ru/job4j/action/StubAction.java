@@ -20,7 +20,7 @@ public class StubAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "STUBACTION";
     }
 
     /**
