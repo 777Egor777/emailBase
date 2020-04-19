@@ -22,7 +22,7 @@ public class DeleteEmailAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "DELETE EMAIL";
     }
 
     /**
