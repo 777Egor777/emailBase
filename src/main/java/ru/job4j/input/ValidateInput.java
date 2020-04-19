@@ -342,8 +342,18 @@ public class ValidateInput implements Input {
      * {@code acceptableNumbers}
      */
     @Override
-    public int askInt(String message, int... acceptableNumbers) {
-        return 0;
+    public int askInt(String message, int... acceptableNumbers) throws IOException {
+        int result = 0;
+        boolean run = false;
+        do {
+            try {
+                result = input.askInt(message, acceptableNumbers);
+            } catch (InvalidIntegerException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
     /**
