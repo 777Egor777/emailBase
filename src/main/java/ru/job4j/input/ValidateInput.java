@@ -485,8 +485,18 @@ public class ValidateInput implements Input {
      * to {@code user} email-list
      */
     @Override
-    public Email askEmail(String message, User user) {
-        return null;
+    public Email askEmail(String message, User user) throws IOException {
+        Email result = null;
+        boolean run = false;
+        do {
+            try {
+                result = input.askEmail(message, user);
+            } catch (InvalidEmailException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
     /**
