@@ -8,6 +8,7 @@ import ru.job4j.model.database.Data;
 import ru.job4j.model.user.User;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.StringJoiner;
@@ -29,7 +30,7 @@ public class OverwriteDataActionTest {
     }
 
     @Test
-    public void execute1() {
+    public void execute1() throws IOException {
         UserAction action = new OverwriteDataAction();
         Input input = new ValidateInput(new StubInput(Arrays.asList(
             "1",
@@ -52,7 +53,7 @@ public class OverwriteDataActionTest {
     }
 
     @Test
-    public void execute2() {
+    public void execute2() throws IOException {
         UserAction action = new OverwriteDataAction();
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1",

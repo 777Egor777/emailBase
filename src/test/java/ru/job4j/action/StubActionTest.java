@@ -5,6 +5,7 @@ import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.StringJoiner;
 
@@ -25,7 +26,7 @@ public class StubActionTest {
     }
 
     @Test
-    public void execute1() {
+    public void execute1() throws IOException {
         UserAction action = new StubAction();
         Input input = null;
         Data data = null;
@@ -33,7 +34,7 @@ public class StubActionTest {
     }
 
     @Test
-    public void execute2() {
+    public void execute2() throws IOException {
         UserAction action = new StubAction();
         Input input = null;
         Data data = null;

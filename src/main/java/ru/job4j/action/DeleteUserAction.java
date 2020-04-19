@@ -2,6 +2,9 @@ package ru.job4j.action;
 
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
+
+import java.io.IOException;
 
 /**
  * This class execute process
@@ -45,7 +48,11 @@ public class DeleteUserAction implements UserAction {
      * action.
      */
     @Override
-    public boolean execute(Input input, Data data) {
-        return false;
+    public boolean execute(Input input, Data data) throws IOException {
+        System.out.println(String.format("===%s===", getTitle()));
+        int id = input.askInt("Enter user's id: ",
+                data.allId());
+        DataHelper.deleteUser(data, id);
+        return true;
     }
 }

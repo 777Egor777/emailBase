@@ -8,6 +8,7 @@ import ru.job4j.model.database.Data;
 import ru.job4j.model.user.User;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.StringJoiner;
@@ -29,7 +30,7 @@ public class ExitProgramActionTest {
     }
 
     @Test
-    public void execute1() {
+    public void execute1() throws IOException {
         UserAction action = new ExitProgramAction();
         Input input = new ValidateInput(new StubInput(Arrays.asList()));
         Data data = new Data();
@@ -45,7 +46,7 @@ public class ExitProgramActionTest {
     }
 
     @Test
-    public void execute2() {
+    public void execute2() throws IOException {
         UserAction action = new ExitProgramAction();
         Input input = new ValidateInput(new StubInput(Arrays.asList()));
         Data data = new Data();
