@@ -420,8 +420,18 @@ public class ValidateInput implements Input {
      * method {@code askEmail}
      */
     @Override
-    public Email askEmail(String message) {
-        return null;
+    public Email askEmail(String message) throws IOException {
+        Email result = null;
+        boolean run = false;
+        do {
+            try {
+                result = input.askEmail(message);
+            } catch (InvalidEmailException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
     /**
