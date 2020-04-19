@@ -1,7 +1,9 @@
 package ru.job4j;
 
 import ru.job4j.action.*;
+import ru.job4j.input.ConsoleInput;
 import ru.job4j.input.Input;
+import ru.job4j.input.ValidateInput;
 import ru.job4j.model.database.Data;
 
 import java.io.IOException;
@@ -29,7 +31,7 @@ public class StartUI {
      * are located in the List
      * "actions"
      */
-    private List<UserAction> actions;
+    public List<UserAction> actions;
 
     /*
      * In this non-static block we
@@ -110,6 +112,10 @@ public class StartUI {
      * interact with user.
      * @param args - standard compiler args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Data data = new Data();
+        Input input = new ValidateInput(new ConsoleInput());
+        StartUI ui = new StartUI();
+        ui.start(ui.actions, input, data);
     }
 }
