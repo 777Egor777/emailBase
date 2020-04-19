@@ -183,8 +183,18 @@ public class ValidateInput implements Input {
      * {@code askLine} method
      */
     @Override
-    public int askInt(String message) {
-        return 0;
+    public int askInt(String message) throws IOException {
+        int result = 0;
+        boolean run = false;
+        do {
+            try {
+                result = input.askInt(message);
+            } catch (InvalidIntegerException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
      /**
