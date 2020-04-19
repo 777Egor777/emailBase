@@ -1,6 +1,7 @@
 package ru.job4j.input;
 
 import ru.job4j.input.exceptions.InvalidDataException;
+import ru.job4j.input.exceptions.InvalidIntegerException;
 import ru.job4j.input.exceptions.InvalidLineException;
 import ru.job4j.input.exceptions.InvalidUserException;
 import ru.job4j.model.database.Data;
@@ -132,8 +133,18 @@ public class ValidateInput implements Input {
      * object into integer number
      */
     @Override
-    public int askInt() {
-        return 0;
+    public int askInt() throws IOException {
+        int result = 0;
+        boolean run = false;
+        do {
+            try {
+                result = input.askInt();
+            } catch (InvalidIntegerException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
     /**
