@@ -1,6 +1,6 @@
 package ru.job4j;
 
-import ru.job4j.action.UserAction;
+import ru.job4j.action.*;
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
 
@@ -38,7 +38,15 @@ public class StartUI {
      */
     {
         actions = Arrays.asList(
-                null
+                new PrintDataAction(),
+                new OverwriteDataAction(),
+                new CleanBaseAction(),
+                new AddUserAction(),
+                new AddEmailAction(),
+                new DeleteUserAction(),
+                new DeleteEmailAction(),
+                new CompressDataAction(),
+                new ExitProgramAction()
         );
     }
 
@@ -52,6 +60,7 @@ public class StartUI {
      *               standard1 output
      */
     public void showMenu(List<UserAction> menu) {
+
     }
 
     /**
