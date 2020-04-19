@@ -61,7 +61,6 @@ public class OverwriteDataActionTest {
                 "yegeraskin13@gmail.com"
         )));
         Data data = new Data();
-        action.execute(input, data);
         assertThat(action.execute(input, data), is(true));
     }
 }

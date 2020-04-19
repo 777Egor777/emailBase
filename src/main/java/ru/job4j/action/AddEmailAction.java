@@ -54,7 +54,7 @@ public class AddEmailAction implements UserAction {
         System.out.println(String.format("===%s===", getTitle()));
         int id = input.askInt("Enter user's id: ",
                               data.allId());
-        Email email = input.askEmail("Enter new email: ", data.getUser(id));
+        Email email = input.askEmail("Enter email: ", data.getUser(id));
         DataHelper.addEmail(data, id, email);
         return true;
     }

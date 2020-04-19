@@ -18,6 +18,13 @@ import ru.job4j.model.user.User;
  */
 public class Users {
     /**
+     * Max count of emails that
+     * each user has.
+     * In version 1.0
+     */
+    public static final int MAX_COUNT_OF_EMAILS = 100;
+
+    /**
      * This variable keeps number
      * of next {@code User} object
      * that we will create
@@ -53,7 +60,7 @@ public class Users {
      */
     public static void printEmails(User user) {
         for (int index = 0; index < user.getNumberOfEmails(); ++index) {
-            System.out.print(String.format("%d. %s%s", (index + 1),
+            System.out.print(String.format("%d.%s%s", (index + 1),
                                                        user.getEmail(index).getValue(),
                                                        System.lineSeparator()));
         }

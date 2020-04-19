@@ -65,7 +65,6 @@ public class AddEmailActionTest {
                 "" + user.getId(),
                 "geraskin@phystech.edu"
         )));
-        action.execute(input, data);
         assertThat(action.execute(input, data), is(true));
     }
 }

@@ -58,7 +58,7 @@ public class DeleteEmailAction implements UserAction {
                 data.allId());
         User user = data.getUser(id);
         Users.printEmails(user);
-        int emailIndex = input.askInt("Enter email's index: ", user.getNumberOfEmails());
+        int emailIndex = input.askInt("Enter email's index: ", user.getNumberOfEmails()) - 1;
         DataHelper.deleteEmail(data, id, emailIndex);
         return true;
     }

@@ -2,9 +2,11 @@ package ru.job4j.input;
 
 import ru.job4j.input.exceptions.*;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.email.util.Emails;
 import ru.job4j.model.user.User;
+import ru.job4j.model.user.util.Users;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -305,7 +307,6 @@ public interface Input {
      *         acceptableNumbers.
      */
     default int askInt(String message, int... acceptableNumbers) throws IOException {
-        System.out.print(message);
         int result = askInt(message);
         boolean contains = false;
         for (int acceptableNumber : acceptableNumbers) {
@@ -453,7 +454,8 @@ public interface Input {
             int numberOfEmails = askInt(String.format(
                     "Enter number of emails of user#%d: ",
                     result.getId()
-            ));
+            ),
+                    Users.MAX_COUNT_OF_EMAILS);
             for (int index = 0; index < numberOfEmails; ++index) {
                 result.addEmail(
                         askEmail(String.format("user#%d email%d: ",
@@ -518,7 +520,8 @@ public interface Input {
     default Data askData() throws IOException {
         Data result = new Data();
         try {
-            int numberOfUsers = askInt("Enter number of users in base: ");
+            int numberOfUsers = askInt("Enter number of users in base: ",
+                    DataHelper.MAX_COUNT_OF_USERS);
             for (int index = 1; index <= numberOfUsers; ++index) {
                 result.addUser(
                         askUser("Enter User №" + index + ": ")

@@ -52,6 +52,7 @@ public class DeleteEmailActionTest {
         action.execute(input, data);
         joiner.add("===DELETE EMAIL===");
         joiner.add("Enter user's id: ");
+        joiner.add("1.terekhovvados31@yandex.ru");
         joiner.add("Enter email's index: ");
 
         System.setOut(stdout);

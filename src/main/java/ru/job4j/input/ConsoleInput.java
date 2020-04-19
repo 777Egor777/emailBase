@@ -45,6 +45,6 @@ public class ConsoleInput implements Input {
      */
     @Override
     public String askLine() throws IOException {
-        return reader.readLine();
+        return reader.readLine().trim();
     }
 }

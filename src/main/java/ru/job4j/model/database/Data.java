@@ -145,11 +145,15 @@ public class Data {
      */
     @Override
     public String toString() {
-        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
-        for (User user : users) {
-            joiner.add(user.toString());
+        String result = "EMPTY EMAILS BASE";
+        if (users.size() > 0) {
+            StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
+            for (User user : users) {
+                joiner.add(user.toString());
+            }
+            result = joiner.toString();
         }
-        return joiner.toString();
+        return result;
     }
 
     /**
@@ -419,7 +423,30 @@ public class Data {
         boolean result = false;
         if (obj != null && obj.getClass() == getClass()) {
             Data data = (Data) obj;
-            result = users.equals(data.getUserList());
+            Collections.sort(users);
+            Collections.sort(data.getUserList());
+            result = users.size() == data.getUserList().size();
+            if (result) {
+                for (int index = 0; index < users.size(); ++index) {
+                    User user1 = users.get(index);
+                    User user2 = data.getUser(index);
+                    if (user1.getNumberOfEmails() != user2.getNumberOfEmails()) {
+                        result = false;
+                        break;
+                    } else {
+                        Collections.sort(user1.getEmails());
+                        Collections.sort(user2.getEmails());
+                        for (int emailIndex = 0; emailIndex < user1.getNumberOfEmails(); emailIndex++) {
+                            if (!user1.getEmail(emailIndex).equals(
+                                    user2.getEmail(emailIndex)
+                            )) {
+                                result = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
         return result;
     }

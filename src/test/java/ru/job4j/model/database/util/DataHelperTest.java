@@ -208,7 +208,7 @@ public class DataHelperTest {
         Email email = new Email("");
         DataHelper.addUser(data, user);
         DataHelper.addEmail(data, user.getId(), email);
-        assertThat(data.getUser(user.getId()).getEmail(1), is(email));
+        assertThat(data.getUser(user.getId()).getEmail(0), is(email));
     }
 
     @Test
@@ -230,7 +230,7 @@ public class DataHelperTest {
         Users.addEmail(user, email);
         DataHelper.addUser(data, user);
         int expected = data.getUser(user.getId()).getNumberOfEmails() - 1;
-        DataHelper.deleteEmail(data, user.getId(), 1);
+        DataHelper.deleteEmail(data, user.getId(), 0);
         int result = data.getUser(user.getId()).getNumberOfEmails();
         assertThat(result, is(expected));
     }

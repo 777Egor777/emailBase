@@ -65,7 +65,6 @@ public class AddUserActionTest {
                 "yegeraskin13@gmail.com",
                 "geraskin@phystech.edu"
         )));
-        action.execute(input, data);
         assertThat(action.execute(input, data), is(true));
     }
 }

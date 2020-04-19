@@ -102,6 +102,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askLine(message, possibleLines);
+                run = false;
             } catch (InvalidLineException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -138,9 +139,10 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askInt();
+                run = false;
             } catch (InvalidIntegerException exception) {
                 run = true;
-                System.out.println(exception.getMessage());
+                System.out.println("Exception. " + exception.getMessage());
             }
         } while (run);
         return result;
@@ -188,6 +190,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askInt(message);
+                run = false;
             } catch (InvalidIntegerException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -234,6 +237,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askInt(max);
+                run = false;
             } catch (InvalidIntegerException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -290,6 +294,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askInt(message, max);
+                run = false;
             } catch (InvalidIntegerException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -347,6 +352,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askInt(message, acceptableNumbers);
+                run = false;
             } catch (InvalidIntegerException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -382,6 +388,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askEmail();
+                run = false;
             } catch (InvalidEmailException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -428,6 +435,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askEmail(message);
+                run = false;
             } catch (InvalidEmailException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -493,6 +501,7 @@ public class ValidateInput implements Input {
         do {
             try {
                 result = input.askEmail(message, user);
+                run = false;
             } catch (InvalidEmailException exception) {
                 run = true;
                 System.out.println(exception.getMessage());
@@ -526,14 +535,11 @@ public class ValidateInput implements Input {
     @Override
     public User askUser() throws IOException {
         User result = new User();
-        int numberOfEmails = askInt(String.format(
-                "Enter number of emails of user#%d: ",
-                result.getId()
-        ));
+        int numberOfEmails = askInt("Enter count of emails: ", Users.MAX_COUNT_OF_EMAILS);
         for (int index = 0; index < numberOfEmails; ++index) {
             Users.addEmail(result,
-                    askEmail(String.format("user#%d email%d: ",
-                            result.getId(), (index + 1)),
+                    askEmail(String.format("Enter user's email#%d: ",
+                            (index + 1)),
                             result)
             );
         }
@@ -578,7 +584,7 @@ public class ValidateInput implements Input {
         int numberOfEmails = askInt(String.format(
                 "Enter user's(%s) email's count: ",
                 message
-        ));
+        ), Users.MAX_COUNT_OF_EMAILS);
         for (int index = 0; index < numberOfEmails; ++index) {
             Users.addEmail(result,
                     askEmail(String.format("Enter user's(%s) email#%d: ",
@@ -615,7 +621,8 @@ public class ValidateInput implements Input {
     @Override
     public Data askData() throws IOException {
         Data result = new Data();
-        int numberOfUsers = askInt("Enter user's count: ");
+        int numberOfUsers = askInt("Enter user's count: ",
+                                    DataHelper.MAX_COUNT_OF_USERS);
         for (int index = 0; index < numberOfUsers; ++index) {
             DataHelper.addUser(result, askUser("" + (index + 1)));
         }

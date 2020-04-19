@@ -23,7 +23,7 @@ public class StubInput implements Input {
      * that we will get in
      * method "askLine()"
      */
-    private int position = 0;
+    private int position = -1;
 
     /**
      * Constructor of class.
@@ -55,6 +55,7 @@ public class StubInput implements Input {
     @Override
     public String askLine() {
         System.out.println();
-        return lines.get(position++);
+        position++;
+        return lines.get(position).trim();
     }
 }

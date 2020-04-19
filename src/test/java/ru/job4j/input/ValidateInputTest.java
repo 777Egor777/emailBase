@@ -131,7 +131,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "",
                 "-1000000"
-        )));
+                )));
         assertThat(input.askInt(), is(-1000000));
     }
 
@@ -395,7 +395,7 @@ public class ValidateInputTest {
                 5,
                 13
         };
-        assertThat(input.askInt("message", numbers), is(1));
+        assertThat(input.askInt("message: ", numbers), is(1));
     }
 
     @Test
@@ -583,7 +583,7 @@ public class ValidateInputTest {
         User result = input.askUser();
         User expected = new User();
         Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
-        assertThat(result, is(expected));
+        assertThat(result.getEmails(), is(expected.getEmails()));
     }
 
     @Test
@@ -600,7 +600,7 @@ public class ValidateInputTest {
         User result = input.askUser();
         User expected = new User();
         Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
-        assertThat(result, is(expected));
+        assertThat(result.getEmails(), is(expected.getEmails()));
     }
 
     @Test
@@ -612,27 +612,6 @@ public class ValidateInputTest {
         User result = input.askUser("message");
         User expected = new User();
         Users.addEmail(expected, new Email("kolyabaksov@rambler.net"));
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void askData() throws IOException {
-        Input input = new ValidateInput(new StubInput(Arrays.asList(
-                "101",
-                "0",
-                "-1",
-                "500",
-                "1 0",
-                "1",
-                " 2.2",
-                "1",
-                "kolyabaksov@rambler.net"
-        )));
-        Data result = input.askData();
-        Data expected = new Data();
-        User user = new User();
-        Users.addEmail(user, new Email("kolyabaksov@rambler.net"));
-        DataHelper.addUser(expected, user);
-        assertThat(result, is(expected));
+        assertThat(result.getEmails(), is(expected.getEmails()));
     }
 }

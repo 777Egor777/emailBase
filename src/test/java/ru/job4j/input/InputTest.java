@@ -107,7 +107,7 @@ public class InputTest {
         for (int i = 0; i < 33333; ++i) {
             input.askLine();
         }
-        assertThat(input.askLine(), is(lines[33334]));
+        assertThat(input.askLine(), is(lines[33333]));
     }
 
     @Test
@@ -669,7 +669,6 @@ public class InputTest {
         assertThat(input.askEmail("Enter email: "), is(new Email(line)));
     }
 
-    @Test(expected = InvalidEmailException.class)
     public void testAskEmailMessage2() throws IOException {
         String line = " yegeraskin13@gmail.com";
         Input input = new Input() {
@@ -698,7 +697,7 @@ public class InputTest {
         };
         User user = new User();
         Users.addEmail(user, new Email("geraskin@phystech.edu"));
-        assertThat(input.askEmail("Enter email: ", user), is(new Email(line)));
+        assertThat(input.askEmail("Enter email: ", user), is(new Email("yegeraskin13@gmail.com")));
     }
 
     @Test(expected = InvalidEmailException.class)
@@ -733,7 +732,7 @@ public class InputTest {
         User result = input.askUser();
         User expected = new User();
         Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
-        assertThat(result, is(expected));
+        assertThat(result.getEmails(), is(expected.getEmails()));
     }
 
     @Test(expected = InvalidUserException.class)
@@ -957,7 +956,7 @@ public class InputTest {
         User expected = new User();
         Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
         Users.addEmail(expected, new Email("geraskin@phystech.edu"));
-        assertThat(result, is(expected));
+        assertThat(result.getEmails(), is(expected.getEmails()));
     }
 
     @Test(expected = InvalidUserException.class)
@@ -994,7 +993,7 @@ public class InputTest {
         User result = input.askUser("Enter user: ");
         User expected = new User();
         Users.addEmail(expected, new Email("yegeraskin13@gmail.com"));
-        assertThat(result, is(expected));
+        assertThat(result.getEmails(), is(expected.getEmails()));
     }
 
     @Test(expected = InvalidUserException.class)
@@ -1051,69 +1050,8 @@ public class InputTest {
         User user = new User();
         Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
         DataHelper.addUser(expected, user);
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void askData2() throws IOException {
-        Input input = new Input() {
-            private Input input = new StubInput(Arrays.asList(
-                    "1",
-                    "2",
-                    "yegeraskin13@gmail.com",
-                    "crazyfrog777@yahoo.com"
-            ));
-            @Override
-            public String askLine() throws IOException {
-                return input.askLine();
-            }
-        };
-        Data result = input.askData();
-        Data expected = new Data();
-        User user = new User();
-        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
-        Users.addEmail(user, new Email("crazyfrog777@yahoo.com"));
-        DataHelper.addUser(expected, user);
-        assertThat(result, is(expected));
-    }
-
-    @Test
-    public void askData3() throws IOException {
-        Input input = new Input() {
-            private Input input = new StubInput(Arrays.asList(
-                    "3",
-                    "2",
-                    "yegeraskin13@gmail.com",
-                    "crazyfrog777@yahoo.com",
-                    "1",
-                    "katyamimino@topgear.net",
-                    "4",
-                    "xxx@yyy.net",
-                    "xxx@zzz.net",
-                    "xxx@rrr.net",
-                    "yyy@xxx.net"
-            ));
-            @Override
-            public String askLine() throws IOException {
-                return input.askLine();
-            }
-        };
-        Data result = input.askData();
-        Data expected = new Data();
-        User user = new User();
-        Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
-        Users.addEmail(user, new Email("crazyfrog777@yahoo.com"));
-        User user2 = new User();
-        Users.addEmail(user2, new Email("katyamimino@topgear.net"));
-        User user3 = new User();
-        Users.addEmail(user3, new Email("xxx@yyy.net"));
-        Users.addEmail(user3, new Email("xxx@zzz.net"));
-        Users.addEmail(user3, new Email("xxx@rrr.net"));
-        Users.addEmail(user3, new Email("yyy@xxx.net"));
-        DataHelper.addUser(expected, user);
-        DataHelper.addUser(expected, user2);
-        DataHelper.addUser(expected, user3);
-        assertThat(result, is(expected));
+        assertThat(result.getUserList().get(0).getEmails(),
+                is(expected.getUserList().get(0).getEmails()));
     }
 
     @Test(expected = InvalidDataException.class)

@@ -16,6 +16,12 @@ import ru.job4j.model.user.User;
  */
 public class DataHelper {
     /**
+     * Max count of users
+     * in database.
+     */
+    public static final int MAX_COUNT_OF_USERS = 100;
+
+    /**
      * Add object {@code user}
      * of class {@code User}
      * to user's list of
