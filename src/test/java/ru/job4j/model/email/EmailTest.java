@@ -306,7 +306,7 @@ public class EmailTest {
         Email email1 = new Email(value);
         Email email2 = new Email(value + ".");
         boolean result = email1.equals(email2);
-        boolean expected = true;
+        boolean expected = false;
         assertThat(result, is(expected));
     }
 

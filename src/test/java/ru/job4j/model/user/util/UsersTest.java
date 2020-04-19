@@ -227,7 +227,7 @@ public class UsersTest {
     public void deleteEmail1() {
         User user = new User();
         Users.addEmail(user, new Email("yegeraskin13@gmail.com"));
-        Users.deleteEmail(user, 1);
+        Users.deleteEmail(user, 0);
         assertThat(user.getNumberOfEmails(), is(0));
     }
 
@@ -241,8 +241,8 @@ public class UsersTest {
         Users.addEmail(user, new Email("robin@gmail.com"));
         Users.addEmail(user, new Email("alexey@gmail.com"));
         Users.addEmail(user, new Email("viktorRahov@rambler.net"));
-        Users.deleteEmail(user, 3);
-        assertThat(user.getEmail(3), is(new Email("batman@gmail.com")));
+        Users.deleteEmail(user, 2);
+        assertThat(user.getEmail(2), is(new Email("batman@gmail.com")));
     }
 
     @Test
@@ -266,7 +266,7 @@ public class UsersTest {
             Users.addEmail(user, new Email("egor" + (index + 1) + "@yandex.ru"));
         }
         Users.deleteEmail(user, 77777);
-        assertThat(user.getEmail(77777), is(new Email("egor77778@yandex.ru")));
+        assertThat(user.getEmail(77777), is(new Email("egor77779@yandex.ru")));
     }
 
     @Test
@@ -283,7 +283,7 @@ public class UsersTest {
     public void addEmail() {
         User user = new User();
         Users.addEmail(user, new Email("xxx@xxx.net"));
-        assertThat(user.getEmail(1),
+        assertThat(user.getEmail(0),
                 is(new Email("xxx@xxx.net")));
     }
 }

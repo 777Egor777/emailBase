@@ -41,43 +41,51 @@ public class UserTest {
 
     @Test
     public void getId1() {
+        int expected = Users.nextUserId;
         User user = new User();
-        assertThat(user.getId(), is(1));
+        assertThat(user.getId(), is(expected));
     }
 
     @Test
     public void getId2() {
         User user1 = new User();
         User user2 = new User();
+        int expected = Users.nextUserId;
         User user3 = new User();
-        assertThat(user3.getId(), is(3));
+        assertThat(user3.getId(), is(expected));
     }
 
     @Test
     public void getId3() {
         User user = null;
+        int expected = Users.nextUserId;
         for (int index = 0; index < 7; ++index) {
+            expected = Users.nextUserId;
             user = new User();
         }
-        assertThat(user.getId(), is(7));
+        assertThat(user.getId(), is(expected));
     }
 
     @Test
     public void getId4() {
         User user = null;
+        int expected = Users.nextUserId;
         for (int index = 0; index < 7; ++index) {
+            expected = Users.nextUserId;
             user = new User();
         }
-        assertThat(user.getId(), is(7));
+        assertThat(user.getId(), is(expected));
     }
 
     @Test
     public void getId5() {
         User[] users = new User[100500];
-        for (int index = 0; index < 7; ++index) {
+        int expected = Users.nextUserId;
+        for (int index = 0; index < 7778; ++index) {
+            expected = Users.nextUserId;
             users[index] = new User();
         }
-        assertThat(users[7777].getId(), is(7777));
+        assertThat(users[7777].getId(), is(expected));
     }
 
     @Test
@@ -162,7 +170,7 @@ public class UserTest {
     public void getEmail1() {
         User user = new User();
         user.addEmail(new Email("yegeraskin13@gmail.com"));
-        assertThat(user.getEmail(1), is(new Email("yegeraskin13@gmail.com")));
+        assertThat(user.getEmail(0), is(new Email("yegeraskin13@gmail.com")));
     }
 
     @Test
@@ -175,7 +183,7 @@ public class UserTest {
         user.addEmail(new Email("robin@gmail.com"));
         user.addEmail(new Email("alexey@gmail.com"));
         user.addEmail(new Email("viktorRahov@rambler.net"));
-        assertThat(user.getEmail(1), is(new Email("yegeraskin13@gmail.com")));
+        assertThat(user.getEmail(0), is(new Email("yegeraskin13@gmail.com")));
     }
 
     @Test
@@ -188,7 +196,7 @@ public class UserTest {
         user.addEmail(new Email("robin@gmail.com"));
         user.addEmail(new Email("alexey@gmail.com"));
         user.addEmail(new Email("viktorRahov@rambler.net"));
-        assertThat(user.getEmail(2), is(new Email("vasyapupkin777@rambler.net")));
+        assertThat(user.getEmail(1), is(new Email("vasyapupkin777@rambler.net")));
     }
 
     @Test
@@ -201,7 +209,7 @@ public class UserTest {
         user.addEmail(new Email("robin@gmail.com"));
         user.addEmail(new Email("alexey@gmail.com"));
         user.addEmail(new Email("viktorRahov@rambler.net"));
-        assertThat(user.getEmail(7), is(new Email("viktorRahov@rambler.net")));
+        assertThat(user.getEmail(6), is(new Email("viktorRahov@rambler.net")));
     }
 
     @Test
@@ -210,14 +218,14 @@ public class UserTest {
         for (int index = 0; index < 100500; ++index) {
             user.addEmail(new Email("egor" + (index + 1) + "@yandex.ru"));
         }
-        assertThat(user.getEmail(91234), is(new Email("egor91234@yandex.ru")));
+        assertThat(user.getEmail(91234), is(new Email("egor91235@yandex.ru")));
     }
 
     @Test
     public void deleteEmail1() {
         User user = new User();
         user.addEmail(new Email("yegeraskin13@gmail.com"));
-        user.deleteEmail(1);
+        user.deleteEmail(0);
         assertThat(user.getNumberOfEmails(), is(0));
     }
 
@@ -231,8 +239,8 @@ public class UserTest {
         user.addEmail(new Email("robin@gmail.com"));
         user.addEmail(new Email("alexey@gmail.com"));
         user.addEmail(new Email("viktorRahov@rambler.net"));
-        user.deleteEmail(3);
-        assertThat(user.getEmail(3), is(new Email("batman@gmail.com")));
+        user.deleteEmail(2);
+        assertThat(user.getEmail(2), is(new Email("batman@gmail.com")));
     }
 
     @Test
@@ -256,7 +264,7 @@ public class UserTest {
             user.addEmail(new Email("egor" + (index + 1) + "@yandex.ru"));
         }
         user.deleteEmail(77777);
-        assertThat(user.getEmail(77777), is(new Email("egor77778@yandex.ru")));
+        assertThat(user.getEmail(77777), is(new Email("egor77779@yandex.ru")));
     }
 
     @Test
@@ -273,7 +281,7 @@ public class UserTest {
     public void testToString1() {
         User user = new User();
         String result = user.toString();
-        String expected = "User#1;";
+        String expected = String.format("User#%s;", user.getId());
         assertThat(result, is(expected));
     }
 
@@ -284,7 +292,7 @@ public class UserTest {
         user = new User();
         user.addEmail(new Email("yegeraskin13@gmail.com"));
         String result = user.toString();
-        String expected = "User#3->yegeraskin13@gmail.com;";
+        String expected = String.format("User#%s->yegeraskin13@gmail.com;", user.getId());
         assertThat(result, is(expected));
     }
 
@@ -301,7 +309,8 @@ public class UserTest {
         user.addEmail(new Email("vasyapupkin@yandex.ru"));
         user.addEmail(new Email("ivanivanov@rambler.net"));
         String result = user.toString();
-        String expected = "User#7->yegeraskin13@gmail.com, vasyapupkin@yandex.ru, ivanivanov@rambler.net;";
+        String expected = String.format("User#%s->yegeraskin13@gmail.com, vasyapupkin@yandex.ru, ivanivanov@rambler.net;",
+                user.getId());
         assertThat(result, is(expected));
     }
 
@@ -309,7 +318,7 @@ public class UserTest {
     public void addEmail() {
         User user = new User();
         user.addEmail(new Email("xxx@xxx.net"));
-        assertThat(user.getEmail(1),
+        assertThat(user.getEmail(0),
                    is(new Email("xxx@xxx.net")));
     }
 

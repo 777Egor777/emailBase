@@ -214,8 +214,8 @@ public class Data {
      */
     public void deleteUser(int id) {
         if (idToUser.containsKey(id)) {
+            users.remove(getUser(id));
             idToUser.remove(id);
-            users.remove(Integer.valueOf(id));
         }
     }
 

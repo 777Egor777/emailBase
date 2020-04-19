@@ -588,7 +588,7 @@ public class DataTest {
         user.addEmail(email);
         data.addUser(user);
         int expected = data.getUser(user.getId()).getNumberOfEmails() - 1;
-        data.deleteEmail(user.getId(), 1);
+        data.deleteEmail(user.getId(), 0);
         int result = data.getUser(user.getId()).getNumberOfEmails();
         assertThat(result, is(expected));
     }
@@ -608,10 +608,14 @@ public class DataTest {
         data.addUser(user1);
         data.addUser(user2);
         data.compressBase();
-        assertThat(data.allId(), is(new int[]{
+        int[] result = data.allId();
+        int[] expected = new int[]{
                 user1.getId(),
                 user2.getId()
-        }));
+        };
+        Arrays.sort(result);
+        Arrays.sort(expected);
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -632,7 +636,8 @@ public class DataTest {
         data.addUser(user6);
         data.addUser(user7);
         data.compressBase();
-        assertThat(data.allId(), is(new int[]{
+        int[] result = data.allId();
+        int[] expected = new int[]{
                 user1.getId(),
                 user2.getId(),
                 user3.getId(),
@@ -640,7 +645,8 @@ public class DataTest {
                 user5.getId(),
                 user6.getId(),
                 user7.getId(),
-        }));
+        };
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -663,14 +669,16 @@ public class DataTest {
         data.addUser(user6);
         data.addUser(user7);
         data.compressBase();
-        assertThat(data.allId(), is(new int[]{
+        int[] result = data.allId();
+        int[] expected = new int[]{
                 user1.getId(),
                 user2.getId(),
                 user3.getId(),
                 user4.getId(),
                 user6.getId(),
                 user7.getId(),
-        }));
+        };
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -698,13 +706,15 @@ public class DataTest {
         data.addUser(user6);
         data.addUser(user7);
         data.compressBase();
-        assertThat(data.allId(), is(new int[]{
+        int[] result = data.allId();
+        int[] expected = new int[]{
                 user1.getId(),
                 user2.getId(),
                 user3.getId(),
                 user4.getId(),
                 user6.getId(),
-        }));
+        };
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -735,12 +745,14 @@ public class DataTest {
         data.addUser(user6);
         data.addUser(user7);
         data.compressBase();
-        assertThat(data.allId(), is(new int[]{
+        int[] result = data.allId();
+        int[] expected = new int[]{
                 user1.getId(),
                 user2.getId(),
                 user3.getId(),
                 user6.getId(),
-        }));
+        };
+        assertThat(result, is(expected));
     }
 
     @Test

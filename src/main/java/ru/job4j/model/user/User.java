@@ -192,7 +192,6 @@ public class User {
      *                </p>
      */
     public void deleteEmail(int index) {
-        index--;
         emailsSet.remove(emails.get(index));
         emails.remove(index);
     }
@@ -302,9 +301,10 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         boolean result = false;
-        if (obj != null && obj.getClass() == this.getClass()) {
+        if (obj != null && obj.getClass() == getClass()) {
             User user = (User) obj;
-            result = emailsSet.equals(user.emailsSet);
+            result = true;
+            Collections.sort(emails);
         }
         return result;
     }
