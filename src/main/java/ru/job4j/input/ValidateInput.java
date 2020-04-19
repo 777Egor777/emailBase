@@ -522,8 +522,20 @@ public class ValidateInput implements Input {
      * object
      */
     @Override
-    public User askUser() {
-        return null;
+    public User askUser() throws IOException {
+        User result = new User();
+        int numberOfEmails = askInt(String.format(
+                "Enter number of emails of user#%d: ",
+                result.getId()
+        ));
+        for (int index = 0; index < numberOfEmails; ++index) {
+            result.addEmail(
+                    askEmail(String.format("user#%d email%d: ",
+                            result.getId(), (index + 1)),
+                            result)
+            );
+        }
+        return result;
     }
 
     /**
