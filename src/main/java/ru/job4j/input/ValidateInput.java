@@ -229,8 +229,18 @@ public class ValidateInput implements Input {
      * from diapason [1, max].
      */
     @Override
-    public int askInt(int max) {
-        return 0;
+    public int askInt(int max) throws IOException {
+        int result = 0;
+        boolean run = false;
+        do {
+            try {
+                result = input.askInt(max);
+            } catch (InvalidIntegerException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
     /**
