@@ -16,8 +16,8 @@ import static org.hamcrest.Matchers.is;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class UsersTest {
-    public static final PrintStream stdout = System.out;
-    public static final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    public static final PrintStream STDOUT = System.out;
+    public static final ByteArrayOutputStream BAOS = new ByteArrayOutputStream();
 
     @Test
     public void cleanEmailsList1() {
@@ -79,7 +79,7 @@ public class UsersTest {
         Users.addEmail(user, new Email("xcvbdfgsd@yandex.ru"));
         Users.addEmail(user, new Email("srrthjdfh@werqe.edu"));
         Users.addEmail(user, new Email("ghjjfghfs@rambler.org"));
-        for(int index = 0; index < 100500; ++index) {
+        for (int index = 0; index < 100500; ++index) {
             Users.addEmail(user, new Email("user" + index + "@yandex.ru"));
         }
         Users.cleanEmailsList(user);
@@ -88,8 +88,8 @@ public class UsersTest {
 
     @Test
     public void printEmails1() {
-        baos.reset();
-        System.setOut(new PrintStream(baos));
+        BAOS.reset();
+        System.setOut(new PrintStream(BAOS));
 
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                                                System.lineSeparator());
@@ -97,16 +97,16 @@ public class UsersTest {
         Users.printEmails(user);
         joiner.add("EMPTY EMAILS LIST");
 
-        String result = baos.toString();
+        String result = BAOS.toString();
         String expected = joiner.toString();
 
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
     public void printEmails2() {
-        baos.reset();
-        System.setOut(new PrintStream(baos));
+        BAOS.reset();
+        System.setOut(new PrintStream(BAOS));
 
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
@@ -116,16 +116,16 @@ public class UsersTest {
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
         joiner.add("1. yegeraskin13@gmail.com");
 
-        String result = baos.toString();
+        String result = BAOS.toString();
         String expected = joiner.toString();
 
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
     public void printEmails3() {
-        baos.reset();
-        System.setOut(new PrintStream(baos));
+        BAOS.reset();
+        System.setOut(new PrintStream(BAOS));
 
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
@@ -137,16 +137,16 @@ public class UsersTest {
         joiner.add("1. yegeraskin13@gmail.com");
         joiner.add("2. vasiliupypkin@gmail.com");
 
-        String result = baos.toString();
+        String result = BAOS.toString();
         String expected = joiner.toString();
 
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
     public void printEmails4() {
-        baos.reset();
-        System.setOut(new PrintStream(baos));
+        BAOS.reset();
+        System.setOut(new PrintStream(BAOS));
 
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
@@ -160,16 +160,16 @@ public class UsersTest {
         joiner.add("2. vasiliupypkin@gmail.com");
         joiner.add("3. vasiliupypkin@gmail.com");
 
-        String result = baos.toString();
+        String result = BAOS.toString();
         String expected = joiner.toString();
 
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
     public void printEmails5() {
-        baos.reset();
-        System.setOut(new PrintStream(baos));
+        BAOS.reset();
+        System.setOut(new PrintStream(BAOS));
 
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
@@ -195,32 +195,32 @@ public class UsersTest {
         joiner.add("8. xxx@xxx.org");
         joiner.add("9. xxx@xxx.edu");
 
-        String result = baos.toString();
+        String result = BAOS.toString();
         String expected = joiner.toString();
 
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
     public void printEmails6() {
-        baos.reset();
-        System.setOut(new PrintStream(baos));
+        BAOS.reset();
+        System.setOut(new PrintStream(BAOS));
 
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "",
                 System.lineSeparator());
         User user = new User();
         joiner.add("USER'S ID#" + user.getId() + " EMAIL LIST:");
-        for(int index = 0; index < 100500; ++index) {
-            Email email = new Email("email" + (index+1) + "@yandex.ru");
+        for (int index = 0; index < 100500; ++index) {
+            Email email = new Email("email" + (index + 1) + "@yandex.ru");
             Users.addEmail(user, email);
-            joiner.add((index+1) + ". email" + (index + 1) + "@yandex.ru");
+            joiner.add((index + 1) + ". email" + (index + 1) + "@yandex.ru");
         }
         Users.printEmails(user);
 
-        String result = baos.toString();
+        String result = BAOS.toString();
         String expected = joiner.toString();
 
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
@@ -241,7 +241,7 @@ public class UsersTest {
         Users.addEmail(user, new Email("robin@gmail.com"));
         Users.addEmail(user, new Email("alexey@gmail.com"));
         Users.addEmail(user, new Email("viktorRahov@rambler.net"));
-        Users.deleteEmail(user,3);
+        Users.deleteEmail(user, 3);
         assertThat(user.getEmail(3), is(new Email("batman@gmail.com")));
     }
 
@@ -255,15 +255,15 @@ public class UsersTest {
         Users.addEmail(user, new Email("robin@gmail.com"));
         Users.addEmail(user, new Email("alexey@gmail.com"));
         Users.addEmail(user, new Email("viktorRahov@rambler.net"));
-        Users.deleteEmail(user,3);
+        Users.deleteEmail(user, 3);
         assertThat(user.getNumberOfEmails(), is(6));
     }
 
     @Test
     public void deleteEmail4() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            Users.addEmail(user, new Email("egor" + (index+1) + "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            Users.addEmail(user, new Email("egor" + (index + 1) + "@yandex.ru"));
         }
         Users.deleteEmail(user, 77777);
         assertThat(user.getEmail(77777), is(new Email("egor77778@yandex.ru")));
@@ -272,10 +272,10 @@ public class UsersTest {
     @Test
     public void deleteEmail5() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            Users.addEmail(user, new Email("egor" + (index+1) + "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            Users.addEmail(user, new Email("egor" + (index + 1) + "@yandex.ru"));
         }
-        Users.deleteEmail(user,77777);
+        Users.deleteEmail(user, 77777);
         assertThat(user.getNumberOfEmails(), is(100499));
     }
 

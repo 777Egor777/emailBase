@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  */
 public class InvalidLineExceptionTest {
     @Test(expected = InvalidLineException.class)
-    public void InvalidLineExceptionTest() {
+    public void invalidLineExceptionTest() {
         throw new InvalidLineException("message");
     }
 }

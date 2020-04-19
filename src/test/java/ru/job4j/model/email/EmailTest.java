@@ -112,7 +112,7 @@ public class EmailTest {
     @Test
     public void testHashCode2() {
         String value = "";
-        Email email = new Email(value+"");
+        Email email = new Email(value + "");
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -121,7 +121,7 @@ public class EmailTest {
     @Test
     public void testHashCode3() {
         String value = "yegeraskin13@rambler.com";
-        Email email = new Email(value+"");
+        Email email = new Email(value + "");
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -130,7 +130,7 @@ public class EmailTest {
     @Test
     public void testHashCode4() {
         String value = "xxx@yyy.org";
-        Email email = new Email(value+"");
+        Email email = new Email(value + "");
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -139,7 +139,7 @@ public class EmailTest {
     @Test
     public void testHashCode5() {
         String value = "xxx@yyy.edu";
-        Email email = new Email(value+"");
+        Email email = new Email(value + "");
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -148,7 +148,7 @@ public class EmailTest {
     @Test
     public void testHashCode6() {
         String value = "qw@po.net";
-        Email email = new Email(""+value);
+        Email email = new Email("" + value);
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -157,7 +157,7 @@ public class EmailTest {
     @Test
     public void testHashCode7() {
         String value = "eg@mipt.ru";
-        Email email = new Email(""+value);
+        Email email = new Email("" + value);
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -166,7 +166,7 @@ public class EmailTest {
     @Test
     public void testHashCode8() {
         String value = "@serv.";
-        Email email = new Email(""+value);
+        Email email = new Email("" + value);
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -175,7 +175,7 @@ public class EmailTest {
     @Test
     public void testHashCode9() {
         String value = "@";
-        Email email = new Email(""+value);
+        Email email = new Email("" + value);
         int result = email.hashCode();
         int expected = value.hashCode();
         assertThat(result, is(expected));
@@ -194,7 +194,7 @@ public class EmailTest {
     public void testEquals1() {
         String value = "yegeraskin13@gmail.com";
         Email email1 = new Email(value);
-        Email email2 = new Email(""+value);
+        Email email2 = new Email("" + value);
         boolean result = email1.equals(email2);
         boolean expected = true;
         assertThat(result, is(expected));
@@ -204,7 +204,7 @@ public class EmailTest {
     public void testEquals2() {
         String value = "";
         Email email1 = new Email(value);
-        Email email2 = new Email(""+value);
+        Email email2 = new Email("" + value);
         boolean result = email1.equals(email2);
         boolean expected = true;
         assertThat(result, is(expected));
@@ -214,7 +214,7 @@ public class EmailTest {
     public void testEquals3() {
         String value = "yegeraskin13@rambler.com";
         Email email1 = new Email(value);
-        Email email2 = new Email(""+value);
+        Email email2 = new Email("" + value);
         boolean result = email1.equals(email2);
         boolean expected = true;
         assertThat(result, is(expected));
@@ -223,7 +223,7 @@ public class EmailTest {
     @Test
     public void testEquals4() {
         String value = "xxx@yyy.org";
-        Email email1 = new Email(""+value);
+        Email email1 = new Email("" + value);
         Email email2 = new Email(value);
         boolean result = email1.equals(email2);
         boolean expected = true;
@@ -233,7 +233,7 @@ public class EmailTest {
     @Test
     public void testEquals5() {
         String value = "xxx@yyy.edu";
-        Email email1 = new Email(""+value);
+        Email email1 = new Email("" + value);
         Email email2 = new Email(value);
         boolean result = email1.equals(email2);
         boolean expected = true;
@@ -244,7 +244,7 @@ public class EmailTest {
     public void testEquals6() {
         String value = "qw@po.net";
         Email email1 = new Email(value);
-        Email email2 = new Email(""+value);
+        Email email2 = new Email("" + value);
         boolean result = email1.equals(email2);
         boolean expected = true;
         assertThat(result, is(expected));
@@ -253,7 +253,7 @@ public class EmailTest {
     @Test
     public void testEquals7() {
         String value = "eg@mipt.ru";
-        Email email1 = new Email(""+value);
+        Email email1 = new Email("" + value);
         Email email2 = new Email(value);
         boolean result = email1.equals(email2);
         boolean expected = true;
@@ -263,7 +263,7 @@ public class EmailTest {
     @Test
     public void testEquals8() {
         String value = "@serv.";
-        Email email1 = new Email(""+value);
+        Email email1 = new Email("" + value);
         Email email2 = new Email(value);
         boolean result = email1.equals(email2);
         boolean expected = true;
@@ -304,7 +304,7 @@ public class EmailTest {
     public void testEquals12() {
         String value = "";
         Email email1 = new Email(value);
-        Email email2 = new Email(value+".");
+        Email email2 = new Email(value + ".");
         boolean result = email1.equals(email2);
         boolean expected = true;
         assertThat(result, is(expected));
@@ -313,7 +313,7 @@ public class EmailTest {
     @Test
     public void testEquals13() {
         String value = "yegeraskin13@rambler.com";
-        Email email1 = new Email(value+".");
+        Email email1 = new Email(value + ".");
         Email email2 = new Email(value);
         boolean result = email1.equals(email2);
         boolean expected = false;
@@ -395,7 +395,7 @@ public class EmailTest {
         String value = "";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -404,7 +404,7 @@ public class EmailTest {
         String value = "31123132";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -413,7 +413,7 @@ public class EmailTest {
         String value = "asadsd@";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -422,7 +422,7 @@ public class EmailTest {
         String value = "yegeraskin13@gmail.com";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -431,7 +431,7 @@ public class EmailTest {
         String value = "@@@";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -440,7 +440,7 @@ public class EmailTest {
         String value = "dllffg j;seo jpeigj ek....";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -449,7 +449,7 @@ public class EmailTest {
         String value = "geraskin@phystech.edu";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -458,7 +458,7 @@ public class EmailTest {
         String value = "ya@.org";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -467,7 +467,7 @@ public class EmailTest {
         String value = "kuzen.net";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 
@@ -476,7 +476,7 @@ public class EmailTest {
         String value = "@@egor@@@@@@77777";
         Email email = new Email(value);
         String result = email.getValue();
-        String expected = ""+value;
+        String expected = "" + value;
         assertThat(result, is(expected));
     }
 

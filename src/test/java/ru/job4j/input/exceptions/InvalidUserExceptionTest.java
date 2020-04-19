@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  */
 public class InvalidUserExceptionTest {
     @Test(expected = InvalidUserException.class)
-    public void InvalidUserExceptionTest() {
+    public void invalidUserExceptionTest() {
         throw new InvalidUserException("message");
     }
 }

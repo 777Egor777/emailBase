@@ -92,7 +92,7 @@ public class InputTest {
     @Test
     public void askLine5() throws IOException {
         String[] lines = new String[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             lines[i] = "line#" + i;
         }
         Input input = new Input() {
@@ -104,7 +104,7 @@ public class InputTest {
                 return input.askLine();
             }
         };
-        for(int i = 0; i < 33333; ++i) {
+        for (int i = 0; i < 33333; ++i) {
             input.askLine();
         }
         assertThat(input.askLine(), is(lines[33334]));
@@ -437,7 +437,7 @@ public class InputTest {
                 return input.askLine();
             }
         };
-        assertThat(input.askInt("Enter number from 1 to 5: ",5), is(5));
+        assertThat(input.askInt("Enter number from 1 to 5: ", 5), is(5));
     }
 
     @Test(expected = InvalidIntegerException.class)
@@ -452,7 +452,7 @@ public class InputTest {
                 return input.askLine();
             }
         };
-        assertThat(input.askInt("Enter number from 1 to 4: ",4), is(5));
+        assertThat(input.askInt("Enter number from 1 to 4: ", 4), is(5));
     }
 
     @Test
@@ -467,7 +467,7 @@ public class InputTest {
                 return input.askLine();
             }
         };
-        assertThat(input.askInt("Enter ID: ",new int[]{
+        assertThat(input.askInt("Enter ID: ", new int[]{
                 1, 7, 5, 100, -1
         }), is(5));
     }
@@ -484,7 +484,7 @@ public class InputTest {
                 return input.askLine();
             }
         };
-        assertThat(input.askInt("Enter ID: ",new int[]{
+        assertThat(input.askInt("Enter ID: ", new int[]{
                 1, 7, 100, -1
         }), is(5));
     }
@@ -1034,7 +1034,7 @@ public class InputTest {
     }
 
     @Test
-    public void askData1() {
+    public void askData1() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1055,7 +1055,7 @@ public class InputTest {
     }
 
     @Test
-    public void askData2() {
+    public void askData2() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1078,7 +1078,7 @@ public class InputTest {
     }
 
     @Test
-    public void askData3() {
+    public void askData3() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "3",
@@ -1117,7 +1117,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData4() {
+    public void askData4() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "101",
@@ -1138,7 +1138,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData5() {
+    public void askData5() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "0",
@@ -1159,7 +1159,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData6() {
+    public void askData6() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "-5",
@@ -1180,7 +1180,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData7() {
+    public void askData7() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1201,7 +1201,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData8() {
+    public void askData8() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1222,7 +1222,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData9() {
+    public void askData9() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1243,7 +1243,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData10() {
+    public void askData10() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1264,7 +1264,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData11() {
+    public void askData11() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1285,7 +1285,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData12() {
+    public void askData12() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1306,7 +1306,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData13() {
+    public void askData13() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1327,7 +1327,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData14() {
+    public void askData14() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",
@@ -1348,7 +1348,7 @@ public class InputTest {
     }
 
     @Test(expected = InvalidDataException.class)
-    public void askData15() {
+    public void askData15() throws IOException {
         Input input = new Input() {
             private Input input = new StubInput(Arrays.asList(
                     "1",

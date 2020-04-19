@@ -9,8 +9,8 @@ import ru.job4j.input.Input;
 import ru.job4j.input.StubInput;
 import ru.job4j.model.database.Data;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +25,7 @@ import static org.hamcrest.Matchers.is;
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
 public class StartUITest {
-    private static final PrintStream stdout = System.out;
+    private static final PrintStream STDOUT = System.out;
     private static ByteArrayOutputStream baos;
 
     @Before
@@ -36,7 +36,7 @@ public class StartUITest {
 
     @After
     public void afterTest() {
-        System.setOut(stdout);
+        System.setOut(STDOUT);
     }
 
     @Test
@@ -118,7 +118,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start1() {
+    public void start1() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction()
@@ -139,7 +139,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start2() {
+    public void start2() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction(),
@@ -162,7 +162,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start3() {
+    public void start3() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction(),
@@ -195,7 +195,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start4() {
+    public void start4() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction(),
@@ -228,7 +228,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start5() {
+    public void start5() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction(),
@@ -261,7 +261,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start6() {
+    public void start6() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction(),
@@ -294,7 +294,7 @@ public class StartUITest {
     }
 
     @Test
-    public void start7() {
+    public void start7() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = Arrays.asList(
                 new StubAction(),
@@ -327,13 +327,13 @@ public class StartUITest {
     }
 
     @Test
-    public void start8() {
+    public void start8() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = new ArrayList<>();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         joiner.add("MENU");
         int size = 1174191;
-        for(int index = 1; index <= size; ++index) {
+        for (int index = 1; index <= size; ++index) {
             actions.add(new StubAction());
             joiner.add(index + ".STUBACTION");
         }
@@ -350,13 +350,13 @@ public class StartUITest {
     }
 
     @Test
-    public void start9() {
+    public void start9() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = new ArrayList<>();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         joiner.add("MENU");
         int size = 1174191;
-        for(int index = 1; index <= size; ++index) {
+        for (int index = 1; index <= size; ++index) {
             actions.add(new StubAction());
             joiner.add(index + ".STUBACTION");
         }
@@ -373,18 +373,18 @@ public class StartUITest {
     }
 
     @Test
-    public void start10() {
+    public void start10() throws IOException {
         StartUI ui = new StartUI();
         List<UserAction> actions = new ArrayList<>();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
         joiner.add("MENU");
         int size = 1174191;
-        for(int index = 1; index <= size; ++index) {
+        for (int index = 1; index <= size; ++index) {
             actions.add(new StubAction());
             joiner.add(index + ".STUBACTION");
         }
         Input input = new StubInput(Arrays.asList(
-                ""+size
+                "" + size
         ));
         Data data = new Data();
         ui.start(actions, input, data);

@@ -81,7 +81,7 @@ public class VertexTest {
 
 
     @Test
-    public void dfs1 () {
+    public void dfs1() {
         Vertex vertex1 = new Vertex(1);
         Vertex vertex2 = new Vertex(2);
         Vertex vertex3 = new Vertex(3);

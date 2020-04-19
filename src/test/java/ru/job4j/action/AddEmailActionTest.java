@@ -34,10 +34,10 @@ public class AddEmailActionTest {
     public void execute1() throws IOException {
         UserAction action = new AddEmailAction();
         Data data = new Data();
-        User user= new User();
+        User user = new User();
         DataHelper.addUser(data, user);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
-                ""+user.getId(),
+                "" + user.getId(),
                 "geraskin@phystech.edu"
         )));
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -59,10 +59,10 @@ public class AddEmailActionTest {
     public void execute2() throws IOException {
         UserAction action = new AddEmailAction();
         Data data = new Data();
-        User user= new User();
+        User user = new User();
         DataHelper.addUser(data, user);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
-                ""+user.getId(),
+                "" + user.getId(),
                 "geraskin@phystech.edu"
         )));
         action.execute(input, data);

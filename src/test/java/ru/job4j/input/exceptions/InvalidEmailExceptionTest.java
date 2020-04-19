@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  */
 public class InvalidEmailExceptionTest {
     @Test(expected = InvalidEmailException.class)
-    public void InvalidEmailExceptionTest() {
+    public void invalidEmailExceptionTest() {
         throw new InvalidEmailException("message");
     }
 }

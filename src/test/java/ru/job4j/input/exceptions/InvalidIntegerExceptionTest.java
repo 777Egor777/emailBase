@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  */
 public class InvalidIntegerExceptionTest {
     @Test(expected = InvalidIntegerException.class)
-    public void InvalidIntegerExceptionTest() {
+    public void invalidIntegerExceptionTest() {
         throw new InvalidIntegerException("message");
     }
 }

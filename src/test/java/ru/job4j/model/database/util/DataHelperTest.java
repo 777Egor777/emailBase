@@ -102,7 +102,7 @@ public class DataHelperTest {
     @Test
     public void addUser7() {
         User user = new User();
-        for(int i=0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             user = new User();
         }
         Data data = new Data();
@@ -114,7 +114,7 @@ public class DataHelperTest {
     public void addUser8() {
         User[] users = new User[100500];
         Data data = new Data();
-        for(int i=0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
             DataHelper.addUser(data, users[i]);
         }
@@ -180,7 +180,7 @@ public class DataHelperTest {
     @Test
     public void clean7() {
         Data data = new Data();
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             DataHelper.addUser(data, new User());
         }
         DataHelper.clean(data);
@@ -190,10 +190,10 @@ public class DataHelperTest {
     @Test
     public void clean8() {
         Data data = new Data();
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             User user = new User();
             for (int j = 0; j < 100; ++j) {
-                Users.addEmail(user, new Email("EMail#" + (i*100 + j)));
+                Users.addEmail(user, new Email("EMail#" + (i * 100 + j)));
             }
             DataHelper.addUser(data, user);
         }

@@ -43,7 +43,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-55"
         )));
-        assertThat(input.askInt(),is(-55));
+        assertThat(input.askInt(), is(-55));
     }
 
     @Test
@@ -59,7 +59,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "0"
         )));
-        assertThat(input.askInt(),is(0));
+        assertThat(input.askInt(), is(0));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
-        assertThat(input.askInt(),is(1));
+        assertThat(input.askInt(), is(1));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
-        assertThat(input.askInt(),is(2));
+        assertThat(input.askInt(), is(2));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
-        assertThat(input.askInt(),is(3));
+        assertThat(input.askInt(), is(3));
     }
 
     @Test
@@ -91,7 +91,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "7"
         )));
-        assertThat(input.askInt(),is(7));
+        assertThat(input.askInt(), is(7));
     }
 
     @Test
@@ -99,7 +99,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "100"
         )));
-        assertThat(input.askInt(),is(100));
+        assertThat(input.askInt(), is(100));
     }
 
     @Test
@@ -107,7 +107,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1000000"
         )));
-        assertThat(input.askInt(),is(1000000));
+        assertThat(input.askInt(), is(1000000));
     }
 
     @Test
@@ -115,7 +115,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 " 1000000 "
         )));
-        assertThat(input.askInt(),is(1000000));
+        assertThat(input.askInt(), is(1000000));
     }
 
     @Test
@@ -123,7 +123,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 " 0 "
         )));
-        assertThat(input.askInt(),is(0));
+        assertThat(input.askInt(), is(0));
     }
 
     @Test()
@@ -132,7 +132,7 @@ public class ValidateInputTest {
                 "",
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
@@ -141,7 +141,7 @@ public class ValidateInputTest {
                 "555,555",
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
@@ -150,7 +150,7 @@ public class ValidateInputTest {
                 "null",
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
@@ -159,7 +159,7 @@ public class ValidateInputTest {
                 "10 000",
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
@@ -168,7 +168,7 @@ public class ValidateInputTest {
                 "yegeraskin13@gmail.com",
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
@@ -178,13 +178,13 @@ public class ValidateInputTest {
                 "yegeraskin13@gmail.com",
                 "-1000000"
         )));
-        assertThat(input.askInt(),is(-1000000));
+        assertThat(input.askInt(), is(-1000000));
     }
 
     @Test
     public void askInt18() throws IOException {
         List<String> list = new ArrayList<>();
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             list.add("xxx" + i);
         }
         list.add("49");
@@ -193,7 +193,7 @@ public class ValidateInputTest {
         list.add("dhwet");
         Input input = new ValidateInput(new StubInput(list));
         assertThat(input.
-                askInt(),is(49));
+                askInt(), is(49));
     }
 
     @Test
@@ -201,7 +201,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "-1000000"
         )));
-        assertThat(input.askInt("Enter number:"),is(-1000000));
+        assertThat(input.askInt("Enter number:"), is(-1000000));
     }
 
     @Test
@@ -209,7 +209,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
-        assertThat(input.askInt(1),is(1));
+        assertThat(input.askInt(1), is(1));
     }
 
     @Test
@@ -217,7 +217,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
-        assertThat(input.askInt(2),is(1));
+        assertThat(input.askInt(2), is(1));
     }
 
     @Test
@@ -225,7 +225,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
-        assertThat(input.askInt(2),is(2));
+        assertThat(input.askInt(2), is(2));
     }
 
     @Test
@@ -233,7 +233,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 " 1  "
         )));
-        assertThat(input.askInt(1),is(1));
+        assertThat(input.askInt(1), is(1));
     }
 
 
@@ -242,7 +242,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
-        assertThat(input.askInt(3),is(2));
+        assertThat(input.askInt(3), is(2));
     }
 
 
@@ -251,7 +251,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
-        assertThat(input.askInt(3),is(1));
+        assertThat(input.askInt(3), is(1));
     }
 
 
@@ -260,7 +260,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
-        assertThat(input.askInt(3),is(3));
+        assertThat(input.askInt(3), is(3));
     }
 
 
@@ -269,7 +269,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "7"
         )));
-        assertThat(input.askInt(7),is(7));
+        assertThat(input.askInt(7), is(7));
     }
 
     @Test
@@ -277,7 +277,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "5"
         )));
-        assertThat(input.askInt(7),is(5));
+        assertThat(input.askInt(7), is(5));
     }
 
     @Test
@@ -285,7 +285,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "3"
         )));
-        assertThat(input.askInt(7),is(3));
+        assertThat(input.askInt(7), is(3));
     }
 
     @Test
@@ -293,7 +293,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "2"
         )));
-        assertThat(input.askInt(7),is(2));
+        assertThat(input.askInt(7), is(2));
     }
 
     @Test
@@ -301,7 +301,7 @@ public class ValidateInputTest {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "1"
         )));
-        assertThat(input.askInt(7),is(1));
+        assertThat(input.askInt(7), is(1));
     }
 
     @Test
@@ -310,7 +310,7 @@ public class ValidateInputTest {
                 "0",
                 "1"
         )));
-        assertThat(input.askInt(7),is(1));
+        assertThat(input.askInt(7), is(1));
     }
 
     @Test
@@ -319,7 +319,7 @@ public class ValidateInputTest {
                 "-1",
                 "1"
         )));
-        assertThat(input.askInt(7),is(1));
+        assertThat(input.askInt(7), is(1));
     }
 
     @Test
@@ -328,7 +328,7 @@ public class ValidateInputTest {
                 "-7",
                 "1"
         )));
-        assertThat(input.askInt(7),is(1));
+        assertThat(input.askInt(7), is(1));
     }
 
     @Test
@@ -338,7 +338,7 @@ public class ValidateInputTest {
                 "49",
                 "3"
         )));
-        assertThat(input.askInt(7),is(3));
+        assertThat(input.askInt(7), is(3));
     }
 
     @Test
@@ -348,7 +348,7 @@ public class ValidateInputTest {
                 "49",
                 "3"
         )));
-        assertThat(input.askInt("message",7),is(3));
+        assertThat(input.askInt("message", 7), is(3));
     }
 
     @Test
@@ -361,7 +361,7 @@ public class ValidateInputTest {
                 2,
                 3
         };
-        assertThat(input.askInt("message",numbers),is(1));
+        assertThat(input.askInt("message", numbers), is(1));
     }
 
     @Test
@@ -374,7 +374,7 @@ public class ValidateInputTest {
                 2,
                 3
         };
-        assertThat(input.askInt("message",numbers),is(3));
+        assertThat(input.askInt("message", numbers), is(3));
     }
 
     @Test
@@ -395,7 +395,7 @@ public class ValidateInputTest {
                 5,
                 13
         };
-        assertThat(input.askInt("message",numbers),is(1));
+        assertThat(input.askInt("message", numbers), is(1));
     }
 
     @Test
@@ -418,7 +418,7 @@ public class ValidateInputTest {
                 5,
                 13
         };
-        assertThat(input.askInt("message",numbers),is(13));
+        assertThat(input.askInt("message", numbers), is(13));
     }
 
     @Test
@@ -440,7 +440,7 @@ public class ValidateInputTest {
                 5,
                 13
         };
-        assertThat(input.askInt("message",numbers),is(5));
+        assertThat(input.askInt("message", numbers), is(5));
     }
 
     @Test
@@ -453,7 +453,7 @@ public class ValidateInputTest {
                 2,
                 3
         };
-        assertThat(input.askInt("message",numbers),is(2));
+        assertThat(input.askInt("message", numbers), is(2));
     }
 
     @Test
@@ -464,7 +464,7 @@ public class ValidateInputTest {
         Email result = input.askEmail();
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -476,7 +476,7 @@ public class ValidateInputTest {
         Email result = input.askEmail();
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -488,7 +488,7 @@ public class ValidateInputTest {
         Email result = input.askEmail();
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -500,7 +500,7 @@ public class ValidateInputTest {
         Email result = input.askEmail();
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -513,7 +513,7 @@ public class ValidateInputTest {
         Email result = input.askEmail();
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -529,7 +529,7 @@ public class ValidateInputTest {
         Email result = input.askEmail();
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -545,7 +545,7 @@ public class ValidateInputTest {
         Email result = input.askEmail("Enter email: ");
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -557,7 +557,7 @@ public class ValidateInputTest {
         Email result = input.askEmail("Enter email: ", user);
         Email expected = new Email("barsik99@yahoo.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -571,7 +571,7 @@ public class ValidateInputTest {
         Email result = input.askEmail("Enter email: ", user);
         Email expected = new Email("yegeraskin13@gmail.com");
 
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
     }
 
     @Test
@@ -616,7 +616,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void askData() {
+    public void askData() throws IOException {
         Input input = new ValidateInput(new StubInput(Arrays.asList(
                 "101",
                 "0",

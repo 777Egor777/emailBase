@@ -41,7 +41,7 @@ public class DeleteEmailActionTest {
         DataHelper.addUser(data, user);
         DataHelper.addEmail(data, user.getId(), email);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
-                ""+user.getId(),
+                "" + user.getId(),
                 "1"
         )));
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -67,7 +67,7 @@ public class DeleteEmailActionTest {
         DataHelper.addUser(data, user);
         DataHelper.addEmail(data, user.getId(), email);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
-                ""+user.getId(),
+                "" + user.getId(),
                 "1"
         )));
         assertThat(action.execute(input, data), is(true));

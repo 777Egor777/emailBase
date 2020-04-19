@@ -1836,7 +1836,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectService114() {
         String service = "cvbnn";
@@ -1844,7 +1843,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectService115() {
         String service = "cannabis";
@@ -1852,7 +1850,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectService116() {
         String service = "mari";
@@ -1860,8 +1857,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
-
     @Test
     public void isCorrectDomain1() {
         String domain = "";
@@ -1869,7 +1864,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain2() {
         String domain = "ru";
@@ -1877,7 +1871,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain3() {
         String domain = "com";
@@ -1885,7 +1878,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain4() {
         String domain = "net";
@@ -1893,7 +1885,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain5() {
         String domain = "org";
@@ -1901,7 +1892,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain6() {
         String domain = "edu";
@@ -1909,7 +1899,6 @@ public class EmailsTest {
         boolean expected = true;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain7() {
         String domain = ".ru";
@@ -1917,7 +1906,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain8() {
         String domain = ".com";
@@ -1925,7 +1913,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain9() {
         String domain = ".net";
@@ -1933,7 +1920,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain10() {
         String domain = ".edu";
@@ -1941,7 +1927,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain11() {
         String domain = ".org";
@@ -1949,7 +1934,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain12() {
         String domain = ".";
@@ -1957,7 +1941,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain13() {
         String domain = "@";
@@ -1965,7 +1948,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain14() {
         String domain = "yandex.ru";
@@ -1973,7 +1955,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain15() {
         String domain = "gmail.com";
@@ -1981,7 +1962,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain16() {
         String domain = "ру";
@@ -1989,7 +1969,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain17() {
         String domain = "qwe";
@@ -1997,7 +1976,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain18() {
         String domain = "qw";
@@ -2012,7 +1990,6 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
     @Test
     public void isCorrectDomain20() {
         String domain = ",ru";
@@ -2020,5 +1997,4 @@ public class EmailsTest {
         boolean expected = false;
         assertThat(result, is(expected));
     }
-
 }

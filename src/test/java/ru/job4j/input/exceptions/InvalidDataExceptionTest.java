@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  */
 public class InvalidDataExceptionTest {
     @Test(expected = InvalidDataException.class)
-    public void InvalidDataExceptionTest() {
+    public void invalidDataExceptionTest() {
         throw new InvalidDataException("message");
     }
 }

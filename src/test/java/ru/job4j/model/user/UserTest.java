@@ -30,7 +30,7 @@ public class UserTest {
                 new Email("email10@rambler.net")
         };
 
-        for(Email email : q) {
+        for (Email email : q) {
             user.addEmail(email);
         }
 
@@ -56,7 +56,7 @@ public class UserTest {
     @Test
     public void getId3() {
         User user = null;
-        for(int index = 0; index < 7; ++index) {
+        for (int index = 0; index < 7; ++index) {
             user = new User();
         }
         assertThat(user.getId(), is(7));
@@ -65,7 +65,7 @@ public class UserTest {
     @Test
     public void getId4() {
         User user = null;
-        for(int index = 0; index < 7; ++index) {
+        for (int index = 0; index < 7; ++index) {
             user = new User();
         }
         assertThat(user.getId(), is(7));
@@ -74,7 +74,7 @@ public class UserTest {
     @Test
     public void getId5() {
         User[] users = new User[100500];
-        for(int index = 0; index < 7; ++index) {
+        for (int index = 0; index < 7; ++index) {
             users[index] = new User();
         }
         assertThat(users[7777].getId(), is(7777));
@@ -112,9 +112,9 @@ public class UserTest {
     @Test
     public void cleanEmailsList4() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            user.addEmail(new Email("JavaDeveloperNumber" + index +
-                                     "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("JavaDeveloperNumber" + index
+                    + "@yandex.ru"));
         }
         user.cleanEmailsList();
         assertThat(user.getEmails(),
@@ -150,9 +150,9 @@ public class UserTest {
     @Test
     public void getNumberOfEmails4() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            user.addEmail(new Email("JavaDeveloperNumber" + index +
-                    "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("JavaDeveloperNumber" + index
+                    + "@yandex.ru"));
         }
         assertThat(user.getNumberOfEmails(),
                 is(100500));
@@ -207,8 +207,8 @@ public class UserTest {
     @Test
     public void getEmail5() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            user.addEmail(new Email("egor" + (index+1) + "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("egor" + (index + 1) + "@yandex.ru"));
         }
         assertThat(user.getEmail(91234), is(new Email("egor91234@yandex.ru")));
     }
@@ -252,8 +252,8 @@ public class UserTest {
     @Test
     public void deleteEmail4() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            user.addEmail(new Email("egor" + (index+1) + "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("egor" + (index + 1) + "@yandex.ru"));
         }
         user.deleteEmail(77777);
         assertThat(user.getEmail(77777), is(new Email("egor77778@yandex.ru")));
@@ -262,8 +262,8 @@ public class UserTest {
     @Test
     public void deleteEmail5() {
         User user = new User();
-        for(int index = 0; index < 100500; ++index) {
-            user.addEmail(new Email("egor" + (index+1) + "@yandex.ru"));
+        for (int index = 0; index < 100500; ++index) {
+            user.addEmail(new Email("egor" + (index + 1) + "@yandex.ru"));
         }
         user.deleteEmail(77777);
         assertThat(user.getNumberOfEmails(), is(100499));

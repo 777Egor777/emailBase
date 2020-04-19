@@ -104,7 +104,7 @@ public class DataTest {
     @Test
     public void addUser7() {
         User user = new User();
-        for(int i=0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             user = new User();
         }
         Data data = new Data();
@@ -116,7 +116,7 @@ public class DataTest {
     public void addUser8() {
         User[] users = new User[100500];
         Data data = new Data();
-        for(int i=0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
             data.addUser(users[i]);
         }
@@ -148,7 +148,7 @@ public class DataTest {
         User user2 = new User();
         data.addUser(user1);
         data.addUser(user2);
-        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
         joiner.add(user1.toString());
         joiner.add(user2.toString());
         String result = data.toString();
@@ -160,11 +160,11 @@ public class DataTest {
     public void testToString4() {
         Data data = new Data();
         User[] users = new User[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
         }
-        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
-        for(int i = 0; i < 100500; ++i) {
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
+        for (int i = 0; i < 100500; ++i) {
             data.addUser(users[i]);
             joiner.add(users[i].toString());
         }
@@ -177,14 +177,14 @@ public class DataTest {
     public void testToString5() {
         Data data = new Data();
         User[] users = new User[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
-            for(int j = 0; j < 10; ++j) {
+            for (int j = 0; j < 10; ++j) {
                 users[i].addEmail(new Email("user#" + users[i].getId() + "email#" + j));
             }
         }
-        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
-        for(int i = 0; i < 100500; ++i) {
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
+        for (int i = 0; i < 100500; ++i) {
             data.addUser(users[i]);
             joiner.add(users[i].toString());
         }
@@ -197,7 +197,7 @@ public class DataTest {
     public void testToString6() {
         Data data = new Data();
         User[] users = new User[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
             if (i % 3 == 0) {
                 for (int j = 0; j < 10; ++j) {
@@ -205,8 +205,8 @@ public class DataTest {
                 }
             }
         }
-        StringJoiner joiner = new StringJoiner(System.lineSeparator(),"","");
-        for(int i = 0; i < 100500; ++i) {
+        StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", "");
+        for (int i = 0; i < 100500; ++i) {
             data.addUser(users[i]);
             joiner.add(users[i].toString());
         }
@@ -274,7 +274,7 @@ public class DataTest {
     @Test
     public void clean7() {
         Data data = new Data();
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             data.addUser(new User());
         }
         data.clean();
@@ -284,10 +284,10 @@ public class DataTest {
     @Test
     public void clean8() {
         Data data = new Data();
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             User user = new User();
             for (int j = 0; j < 100; ++j) {
-                user.addEmail(new Email("EMail#" + (i*100 + j)));
+                user.addEmail(new Email("EMail#" + (i * 100 + j)));
             }
             data.addUser(user);
         }
@@ -411,7 +411,7 @@ public class DataTest {
         Data data = new Data();
         User[] users = new User[100500];
         int[] ids = new int[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
             ids[i] = users[i].getId();
             data.addUser(users[i]);
@@ -423,17 +423,17 @@ public class DataTest {
     public void allId8() {
         Data data = new Data();
         User[] users = new User[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
             data.addUser(users[i]);
         }
         data.deleteUser(users[77777].getId());
         int[] ids = new int[100499];
         int pos = 0;
-        for(int i = 0; i < 77777; ++i) {
+        for (int i = 0; i < 77777; ++i) {
             ids[pos++] = users[i].getId();
         }
-        for(int i = 77778; i < 100500; ++i) {
+        for (int i = 77778; i < 100500; ++i) {
             ids[pos++] = users[i].getId();
         }
         assertThat(data.allId(), is(ids));
@@ -570,7 +570,7 @@ public class DataTest {
     public void getUser4() {
         Data data = new Data();
         User[] users = new User[100500];
-        for(int i = 0; i < 100500; ++i) {
+        for (int i = 0; i < 100500; ++i) {
             users[i] = new User();
             data.addUser(users[i]);
         }

@@ -37,7 +37,7 @@ public class DeleteUserActionTest {
         User user = new User();
         DataHelper.addUser(data, user);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
-                ""+user.getId()
+                "" + user.getId()
         )));
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         StringJoiner joiner = new StringJoiner(System.lineSeparator(), "", System.lineSeparator());
@@ -59,7 +59,7 @@ public class DeleteUserActionTest {
         User user = new User();
         DataHelper.addUser(data, user);
         Input input = new ValidateInput(new StubInput(Arrays.asList(
-                ""+user.getId()
+                "" + user.getId()
         )));
         assertThat(action.execute(input, data), is(true));
     }
