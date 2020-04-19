@@ -60,7 +60,14 @@ public class StartUI {
      *               standard1 output
      */
     public void showMenu(List<UserAction> menu) {
-
+        System.out.println("MENU");
+        for (int index = 0; index < menu.size(); ++index) {
+            System.out.println(String.format(
+                    "%d.%s",
+                    (index + 1),
+                    menu.get(index).getTitle()
+            ));
+        }
     }
 
     /**
