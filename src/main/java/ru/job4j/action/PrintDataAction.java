@@ -45,6 +45,7 @@ public class PrintDataAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Data data) {
-        return false;
+        System.out.println(data.toString());
+        return true;
     }
 }
