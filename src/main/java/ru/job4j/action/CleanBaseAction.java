@@ -20,7 +20,7 @@ public class CleanBaseAction implements UserAction {
      */
     @Override
     public String getTitle() {
-        return null;
+        return "CLEAN";
     }
 
     /**
