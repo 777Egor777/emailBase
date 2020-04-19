@@ -571,8 +571,9 @@ public class ValidateInput implements Input {
      * object
      */
     @Override
-    public User askUser(String message) {
-        return null;
+    public User askUser(String message) throws IOException {
+        System.out.println(message);
+        return askUser();
     }
 
     /**
