@@ -38,6 +38,7 @@ public class ValidateInput implements Input {
      *               class.
      */
     public ValidateInput(Input input) {
+        this.input = input;
     }
 
     /**
