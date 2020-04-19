@@ -4,6 +4,7 @@ import ru.job4j.action.*;
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -92,7 +93,14 @@ public class StartUI {
      *               we save data base of users
      *               and their emails
      */
-    public void start(List<UserAction> actions, Input input, Data data) {
+    public void start(List<UserAction> actions, Input input, Data data) throws IOException {
+        boolean run = true;
+        while (run) {
+            showMenu(actions);
+            int menuItemIndex = input.askInt("Enter menu's item number: ", actions.size()) - 1;
+            run = actions.get(menuItemIndex).execute(input, data);
+            System.out.println();
+        }
     }
 
     /**
