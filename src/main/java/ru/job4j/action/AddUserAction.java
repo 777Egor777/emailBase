@@ -2,6 +2,10 @@ package ru.job4j.action;
 
 import ru.job4j.input.Input;
 import ru.job4j.model.database.Data;
+import ru.job4j.model.database.util.DataHelper;
+import ru.job4j.model.user.User;
+
+import java.io.IOException;
 
 /**
  * This class execute process
@@ -44,7 +48,9 @@ public class AddUserAction implements UserAction {
      * action.
      */
     @Override
-    public boolean execute(Input input, Data data) {
-        return false;
+    public boolean execute(Input input, Data data) throws IOException {
+        User newUser = input.askUser();
+        DataHelper.addUser(data, newUser);
+        return true;
     }
 }
