@@ -1,9 +1,6 @@
 package ru.job4j.input;
 
-import ru.job4j.input.exceptions.InvalidDataException;
-import ru.job4j.input.exceptions.InvalidIntegerException;
-import ru.job4j.input.exceptions.InvalidLineException;
-import ru.job4j.input.exceptions.InvalidUserException;
+import ru.job4j.input.exceptions.*;
 import ru.job4j.model.database.Data;
 import ru.job4j.model.email.Email;
 import ru.job4j.model.user.User;
@@ -377,8 +374,18 @@ public class ValidateInput implements Input {
      * mathod {@code askEmail}
      */
     @Override
-    public Email askEmail() {
-        return null;
+    public Email askEmail() throws IOException {
+        Email result = null;
+        boolean run = false;
+        do {
+            try {
+                result = input.askEmail();
+            } catch (InvalidEmailException exception) {
+                run = true;
+                System.out.println(exception.getMessage());
+            }
+        } while (run);
+        return result;
     }
 
     /**
