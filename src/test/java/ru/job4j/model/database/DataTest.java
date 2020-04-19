@@ -302,7 +302,7 @@ public class DataTest {
         Email email = new Email("");
         data.addUser(user);
         data.addEmail(user.getId(), email);
-        assertThat(data.getUser(user.getId()).getEmail(1), is(email));
+        assertThat(data.getUser(user.getId()).getEmail(0), is(email));
     }
 
     @Test
@@ -646,6 +646,8 @@ public class DataTest {
                 user6.getId(),
                 user7.getId(),
         };
+        Arrays.sort(result);
+        Arrays.sort(expected);
         assertThat(result, is(expected));
     }
 
@@ -678,6 +680,8 @@ public class DataTest {
                 user6.getId(),
                 user7.getId(),
         };
+        Arrays.sort(result);
+        Arrays.sort(expected);
         assertThat(result, is(expected));
     }
 
@@ -714,6 +718,8 @@ public class DataTest {
                 user4.getId(),
                 user6.getId(),
         };
+        Arrays.sort(result);
+        Arrays.sort(expected);
         assertThat(result, is(expected));
     }
 
@@ -752,6 +758,8 @@ public class DataTest {
                 user3.getId(),
                 user6.getId(),
         };
+        Arrays.sort(result);
+        Arrays.sort(expected);
         assertThat(result, is(expected));
     }
 

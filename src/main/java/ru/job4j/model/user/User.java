@@ -15,7 +15,7 @@ import java.util.*;
  * @version 1.0.
  * @author Geraskin Yegor(yegeraskin13@gmail.com)
  */
-public class User {
+public class User implements Comparable<User> {
     /**
      * Email's list of {@code this} {@code User}
      * We will try not to allow duplicates
@@ -303,8 +303,19 @@ public class User {
         boolean result = false;
         if (obj != null && obj.getClass() == getClass()) {
             User user = (User) obj;
-            result = true;
-            Collections.sort(emails);
+            if (user.getId() == id) {
+                Collections.sort(emails);
+                Collections.sort(user.getEmails());
+                result = emails.size() == user.getNumberOfEmails();
+                if (result) {
+                    for (int index = 0; index < emails.size(); ++index) {
+                        if (!emails.get(index).equals(user.getEmail(index))) {
+                            result = false;
+                            break;
+                        }
+                    }
+                }
+            }
         }
         return result;
     }
@@ -341,11 +352,22 @@ public class User {
      */
     @Override
     public int hashCode() {
-        int result = 0;
-        for (Email email : emails) {
-            result += email.hashCode();
-        }
-        result *= id;
-        return result;
+        return id;
+    }
+
+    /**
+     * Method that we need to
+     * compare {@code User} object's
+     * while sorting them
+     * @param user - another {@code User}
+     *               that we compare with
+     *               {@code this} {@code User}
+     * @return 0 - if users are equal
+     *         -1 - if this user less than {@code user}
+     *         1 - if this user more than {@code user}
+     */
+    @Override
+    public int compareTo(User user) {
+        return Integer.compare(id, user.getId());
     }
 }

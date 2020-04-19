@@ -382,6 +382,7 @@ public class Data {
                 newUsers.add(users.get(userIndex));
             }
         }
+        newUsers.sort(Comparator.naturalOrder());
         users = newUsers;
     }
 

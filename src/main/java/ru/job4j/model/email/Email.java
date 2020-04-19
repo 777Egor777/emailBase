@@ -93,7 +93,7 @@ public final class Email implements Comparable<Email> {
      */
     @Override
     public int hashCode() {
-        return value.hashCode();
+        return Objects.hashCode(value);
     }
 
     /**
