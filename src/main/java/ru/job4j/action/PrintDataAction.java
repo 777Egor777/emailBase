@@ -45,6 +45,7 @@ public class PrintDataAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Data data) {
+        System.out.println(String.format("===%s===", getTitle()));
         System.out.println(data.toString());
         return true;
     }

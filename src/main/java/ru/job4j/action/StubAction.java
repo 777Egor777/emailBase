@@ -40,6 +40,7 @@ public class StubAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Data data) {
+        System.out.println(String.format("===%s===", getTitle()));
         return false;
     }
 }
